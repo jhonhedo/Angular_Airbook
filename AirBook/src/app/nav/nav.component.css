@@ -1,0 +1,11 @@
+.container-fluid.bg-light {
+    /* Existing styles */
+    background-color: lightgray;
+    border: 1px solid #ccc;
+
+    /* Increase the padding to 30px on all sides */
+    padding: 13px;
+}
+.nav-btn {
+    margin-left: 10px;
+}
