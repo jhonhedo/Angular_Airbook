@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { BodyComponent } from './body/body.component';
+import { ShowflightComponent } from './showflight/showflight.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    BodyComponent
+    BodyComponent,
+    ShowflightComponent
   ],
   imports: [
     BrowserModule,
