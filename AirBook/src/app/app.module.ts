@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { BodyComponent } from './body/body.component';
 import { ShowflightComponent } from './showflight/showflight.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -14,6 +15,8 @@ import { ShowflightComponent } from './showflight/showflight.component';
     NavComponent,
     BodyComponent,
     ShowflightComponent,
+    LoginComponent,
+    
    
   ],
   imports: [
