@@ -7,12 +7,14 @@ import { NavComponent } from './nav/nav.component';
 import { BodyComponent } from './body/body.component';
 import { ShowflightComponent } from './showflight/showflight.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     BodyComponent,
-    ShowflightComponent
+    ShowflightComponent,
+   
   ],
   imports: [
     BrowserModule,

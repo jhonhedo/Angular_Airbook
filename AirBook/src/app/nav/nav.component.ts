@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component,ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.css']
+  styleUrls: ['./nav.component.css'],
+  encapsulation: ViewEncapsulation.None,// Disable view encapsulation
 })
 export class NavComponent {
 
