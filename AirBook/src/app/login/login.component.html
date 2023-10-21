@@ -1,26 +1,30 @@
-<p>login works!</p>
+
 <div class="container d-flex justify-content-center align-items-center vh-100">
     <div class="card" style="width: 350px;">
         <div class="card-header">
             <h5 class="card-title">Login</h5>
         </div>
         <div class="card-body">
-            <form>
+            <form (ngSubmit)="login()" #loginForm="ngForm">
                 <div class="mb-3">
                     <label for="username" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="username" placeholder="Enter your username">
+                    <input type="text" class="form-control" id="username" name="username" ngModel required>
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                    <input type="password" class="form-control" id="password" name="password" ngModel required>
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">Login</button>
+                <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+
             </form>
+            
         </div>
         <div class="card-footer">
             <p class="text-center mb-0">
                 <a href="#">Forgot Password?</a> | <a href="#">Register</a>
             </p>
         </div>
+
     </div>
 </div>

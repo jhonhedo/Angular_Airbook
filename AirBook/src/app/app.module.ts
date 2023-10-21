@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { BodyComponent } from './body/body.component';
 import { ShowflightComponent } from './showflight/showflight.component';
 import { LoginComponent } from './login/login.component';
+import { CounterComponent } from './counter/counter.component';
 
 
 @NgModule({
@@ -16,12 +17,14 @@ import { LoginComponent } from './login/login.component';
     BodyComponent,
     ShowflightComponent,
     LoginComponent,
+    CounterComponent,
     
    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
