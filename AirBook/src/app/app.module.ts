@@ -8,6 +8,7 @@ import { BodyComponent } from './body/body.component';
 import { ShowflightComponent } from './showflight/showflight.component';
 import { LoginComponent } from './login/login.component';
 import { CounterComponent } from './counter/counter.component';
+import { AdmindashordComponent } from './admindashbord/admindashord.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { CounterComponent } from './counter/counter.component';
     ShowflightComponent,
     LoginComponent,
     CounterComponent,
+    AdmindashordComponent,
     
    
   ],
