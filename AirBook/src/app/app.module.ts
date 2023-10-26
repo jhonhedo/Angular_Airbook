@@ -9,6 +9,7 @@ import { ShowflightComponent } from './showflight/showflight.component';
 import { LoginComponent } from './login/login.component';
 import { CounterComponent } from './counter/counter.component';
 import { AdmindashordComponent } from './admindashbord/admindashord.component';
+import { RigesterComponent } from './rigester/rigester.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { AdmindashordComponent } from './admindashbord/admindashord.component';
     LoginComponent,
     CounterComponent,
     AdmindashordComponent,
+    RigesterComponent,
     
    
   ],
