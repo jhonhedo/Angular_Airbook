@@ -9,8 +9,12 @@ import { ShowflightComponent } from './showflight/showflight.component';
 import { LoginComponent } from './login/login.component';
 import { CounterComponent } from './counter/counter.component';
 import { AdmindashordComponent } from './admindashbord/admindashord.component';
+
 import { ReviewbookingComponent } from './reviewbooking/reviewbooking.component';
 import { RegisterComponent } from './register/register.component';
+
+import { PaymentComponent } from './payment/payment.component';
+
 
 
 @NgModule({
@@ -24,6 +28,8 @@ import { RegisterComponent } from './register/register.component';
     AdmindashordComponent,
     ReviewbookingComponent,
     RegisterComponent,
+    PaymentComponent,
+
     
    
   ],
