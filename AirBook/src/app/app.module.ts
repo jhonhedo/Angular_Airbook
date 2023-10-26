@@ -24,8 +24,8 @@ import { PaymentComponent } from './payment/payment.component';
     LoginComponent,
     CounterComponent,
     AdmindashordComponent,
-    ReviewbookingComponent,
-    RegisterComponent,
+   
+  
     PaymentComponent,
 
     
