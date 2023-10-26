@@ -11,6 +11,10 @@ import { CounterComponent } from './counter/counter.component';
 import { AdmindashordComponent } from './admindashbord/admindashord.component';
 
 
+import { PaymentComponent } from './payment/payment.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +24,10 @@ import { AdmindashordComponent } from './admindashbord/admindashord.component';
     LoginComponent,
     CounterComponent,
     AdmindashordComponent,
+    ReviewbookingComponent,
+    RegisterComponent,
+    PaymentComponent,
+
     
    
   ],
