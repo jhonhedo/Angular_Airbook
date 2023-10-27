@@ -1,249 +1,203 @@
-
 <div class="container-fluid text-center bg-primary">
-    <h5>Domestic and International Flights</h5>
-    <div class="container">
-        <div class="row">
-            <div class="col-1">
+  <h5>Domestic and International Flights</h5>
+  <div class="container">
+    <div class="row">
+      <div class="col-1">
 
-            </div>
-            <div class="rounded p-3 bg-light col-10 mb-4 mb-md-0">
-                <div class="d-flex align-items-center">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label fw-bold fs-7" for="flexRadioDefault1">
-                            Return
-                        </label>
-                    </div>
-                    <div class="form-check mx-2">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
-                            checked>
-                        <label class="form-check-label fw-bold fs-7" for="flexRadioDefault2">
-                            One way
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3"
-                            checked>
-                        <label class="form-check-label fw-bold fs-7" for="flexRadioDefault3">
-                            Multi-city
-                        </label>
-                    </div>
-
-                </div>
-                <div class="d-flex align-items-center ">
-                    <div class="e1">
-                        <label for="exampleDataList" class="form-label fw-bold  m-0">From</label>
-                        <input class="form-control inp-width inp-height" list="datalistOptions" id="exampleDataList"
-                            placeholder="Airport or City">
-                        <datalist id="datalistOptions">
-                            <option value="San Francisco">
-                            <option value="New York">
-                            <option value="Seattle">
-                            <option value="Los Angeles">
-                            <option value="Chicago">
-                        </datalist>
-                    </div>
-                    <div>
-                        <button id="arrow1">
-                            <div>
-                                <i class="bi bi-arrow-left-right"></i>
-                            </div>
-                        </button>
-                    </div>
-                    <div class="e1">
-                        <label for="exampleDataList1" class="form-label fw-bold  m-0">TO</label>
-                        <input class="form-control inp-width inp-height" list="datalistOptions1"
-                            id="exampleDataList1" placeholder="Airport or City">
-                        <datalist id="datalistOptions1">
-                            <option value="delhi">
-                            <option value="Hyderabad">
-                            <option value="Mumbai">
-                            <option value="Banglore">
-                            <option value="Kolkatta">
-                        </datalist>
-                    </div>
-                    <div class="e1">
-                        <div class="lable fw-bold">Depart</div>
-                        <input type="date" name="" id="" class="form-control inp-height">
-                    </div>
-
-                    <div class="e1">
-                        <div class="lable fw-bold">Return</div>
-                        <input type="date" name="" id="" class="form-control inp-height">
-                    </div>
-                    <div class="e5">
-                         <label class="fw-bold ">Class</label>
-                        <select class="form-select inp-height inp-width">
-                            <option value="1">Economy</option>
-                            <option value="2">First</option>
-                            <option value="3">Business</option>
-                        </select>
-                        
-                    </div>
-                </div>
-                <div class="d-flex align-items h-25 justify-content-between">
-                    <div class="container d-flex mt-2 ">
-                        <h6>Select a fare type:</h6>
-                        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-                            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-                            <label class="btn btn-outline-primary" for="btnradio1">Regular</label>
-                
-                            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-                            <label class="btn btn-outline-primary" for="btnradio2">ArmedForces</label>
-                
-                            <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-                            <label class="btn btn-outline-primary" for="btnradio3">SeniorCitizen</label>
-                
-                            <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
-                            <label class="btn btn-outline-primary" for="btnradio4">Student</label>
-                
-                            <input type="radio" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off">
-                            <label class="btn btn-outline-primary" for="btnradio5">Doctors & Nurses</label>
-                        </div>
-                        
-                    </div>
-                     
-                    <div id="search-btn" class="btn btn-success fw-bold btn-lg position-absolute ">
-                        <a  style="text-decoration:none"   href="/showflight">Search Flights</a>
-                    </div>
-                    <div>
-                        <app-counter></app-counter>
-                    </div>
-                </div>
-                
-            </div>
-            <!-- Remove the container if you want to extend the Footer to full width. -->
-<div class="container my-5">
-
-    <footer class="text-center text-white" style="background-color: #caced1;">
-      <!-- Grid container -->
-      <div class="container p-4">
-        <!-- Section: Images -->
-        <section class="">
-          <div class="row">
-            <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-              <div
-                   class="bg-image hover-overlay ripple shadow-1-strong rounded"
-                   data-ripple-color="light"
-                   >
-                <img
-                     src="https://mdbootstrap.com/img/new/fluid/city/113.jpg"
-                     class="w-100"
-                     />
-                <a href="#!">
-                  <div
-                       class="mask"
-                       style="background-color: rgba(251, 251, 251, 0.2);"
-                       ></div>
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-              <div
-                   class="bg-image hover-overlay ripple shadow-1-strong rounded"
-                   data-ripple-color="light"
-                   >
-                <img
-                     src="https://mdbootstrap.com/img/new/fluid/city/111.jpg"
-                     class="w-100"
-                     />
-                <a href="#!">
-                  <div
-                       class="mask"
-                       style="background-color: rgba(251, 251, 251, 0.2);"
-                       ></div>
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-              <div
-                   class="bg-image hover-overlay ripple shadow-1-strong rounded"
-                   data-ripple-color="light"
-                   >
-                <img
-                     src="https://mdbootstrap.com/img/new/fluid/city/112.jpg"
-                     class="w-100"
-                     />
-                <a href="#!">
-                  <div
-                       class="mask"
-                       style="background-color: rgba(251, 251, 251, 0.2);"
-                       ></div>
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-              <div
-                   class="bg-image hover-overlay ripple shadow-1-strong rounded"
-                   data-ripple-color="light"
-                   >
-                <img
-                     src="https://mdbootstrap.com/img/new/fluid/city/114.jpg"
-                     class="w-100"
-                     />
-                <a href="#!">
-                  <div
-                       class="mask"
-                       style="background-color: rgba(251, 251, 251, 0.2);"
-                       ></div>
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-              <div
-                   class="bg-image hover-overlay ripple shadow-1-strong rounded"
-                   data-ripple-color="light"
-                   >
-                <img
-                     src="https://mdbootstrap.com/img/new/fluid/city/115.jpg"
-                     class="w-100"
-                     />
-                <a href="#!">
-                  <div
-                       class="mask"
-                       style="background-color: rgba(251, 251, 251, 0.2);"
-                       ></div>
-                </a>
-              </div>
-            </div>
-            <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
-              <div
-                   class="bg-image hover-overlay ripple shadow-1-strong rounded"
-                   data-ripple-color="light"
-                   >
-                <img
-                     src="https://mdbootstrap.com/img/new/fluid/city/116.jpg"
-                     class="w-100"
-                     />
-                <a href="#!">
-                  <div
-                       class="mask"
-                       style="background-color: rgba(251, 251, 251, 0.2);"
-                       ></div>
-                </a>
-              </div>
-            </div>
+      </div>
+      <div class="rounded p-3 bg-light col-10 mb-4 mb-md-0">
+        <div class="d-flex align-items-center">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label fw-bold fs-7" for="flexRadioDefault1">
+              Return
+            </label>
           </div>
-        </section>
-        <!-- Section: Images -->
-      </div>
-      <!-- Grid container -->
-  
-      <!-- Copyright -->
-      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2020 Copyright:
-        <a class="text-white" href="#">Airline.com</a>
-      </div>
-      <!-- Copyright -->
-    </footer>
-  
-  </div>
-  <!-- End of .container -->
+          <div class="form-check mx-2">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+            <label class="form-check-label fw-bold fs-7" for="flexRadioDefault2">
+              One way
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked>
+            <label class="form-check-label fw-bold fs-7" for="flexRadioDefault3">
+              Multi-city
+            </label>
+          </div>
 
-  
-            <div class="col-1">
-                
-            </div>
         </div>
+        <div class="d-flex align-items-center ">
+          <div class="e1">
+            <label for="exampleDataList" class="form-label fw-bold  m-0">From</label>
+            <input class="form-control inp-width inp-height" list="datalistOptions" id="exampleDataList"
+              placeholder="Airport or City">
+            <datalist id="datalistOptions">
+              <option value="San Francisco">
+              <option value="New York">
+              <option value="Seattle">
+              <option value="Los Angeles">
+              <option value="Chicago">
+            </datalist>
+          </div>
+          <div>
+            <button id="arrow1">
+              <div>
+                <i class="bi bi-arrow-left-right"></i>
+              </div>
+            </button>
+          </div>
+          <div class="e1">
+            <label for="exampleDataList1" class="form-label fw-bold  m-0">TO</label>
+            <input class="form-control inp-width inp-height" list="datalistOptions1" id="exampleDataList1"
+              placeholder="Airport or City">
+            <datalist id="datalistOptions1">
+              <option value="delhi">
+              <option value="Hyderabad">
+              <option value="Mumbai">
+              <option value="Banglore">
+              <option value="Kolkatta">
+            </datalist>
+          </div>
+          <div class="e1">
+            <div class="lable fw-bold">Depart</div>
+            <input type="date" name="" id="" class="form-control inp-height">
+          </div>
+
+          <div class="e1">
+            <div class="lable fw-bold">Return</div>
+            <input type="date" name="" id="" class="form-control inp-height">
+          </div>
+          <div class="e5">
+            <label class="fw-bold ">Class</label>
+            <select class="form-select inp-height inp-width">
+              <option value="1">Economy</option>
+              <option value="2">First</option>
+              <option value="3">Business</option>
+            </select>
+
+          </div>
+        </div>
+        <div class="d-flex align-items h-25 justify-content-between">
+          <div class="container d-flex mt-2 ">
+            <h6>Type:</h6>
+            <div class="btn-group" role="group" aria-label="Basic radio button group">
+              <label>
+                  <input type="radio" name="btnradio" id="btnradio1" checked>
+                  Regular
+              </label>
+          
+              <label>
+                  <input type="radio" name="btnradio" id="btnradio2">
+                  ArmedForces
+              </label>
+          
+              <label>
+                  <input type="radio" name="btnradio" id="btnradio3">
+                  SeniorCitizen
+              </label>
+          
+              <label>
+                  <input type="radio" name="btnradio" id="btnradio4">
+                  Student
+              </label>
+          
+              <label>
+                  <input type="radio" name="btnradio" id="btnradio5">
+                  Doctors & Nurses
+              </label>
+          </div>
+          
+
+          </div>
+
+          <div id="search-btn" class="btn btn-success fw-bold btn-lg position-absolute ">
+            <a style="text-decoration:none" href="/showflight">Search Flights</a>
+          </div>
+          <div>
+            <app-counter></app-counter>
+          </div>
+        </div>
+
+      </div>
+      <!-- Remove the container if you want to extend the Footer to full width. -->
+      <div class="container my-5">
+
+        <footer class="text-center text-white" style="background-color: #caced1;">
+          <!-- Grid container -->
+          <div class="container p-4">
+            <!-- Section: Images -->
+            <section class="">
+              <div class="row">
+                <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                  <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+                    <img src="https://mdbootstrap.com/img/new/fluid/city/113.jpg" class="w-100" />
+                    <a href="#!">
+                      <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                  <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+                    <img src="https://mdbootstrap.com/img/new/fluid/city/111.jpg" class="w-100" />
+                    <a href="#!">
+                      <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                  <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+                    <img src="https://mdbootstrap.com/img/new/fluid/city/112.jpg" class="w-100" />
+                    <a href="#!">
+                      <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                  <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+                    <img src="https://mdbootstrap.com/img/new/fluid/city/114.jpg" class="w-100" />
+                    <a href="#!">
+                      <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                  <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+                    <img src="https://mdbootstrap.com/img/new/fluid/city/115.jpg" class="w-100" />
+                    <a href="#!">
+                      <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                  <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light">
+                    <img src="https://mdbootstrap.com/img/new/fluid/city/116.jpg" class="w-100" />
+                    <a href="#!">
+                      <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- Section: Images -->
+          </div>
+          <!-- Grid container -->
+
+          <!-- Copyright -->
+          <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2020 Copyright:
+            <a class="text-white" href="#">Airline.com</a>
+          </div>
+          <!-- Copyright -->
+        </footer>
+
+      </div>
+      <!-- End of .container -->
+
+
+      <div class="col-1">
+
+      </div>
     </div>
+  </div>
 </div>
