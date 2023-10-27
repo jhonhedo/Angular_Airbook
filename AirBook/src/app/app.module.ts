@@ -12,11 +12,7 @@ import { AdmindashordComponent } from './admindashbord/admindashord.component';
 
 
 import { PaymentComponent } from './payment/payment.component';
-<<<<<<< HEAD
-import { TicketComponent } from './ticket/ticket.component';
-=======
 import { SeatselectionComponent } from './seatselection/seatselection.component';
->>>>>>> 9080dae4234ff10e7de659daaa266233208668c5
 
 
 
@@ -32,11 +28,7 @@ import { SeatselectionComponent } from './seatselection/seatselection.component'
    
   
     PaymentComponent,
-<<<<<<< HEAD
-             TicketComponent,
-=======
              SeatselectionComponent,
->>>>>>> 9080dae4234ff10e7de659daaa266233208668c5
 
     
    
