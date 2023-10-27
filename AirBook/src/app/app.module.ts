@@ -12,6 +12,7 @@ import { AdmindashordComponent } from './admindashbord/admindashord.component';
 
 
 import { PaymentComponent } from './payment/payment.component';
+import { TicketComponent } from './ticket/ticket.component';
 
 
 
@@ -27,6 +28,7 @@ import { PaymentComponent } from './payment/payment.component';
    
   
     PaymentComponent,
+             TicketComponent,
 
     
    
