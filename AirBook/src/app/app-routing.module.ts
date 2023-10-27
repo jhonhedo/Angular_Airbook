@@ -5,7 +5,6 @@ import { BodyComponent } from './search/body.component';
 import { LoginComponent } from './login/login.component';
 import { RigesterComponent } from './rigester/rigester.component';
 import { ReviewbookingComponent } from './reviewbooking/reviewbooking.component';
-import { PaymentComponent } from './payment/payment.component';
 
 
 const routes: Routes = [
@@ -14,7 +13,6 @@ const routes: Routes = [
   {path:'rig', component:RigesterComponent},
   {path: 'showflight', component:ShowflightComponent},
   {path:'review', component:ReviewbookingComponent},
-  {path:'payment', component:PaymentComponent}
   
   
 ];
