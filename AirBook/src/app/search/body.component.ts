@@ -8,4 +8,9 @@ import { Component ,ViewEncapsulation } from '@angular/core';
 })
 export class BodyComponent {
 
+  showTravelerInputs: boolean = false;
+
+  toggleTravelerInputs() {
+    this.showTravelerInputs = !this.showTravelerInputs;
+  }
 }

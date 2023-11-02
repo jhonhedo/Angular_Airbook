@@ -91,12 +91,6 @@
                 <input type="radio" name="btnradio" id="btnradio2">
                 ArmedForces
               </label>
-
-              <label>
-                <input type="radio" name="btnradio" id="btnradio3">
-                SeniorCitizen
-              </label>
-
               <label>
                 <input type="radio" name="btnradio" id="btnradio4">
                 Student
@@ -115,7 +109,27 @@
             <a style="text-decoration:none ; color: white;" href="/showflight">Search Flights</a>
           </div>
           <div>
-            <app-counter></app-counter>
+            <!-- <app-counter></app-counter> -->
+            <div class="form-group">
+              <label for="travelers" (click)="toggleTravelerInputs()" class=" focus-ring py-1 px-2 text-decoration-bold border rounded-2">Passengers</label>
+              <div class="row" id="travelerInputs" *ngIf="showTravelerInputs">
+                <div class="col-md-4">
+                  <label for="children">Children</label>
+                  <input type="number" class="form-control" id="children" name="children" min="0" max="10" value="0">
+                </div>
+                <div class="col-md-4">
+                  <label for="adults">Adults</label>
+                  <input type="number" class="form-control" id="adults" name="adults" min="1" max="10" value="1">
+                </div>
+                <div class="col-md-4">
+                  <label for="infants">Infants</label>
+                  <input type="number" class="form-control" id="infants" name="infants" min="0" max="10" value="0">
+                </div>
+              </div>
+
+            </div>
+
+
           </div>
         </div>
 

@@ -2,18 +2,16 @@
     <div class="d-flex justify-content-between align-items-center">
         <div id="nav-btn" class="d-flex align-items-center">
             <h3>letsfly</h3>
-            <a href="#" class="btn btn-primary fw-bold mx-2">Flights</a>
-            <a href="#" class="btn btn-primary fw-bold mx-2">Hotels</a>
-            <a href="#" class="btn btn-primary fw-bold mx-2">Trains</a>
-            <a href="#" class="btn btn-primary fw-bold mx-2">Bus</a>
-            <a href="/admindash" class="btn btn-primary fw-bold mx-2">Cabs</a>
+            <a href="#" class="btn btn-primary fw-bold mx-2">Book Flight</a>
+            <a href="#" class="btn btn-primary fw-bold mx-2">Home</a>
+            <a href="/admindash" class="btn btn-primary fw-bold mx-2">Contact</a>
         </div>
         <div class="d-none d-xl-flex">
             <h5>Hii User <i class="bi bi-person"></i> &nbsp;</h5>
-            <button type="button" class="btn btn-primary">
-                <a href="/login" style="color: rgb(253, 250, 250);">Login</a>
-            </button>
-
+            <button (click)="toggleLoginComponent()" type="button" class="btn btn-primary">Login</button>
+            <!-- <a href="/login" style= "text-decoration: none; color: rgb(253, 250, 250);">Login</a> -->
+            
         </div>
     </div>
 </nav>
+<app-login *ngIf="showLoginComponent" class="overlay"></app-login>

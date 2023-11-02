@@ -1,4 +1,4 @@
-import { Component,ViewEncapsulation } from '@angular/core';
+import { Component,ViewEncapsulation,ElementRef, HostListener} from '@angular/core';
 
 @Component({
   selector: 'app-nav',
@@ -8,4 +8,17 @@ import { Component,ViewEncapsulation } from '@angular/core';
 })
 export class NavComponent {
 
+  constructor(private el: ElementRef) {}
+  showLoginComponent: boolean = false;
+
+  toggleLoginComponent() {
+    this.showLoginComponent = !this.showLoginComponent;
+  }
+
+  @HostListener('document:click', ['$event'])
+  handleClick(event: Event) {
+    if (!this.el.nativeElement.contains(event.target)) {
+      this.showLoginComponent = false;
+    }
+  }
 }
