@@ -9,12 +9,13 @@ import { Router } from '@angular/router';
 
 export class PaymentComponent {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) { };
+
   ownerName: string = '';
   cvv: string = '';
   cardNumber: string = '';
   message: string = '';
-  attmpts: number = 0;
+  attempts: number = 0;
   chances: number = 3;
 
   confirm() {
@@ -22,15 +23,20 @@ export class PaymentComponent {
       this.message = "Payment completed successfully..!!";
       this.router.navigate(['/ticket']); // Replace 'next-page' with your actual route path
     } else {
-      this.attmpts++;
+      this.attempts++;
       this.chances--;
 
-      if (this.attmpts >= 3) {
+      if (this.attempts >= 3) {
         this.message = "Please wait 24 hours...!!";
       } else {
         this.message = "Login failed. You have" + this.chances + "attempts remaining.";
       }
     }
+  }
+
+  redirectToNextPage() {
+    // Use the Router service to navigate to the next page
+    this.router.navigate(['/ticket']); // Replace 'next-page' with your actual route path
   }
 
 }

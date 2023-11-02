@@ -33,6 +33,7 @@ import { PaymentreviewComponent } from './paymentreview/paymentreview.component'
              SeatselectionComponent,
              ResetpassComponent,
              PaymentreviewComponent,
+             
 
     
    
