@@ -13,6 +13,8 @@ export class CounterComponent {
   }
 
   decreaseCount() {
+    if(this.count>0){
     this.count--;
+    }
   }
 }

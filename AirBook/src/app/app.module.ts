@@ -9,8 +9,13 @@ import { ShowflightComponent } from './showflight/showflight.component';
 import { LoginComponent } from './login/login.component';
 import { CounterComponent } from './counter/counter.component';
 import { AdmindashordComponent } from './admindashbord/admindashord.component';
-import { ReviewbookingComponent } from './reviewbooking/reviewbooking.component';
-import { RegisterComponent } from './register/register.component';
+
+
+import { PaymentComponent } from './cardpayment/payment.component';
+import { SeatselectionComponent } from './seatselection/seatselection.component';
+import { ResetpassComponent } from './resetpass/resetpass.component';
+import { PaymentreviewComponent } from './paymentreview/paymentreview.component';
+
 
 
 @NgModule({
@@ -22,8 +27,14 @@ import { RegisterComponent } from './register/register.component';
     LoginComponent,
     CounterComponent,
     AdmindashordComponent,
-    ReviewbookingComponent,
-    RegisterComponent,
+   
+  
+    PaymentComponent,
+             SeatselectionComponent,
+             ResetpassComponent,
+             PaymentreviewComponent,
+             
+
     
    
   ],

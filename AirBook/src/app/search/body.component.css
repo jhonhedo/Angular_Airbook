@@ -36,7 +36,7 @@
 }
 
 #search-btn {
-    background-color: rgb(247, 127, 8);
+    background-color: rgb(253, 120, 18);
     height: 52px;
     margin-top: 70px;
     margin-left: 30%;
@@ -107,4 +107,14 @@ input {
     border: 1px solid rgb(108, 106, 106);
     border-radius: 20px;
     height: 20vh;
+}
+/* Reduce the size of the radio buttons */
+.btn-group label input[type="radio"] {
+    transform: scale(0.6); /* Adjust the scale factor as needed */
+    margin-right: 3px; /* Add some spacing between the radio button and label */
+}
+
+/* Optional: Adjust label text size */
+.btn-group label {
+    font-size: 13px; /* Change the font size as needed */
 }
