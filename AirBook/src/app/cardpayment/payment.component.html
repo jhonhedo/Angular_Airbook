@@ -1,0 +1,60 @@
+<div class="container">
+     <div class="row justify-content-center">
+       <div class="col-md-6">
+         <div class="card mt-4">
+           <div class="card-body">
+             <h5 class="card-title">Confirm Your Payment</h5>
+             
+             <div class="mb-3">
+               <label for="ownerName" class="form-label">Enter Name on card</label>
+               <input type="text" class="form-control" id="ownerName" [(ngModel)]="ownerName" name="t1">
+             </div>
+             
+             <div class="mb-3">
+               <label for="cvv" class="form-label">CVV</label>
+               <input type="text" class="form-control" id="cvv" [(ngModel)]="cvv" name="t2">
+             </div>
+             
+             <div class="mb-3">
+               <label for="cardNumber" class="form-label">Card Number</label>
+               <input type="text" class="form-control" id="cardNumber" [(ngModel)]="cardNumber" name="t3">
+             </div>
+             
+             <div class="mb-3">
+               <label for="expDate" class="form-label">Exp Date</label>
+               <div class="row">
+                 <div class="col">
+                   <select name="months" id="months" class="form-select">
+                     <option value="jan">Jan</option>
+                     <option value="feb">Feb</option>
+                     <option value="feb">Mar</option>
+                     <option value="feb">Apr</option>
+                     <option value="feb">May</option>
+                     <option value="feb">Jun</option>
+                     <option value="feb">Jul</option>
+                     <option value="feb">Aug</option>
+                     <option value="feb">Sep</option>
+                     <option value="feb">Oct</option>
+                     <option value="feb">Nov</option>
+                     <option value="feb">Dec</option>
+                    
+                   </select>
+                 </div>
+                 <div class="col">
+                   <select name="years" id="years" class="form-select">
+                     <option value="2022">2022</option>
+                     <option value="2021">2021</option>
+                     <!-- Add more years here -->
+                   </select>
+                 </div>
+               </div>
+             </div>
+             
+             <button type="button" class="btn btn-primary" [disabled]="attmpts >= 3">Confirm</button>
+             
+             <h3>{{message}}</h3>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>

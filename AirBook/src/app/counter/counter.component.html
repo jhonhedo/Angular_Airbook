@@ -1,9 +1,9 @@
+<div style="order: 1; flex-grow: 1;"> <!-- This div is styled to fill the remaining space -->
+  <h5 style="color: black; text-align: center; margin-top: -10px;">Passengers</h5>
 
-
-<div style="display: flex; align-items: center;">
-  <h5 style="color: black;">Passengers</h5>
-  <button (click)="decreaseCount()" class="btn btn-danger btn-lg">-</button>
-  <p id="count" class="display-4">{{ count }}</p>
-
-  <button (click)="increaseCount()" class="btn btn-success btn-lg">+</button>
+  <div style="display: flex; align-items: center;" >
+    <button (click)="decreaseCount()" class="btn btn-danger btn-md" style="order: 2;">-</button>
+    <h4 id="count" class="display-4 " style="font-size: 2rem; order: 3;">{{ count }}</h4>
+    <button (click)="increaseCount()" class="btn btn-success btn-md" style="order: 4;">+</button>
+  </div>
 </div>
