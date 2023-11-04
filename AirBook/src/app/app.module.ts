@@ -17,7 +17,6 @@ import { ResetpassComponent } from './resetpass/resetpass.component';
 import { PaymentreviewComponent } from './paymentreview/paymentreview.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +29,7 @@ import { PaymentreviewComponent } from './paymentreview/paymentreview.component'
    
   
     PaymentComponent,
-             SeatselectionComponent,
+         SeatselectionComponent,
              ResetpassComponent,
              PaymentreviewComponent,
              

@@ -3,137 +3,134 @@
   <div class="container">
     <div class="row">
       <div class="col-1">
-
       </div>
       <div class="rounded p-3 bg-light col-10 mb-4 mb-md-0">
-        <div class="d-flex align-items-center">
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-            <label class="form-check-label fw-bold fs-7" for="flexRadioDefault1">
-              Return
-            </label>
+        <form (ngSubmit)="searchFlight()">
+          <div class="d-flex align-items-center">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+              <label class="form-check-label fw-bold fs-7" for="flexRadioDefault1">
+                Return
+              </label>
+            </div>
+            <div class="form-check mx-2">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+              <label class="form-check-label fw-bold fs-7" for="flexRadioDefault2">
+                One way
+              </label>
+            </div>
           </div>
-          <div class="form-check mx-2">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-            <label class="form-check-label fw-bold fs-7" for="flexRadioDefault2">
-              One way
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked>
-            <label class="form-check-label fw-bold fs-7" for="flexRadioDefault3">
-              Multi-city
-            </label>
-          </div>
+          <div class="d-flex align-items-center ">
+            <div class="e1">
+              <label for="exampleDataList1" class="form-label fw-bold m-0">From</label>
+              <input class="form-control inp-width inp-height" list="datalistOptions1" id="exampleDataList1"
+                [(ngModel)]="city1" name="city1" placeholder="Airport or City" type="text">
+              <datalist id="datalistOptions1">
+                <option value="San Francisco"></option>
+                <option value="Seattle"></option>
+                <option value="Boston"></option>
+              </datalist>
+            </div>
 
-        </div>
-        <div class="d-flex align-items-center ">
-          <div class="e1">
-            <label for="exampleDataList" class="form-label fw-bold  m-0">From</label>
-            <input class="form-control inp-width inp-height" list="datalistOptions" id="exampleDataList"
-              placeholder="Airport or City">
-            <datalist id="datalistOptions">
-              <option value="San Francisco">
-              <option value="New York">
-              <option value="Seattle">
-              <option value="Los Angeles">
-              <option value="Chicago">
-            </datalist>
+            <div>
+              <button id="arrow1" (click)="swapCities()">
+                <div>
+                  <i class="bi bi-arrow-left-right"></i>
+                </div>
+              </button>
+            </div>
+            <div class="e1">
+              <label for="exampleDataList1" class="form-label fw-bold m-0">TO</label>
+              <input class="form-control inp-width inp-height" list="datalistOptions1" id="exampleDataList1"
+                [(ngModel)]="city2" name="city2" placeholder="Airport or City">
+              <datalist id="datalistOptions1">
+                <option value="San Francisco"></option>
+                <option value="Seattle"></option>
+                <option value="Boston"></option>
+              </datalist>
+            </div>
+
+            <div class="e1">
+              <div class="lable fw-bold">Depart</div>
+              <input type="date" name="" id="" class="form-control inp-height">
+            </div>
+
+            <div class="e1">
+              <div class="lable fw-bold">Return</div>
+              <input type="date" name="" id="" class="form-control inp-height">
+            </div>
+            <div class="e5">
+              <label class="fw-bold ">Class</label>
+              <input class="form-control inp-width inp-height" [(ngModel)]="selectedClass" name="selectedClass"
+                placeholder="Select Class" list="datalistOptions3" type="text">
+              <datalist id="datalistOptions3">
+                <option value="Economy">Economy</option>
+                <option value="First">First</option>
+                <option value="Business">Business</option>
+              </datalist>
+
+            </div>
           </div>
-          <div>
-            <button id="arrow1">
-              <div>
-                <i class="bi bi-arrow-left-right"></i>
+          <div class="d-flex align-items h-25 justify-content-between">
+            <div class="container d-flex mt-2 ">
+              <h6>Type:</h6>
+              <div class="btn-group" role="group" aria-label="Basic radio button group">
+                <label>
+                  <input type="radio" name="btnradio" id="btnradio1" checked>
+                  Regular
+                </label>
+
+                <label>
+                  <input type="radio" name="btnradio" id="btnradio2">
+                  ArmedForces
+                </label>
+                <label>
+                  <input type="radio" name="btnradio" id="btnradio4">
+                  Student
+                </label>
+
+                <label>
+                  <input type="radio" name="btnradio" id="btnradio5">
+                  Doctors & Nurses
+                </label>
               </div>
+
+
+            </div>
+
+            <button type="submit" id="search-btn" class="btn btn-success fw-bold btn-lg position-absolute ">
+              SearchFlight
+              <!-- <a style="text-decoration:none ; color: white;" href="/showflight">Search Flights</a> -->
             </button>
-          </div>
-          <div class="e1">
-            <label for="exampleDataList1" class="form-label fw-bold  m-0">TO</label>
-            <input class="form-control inp-width inp-height" list="datalistOptions1" id="exampleDataList1"
-              placeholder="Airport or City">
-            <datalist id="datalistOptions1">
-              <option value="delhi">
-              <option value="Hyderabad">
-              <option value="Mumbai">
-              <option value="Banglore">
-              <option value="Kolkatta">
-            </datalist>
-          </div>
-          <div class="e1">
-            <div class="lable fw-bold">Depart</div>
-            <input type="date" name="" id="" class="form-control inp-height">
-          </div>
+            <div>
+              <div class="form-group">
+                <label for="totalPassengers">Passengers</label>
+                <input type="number" class="form-control" id="totalPassengers" name="totalPassengers"
+                  [value]="totalPassengers" (click)="toggleTravelerInputs()" [(ngModel)]="Passengers">
 
-          <div class="e1">
-            <div class="lable fw-bold">Return</div>
-            <input type="date" name="" id="" class="form-control inp-height">
-          </div>
-          <div class="e5">
-            <label class="fw-bold ">Class</label>
-            <select class="form-select inp-height inp-width">
-              <option value="1">Economy</option>
-              <option value="2">First</option>
-              <option value="3">Business</option>
-            </select>
-
-          </div>
-        </div>
-        <div class="d-flex align-items h-25 justify-content-between">
-          <div class="container d-flex mt-2 ">
-            <h6>Type:</h6>
-            <div class="btn-group" role="group" aria-label="Basic radio button group">
-              <label>
-                <input type="radio" name="btnradio" id="btnradio1" checked>
-                Regular
-              </label>
-
-              <label>
-                <input type="radio" name="btnradio" id="btnradio2">
-                ArmedForces
-              </label>
-              <label>
-                <input type="radio" name="btnradio" id="btnradio4">
-                Student
-              </label>
-
-              <label>
-                <input type="radio" name="btnradio" id="btnradio5">
-                Doctors & Nurses
-              </label>
-            </div>
-
-
-          </div>
-
-          <div id="search-btn" class="btn btn-success fw-bold btn-lg position-absolute ">
-            <a style="text-decoration:none ; color: white;" href="/showflight">Search Flights</a>
-          </div>
-          <div>
-            <!-- <app-counter></app-counter> -->
-            <div class="form-group">
-              <label for="travelers" (click)="toggleTravelerInputs()" class=" focus-ring py-1 px-2 text-decoration-bold border rounded-2">Passengers</label>
-              <div class="row" id="travelerInputs" *ngIf="showTravelerInputs">
-                <div class="col-md-4">
-                  <label for="children">Children</label>
-                  <input type="number" class="form-control" id="children" name="children" min="0" max="10" value="0">
-                </div>
-                <div class="col-md-4">
-                  <label for="adults">Adults</label>
-                  <input type="number" class="form-control" id="adults" name="adults" min="1" max="10" value="1">
-                </div>
-                <div class="col-md-4">
-                  <label for="infants">Infants</label>
-                  <input type="number" class="form-control" id="infants" name="infants" min="0" max="10" value="0">
+                <div class="row" id="travelerInputs" *ngIf="showTravelerInputs">
+                  <div class="col-md-4">
+                    <label for="children">Children</label>
+                    <input type="number" class="form-control" id="children" name="children" [(ngModel)]="children"
+                      min="0" max="10" (change)="updateTotalPassengers()">
+                  </div>
+                  <div class="col-md-4">
+                    <label for="adults">Adults</label>
+                    <input type="number" class="form-control" id="adults" name="adults" [(ngModel)]="adults" min="1"
+                      max="10" (change)="updateTotalPassengers()">
+                  </div>
+                  <div class="col-md-4">
+                    <label for="infants">Infants</label>
+                    <input type="number" class="form-control" id="infants" name="infants" [(ngModel)]="infants" min="0"
+                      max="10" (change)="updateTotalPassengers()">
+                  </div>
                 </div>
               </div>
-
             </div>
-
-
           </div>
-        </div>
-
+        </form>
       </div>
+
       <!-- Remove the container if you want to extend the Footer to full width. -->
       <div class="container my-5">
 
@@ -199,7 +196,7 @@
 
           <!-- Copyright -->
           <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2020 Copyright:
+            © 2023 Copyright:
             <a class="text-white" href="#">Airline.com</a>
           </div>
           <!-- Copyright -->
@@ -218,11 +215,11 @@
                 </ul>
               </div>
               <div class="col-md-4">
-                <h5>Products</h5>
+                <h5>Links</h5>
                 <ul class="list-unstyled">
-                  <li><a href="#">Product 1</a></li>
-                  <li><a href="#">Product 2</a></li>
-                  <li><a href="#">Product 3</a></li>
+                  <li><a href="#">makeMytrip</a></li>
+                  <li><a href="#">Indigo</a></li>
+                  <li><a href="#">IRCTC</a></li>
                 </ul>
               </div>
               <div class="col-md-4">
@@ -239,8 +236,6 @@
 
       </div>
       <!-- End of .container -->
-
-
       <div class="col-1">
 
       </div>
