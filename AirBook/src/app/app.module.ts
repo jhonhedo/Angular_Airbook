@@ -9,12 +9,11 @@ import { ShowflightComponent } from './showflight/showflight.component';
 import { LoginComponent } from './login/login.component';
 import { CounterComponent } from './counter/counter.component';
 import { AdmindashordComponent } from './admindashbord/admindashord.component';
-
-
 import { PaymentComponent } from './cardpayment/payment.component';
 import { SeatselectionComponent } from './seatselection/seatselection.component';
 import { ResetpassComponent } from './resetpass/resetpass.component';
 import { PaymentreviewComponent } from './paymentreview/paymentreview.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -40,7 +39,8 @@ import { PaymentreviewComponent } from './paymentreview/paymentreview.component'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
