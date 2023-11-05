@@ -5,24 +5,24 @@
             <h5 class="card-title">Login</h5>
         </div>
         <div class="card-body">
-            <form (ngSubmit)="login()" #loginForm="ngForm">
+            <form  (ngSubmit)="login()" #loginForm="ngForm">
                 <div class="mb-3">
                     <label for="username" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="username" name="username" ngModel required>
+                    <input type="text" class="form-control" id="username" name="username" [(ngModel)]="username" required>
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" ngModel required>
+                    <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password" required>
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">Login</button>
-                <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+                <div class="error-message " *ngIf="errorMessage">{{ errorMessage }}</div>
 
             </form>
             
         </div>
         <div class="card-footer">
             <p class="text-center mb-0">
-                <a href="/resetpass">Forgot Password?</a> | <a href="/rig">Register</a>
+                <a href="/resetpass">Forgot Password?</a> | <a href="/userRegister">Register</a>
 
             </p>
         </div>

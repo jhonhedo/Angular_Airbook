@@ -14,6 +14,7 @@ import { SeatselectionComponent } from './seatselection/seatselection.component'
 import { ResetpassComponent } from './resetpass/resetpass.component';
 import { PaymentreviewComponent } from './paymentreview/paymentreview.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UserregisterComponent } from './userregister/userregister.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
          SeatselectionComponent,
              ResetpassComponent,
              PaymentreviewComponent,
+             UserregisterComponent,
              
 
     
