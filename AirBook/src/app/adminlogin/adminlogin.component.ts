@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http'
+
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-adminlogin',
+  templateUrl: './adminlogin.component.html',
+  styleUrls: ['./adminlogin.component.css']
 })
-export class LoginComponent {
+export class AdminloginComponent {
+
   errorMessage: string;
   username: string;
   password: string;
@@ -32,6 +34,7 @@ export class LoginComponent {
     if (username === 'John' && password === 'hedo') {
       alert('Login successful ' + `username: ${this.username} ` + `password:${this.password}`);
       // Successful login, perform necessary actions (e.g., navigate to a different page)
+      this.router.navigate(['/admindash']);
     } else {
       alert('Login failed');
       // Display an error message to the user (e.g., incorrect username or password)
@@ -39,6 +42,6 @@ export class LoginComponent {
     }
   }
   cancel() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/admindash']);
   }
 }

@@ -1,0 +1,70 @@
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header">
+            <h2 class="text-center">Add Flight</h2>
+        </div>
+        <div class="card-body">
+            <form class="row g-3">
+                <div class="col-md-6">
+                    <label for="flightno" class="form-label">Flight No.</label>
+                    <select class="form-select" id="flightno" name="flightno" [(ngModel)]="formData.flightno">
+                        <option value="from">Select</option>
+                        <option value="indigo">Indigo-6E993</option>
+                        <option value="SPICEJET">SPICEJET-SG8164</option>
+                        <option value="premium economy">VISTARA-UK808</option>
+                        <option value="first class">Flybig-S9</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="from" class="form-label">From</label>
+                    <select class="form-select" id="from" name="from" [(ngModel)]="formData.from">
+                        <option value="from">Select</option>
+                        <option value="bom">BOM - Mumbai</option>
+                        <option value="del">DEL - New Delhi</option>
+                        <option value="blr">BLR - Bengaluru</option>
+                        <option value="first class">Kolkata</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="to" class="form-label">To</label>
+                    <select class="form-select" id="to" name="to" [(ngModel)]="formData.to">
+                        <option value="time">Select</option>
+                        <option value="del">DEL - New Delhi</option>
+                        <option value="hyd">HYD - Hyderabad</option>
+                        <option value="rpr">RPR - Raipur</option>
+                        <option value="first class">Patna</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="depart" class="form-label">Depart</label>
+                    <input type="datetime-local" class="form-control" id="depart" name="depart" [(ngModel)]="formData.depart">
+                </div>
+
+                <div class="col-md-6">
+                    <label for="arrive" class="form-label">Arrive</label>
+                    <input type="datetime-local" class="form-control" id="arrive" name="arrive" [(ngModel)]="formData.arrive">
+                </div>
+
+                <div class="col-md-6">
+                    <label for="duration" class="form-label">Duration</label>
+                    <select class="form-select" id="duration" name="duration" [(ngModel)]="formData.duration">
+                        <option value="time">Select</option>
+                        <option value="time">2hr 5min</option>
+                        <option value="time">2hr</option>
+                        <option value="time">24hr 20min</option>
+                        <option value="time">01hr 10min</option>
+                    </select>
+                </div>
+                
+                <div class="col-12">
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success" (click)="submitForm()">Add</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

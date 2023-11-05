@@ -1,0 +1,49 @@
+<div>
+    <form (ngSubmit)="onSubmit()" class="container mt-5">
+        <h1 class="text-center">Admin Registration </h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="userName">UserName</label>
+                    <input type="text" class="form-control" id="userName" [(ngModel)]="userName" name="userName">
+                </div>
+
+                <div class="mb-3">
+                    <label for="email">Email Id</label>
+                    <input type="text" class="form-control" id="email" [(ngModel)]="email" name="email">
+                </div>
+
+                <!-- <div class="mb-3">
+                    <label for="phone">Phone No</label>
+                    <input type="text" class="form-control" id="phone"
+                    [(ngModel)]="phone" name="phone">
+                </div> -->
+
+                
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password"
+                    [(ngModel)]="password1" name="password1" >
+                </div>
+
+                <div class="mb-3">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" class="form-control" id="confirmPassword"
+                    [(ngModel)]="password2" name="password2" (input)="checkPassword()">
+                </div>
+                <div class="text-danger" *ngIf="passwordError">{{ passwordError }}</div>
+                <!-- <div class="mb-3">
+                    <label for="dateOfBirth">Date of Birth</label>
+                    <input type="date" class="form-control" id="dateOfBirth"
+                    [(ngModel)]="DOB" name="DOB">
+                </div> -->
+                <button type="submit" class="btn btn-primary">Sign up</button>
+                <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+

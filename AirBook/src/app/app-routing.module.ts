@@ -12,6 +12,9 @@ import { TicketComponent } from './ticket/ticket.component';
 import { PaymentComponent } from './cardpayment/payment.component';
 import { PaymentreviewComponent } from './paymentreview/paymentreview.component';
 import { UserregisterComponent } from './userregister/userregister.component';
+import { AdminloginComponent } from './adminlogin/adminlogin.component';
+import { AdminRegisterComponent } from './admin-register/admin-register.component';
+import { AddflightComponent } from './addflight/addflight.component';
 
 
 
@@ -26,7 +29,10 @@ const routes: Routes = [
   {path:'admindash',component:AdmindashordComponent},
   {path:'ticket',component:TicketComponent},
   {path:'cardpayment',component:PaymentComponent},
-  {path:'paymentreview',component:PaymentreviewComponent}
+  {path:'paymentreview',component:PaymentreviewComponent},
+  {path:'adminlogin',component:AdminloginComponent},
+  {path:'adminregister',component:AdminRegisterComponent},
+  {path:'addflight',component:AddflightComponent}
   
 ];
 

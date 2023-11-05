@@ -15,6 +15,10 @@ import { ResetpassComponent } from './resetpass/resetpass.component';
 import { PaymentreviewComponent } from './paymentreview/paymentreview.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserregisterComponent } from './userregister/userregister.component';
+import { AdminloginComponent } from './adminlogin/adminlogin.component';
+import { AdminRegisterComponent } from './admin-register/admin-register.component';
+import { AdminNavComponent } from './admin-nav/admin-nav.component';
+import { AddflightComponent } from './addflight/addflight.component';
 
 
 @NgModule({
@@ -33,6 +37,10 @@ import { UserregisterComponent } from './userregister/userregister.component';
              ResetpassComponent,
              PaymentreviewComponent,
              UserregisterComponent,
+             AdminloginComponent,
+             AdminRegisterComponent,
+             AdminNavComponent,
+             AddflightComponent,
              
 
     

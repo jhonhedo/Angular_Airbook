@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http'
 
 @Component({
   selector: 'app-userregister',
   templateUrl: './userregister.component.html',
   styleUrls: ['./userregister.component.css']
 })
-export class UserregisterComponent {
 
-  userName: String;
+export class UserregisterComponent {
+  userName: string;
   email: string;
   phone: number;
   DOB: Date;
@@ -16,7 +17,7 @@ export class UserregisterComponent {
   password2: string;
   passwordError: string = '';
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private http: HttpClient) {
     this.userName = '';
     this.email = '';
     this.phone = 0;
@@ -27,10 +28,10 @@ export class UserregisterComponent {
 
   checkPassword() {
     if (this.password1 !== this.password2) {
-      this.passwordError = 'Password does not match'
-      return
-    }
-    else {  // Clear the error message if passwords match
+      this.passwordError = 'Password does not match';
+      return;
+    } else {
+      // Clear the error message if passwords match
       this.passwordError = '';
     }
   }
@@ -38,25 +39,31 @@ export class UserregisterComponent {
   onSubmit() {
     this.checkPassword(); // Check passwords before form submission
 
-
     if (this.passwordError) {  // Prevent form submission if passwords do not match
       return;
     }
+     alert('Login successful ' + `username: ${this.userName}`+`${this.password1}`+
+     `${this.email}`+`${this.phone}`+`${this.DOB}`)
+    let userData ={
+      "userName":this.userName,
+      "password":this.password1,
+      "email":this.email,
+      "phone":this.phone,
+      "dob":this.DOB
 
-    alert(`username: ${this.userName} ` + `email: ${this.email} ` + `Dob: ${this.DOB} ` +
-    `Password: ${this.password1} ` + 
-    `phone: ${this.phone} `);
+    };
 
-  // let url = `http://localhost:8080/`;
-  // this.http.get<any>(url).subscribe(data => {
-  //   // alert(JSON.stringify(data));
-  //   // alert(data.trainNo)
-  //   this.data = data;
-  // })
+    this.http.post("http://localhost:7777/user-controller/registration",userData)
+    .subscribe((response:any)=>{
+      console.log(response)
+      alert("User rigister success")
+
+      
+    })
+
   }
 
   cancel() {
     this.router.navigate(['/']);
   }
-
 }
