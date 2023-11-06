@@ -57,7 +57,7 @@ export class UserregisterComponent {
     .subscribe((response:any)=>{
       console.log(response)
       alert("User rigister success")
-
+      
       
     })
 

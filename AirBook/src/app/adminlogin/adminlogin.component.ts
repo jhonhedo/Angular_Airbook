@@ -10,29 +10,29 @@ import { HttpClient } from '@angular/common/http'
 export class AdminloginComponent {
 
   errorMessage: string;
-  username: string;
+  adminName: string;
   password: string;
-  data!:any;
-  constructor(private http: HttpClient,private router: Router) {
-    this.username = ''
+  data!: any;
+
+  constructor(private http: HttpClient, private router: Router) {
+    this.adminName = ''
     this.password = ''
     this.errorMessage = '';
   }
 
   login() {
-    const username = this.username;
+    const adminName = this.adminName;
     const password = this.password;
-    
-    let url = `http://localhost:7777/user-controller/login?userName=${this.username}&password=${this.password}`;
-      this.http.get<any>(url).subscribe(data => {
-        alert(JSON.stringify(data));
-        alert(data.trainNo)
-        this.data = data;
-      })
 
-      //use only for frontend
-    if (username === 'John' && password === 'hedo') {
-      alert('Login successful ' + `username: ${this.username} ` + `password:${this.password}`);
+    //http://localhost:7777/admin-registration/admin-login?adminName=kishore&password=passw0rd
+
+    let url = `http://localhost:7777/admin-registration/admin-login?adminName=${this.adminName}&password=${this.password}`;
+    this.http.post<any>(url, null).subscribe(data => {
+      alert(JSON.stringify(data));
+      this.data = data;
+
+    if (adminName === data.adminName && password === data.password) {
+      alert('Login successful ' + `username: ${this.adminName} ` + `password:${this.password}`);
       // Successful login, perform necessary actions (e.g., navigate to a different page)
       this.router.navigate(['/admindash']);
     } else {
@@ -40,8 +40,12 @@ export class AdminloginComponent {
       // Display an error message to the user (e.g., incorrect username or password)
       this.errorMessage = 'Incorrect username or password';
     }
+    })
+
+    
   }
   cancel() {
     this.router.navigate(['/admindash']);
   }
 }
+

@@ -4,8 +4,8 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="mb-3">
-                    <label for="userName">UserName</label>
-                    <input type="text" class="form-control" id="userName" [(ngModel)]="userName" name="userName">
+                    <label for="userName">AdminName</label>
+                    <input type="text" class="form-control" id="adminName" [(ngModel)]="adminName" name="adminName">
                 </div>
 
                 <div class="mb-3">
@@ -13,11 +13,11 @@
                     <input type="text" class="form-control" id="email" [(ngModel)]="email" name="email">
                 </div>
 
-                <!-- <div class="mb-3">
+                <div class="mb-3">
                     <label for="phone">Phone No</label>
                     <input type="text" class="form-control" id="phone"
                     [(ngModel)]="phone" name="phone">
-                </div> -->
+                </div>
 
                 
             </div>
@@ -34,11 +34,11 @@
                     [(ngModel)]="password2" name="password2" (input)="checkPassword()">
                 </div>
                 <div class="text-danger" *ngIf="passwordError">{{ passwordError }}</div>
-                <!-- <div class="mb-3">
+                <div class="mb-3">
                     <label for="dateOfBirth">Date of Birth</label>
                     <input type="date" class="form-control" id="dateOfBirth"
                     [(ngModel)]="DOB" name="DOB">
-                </div> -->
+                </div>
                 <button type="submit" class="btn btn-primary">Sign up</button>
                 <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
             </div>
