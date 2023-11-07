@@ -1,318 +1,157 @@
 <div class="container-fluid p-5 mt-5 bg-primary text-white text-center">
-
     <div class="row">
-
         <div class="col-md-3">
-
             <div class="card">
-
                 <div class="card-body">
-
-                    <h2>Fliters</h2>
-
+                    <h2>Filters</h2>
                     <p>Showing 80 flights</p>
-
+                    <div *ngFor="let flight of flights">
+                        <div>
+                            <p>Flight No: {{ flight.flightId }}</p>
+                            <p>From: {{ flight.from }}</p>
+                            <p>To: {{ flight.to }}</p>
+                            <p>Departure Time: {{ flight.departureTime }}</p>
+                            <p>Arrival Time: {{ flight.arrivalTime }}</p>
+                        </div>
+                    </div>
                     <hr>
-
                     <div class="departure">
-
                         <h6 style="margin-left: 10px;">Departure</h6>
-
                         <button type="button" class="btn btn-primary">Before 6AM</button>
-
-                        <button type="button" class="btn btn-primary">6AM - 12PM </button><br><br>
-
-                        <button type="button" class="btn btn-primary">12PM - 6PM </button>
-
-                        <button type="button" class="btn btn-primary">After 6PM </button>
-
+                        <button type="button" class="btn btn-primary">6AM - 12PM</button><br><br>
+                        <button type="button" class="btn btn-primary">12PM - 6PM</button>
+                        <button type="button" class="btn btn-primary">After 6PM</button>
                     </div>
-
                     <hr>
-
                     <div class="card-content m-1 p-2">
-
                         <h6>Stops</h6>
-
                         <button type="button" class="btn btn-primary">Direct</button>
-
-                        <button type="button" class="btn btn-primary">1 Stops</button>
-
+                        <button type="button" class="btn btn-primary">1 Stop</button>
                         <button type="button" class="btn btn-primary" style="margin-top: 10px;">2+ Stops</button>
-
                     </div>
-
                     <hr>
-
                     <div class="card-content m-1 p-2">
-
                         <div class="Price">
-
                             <h6>Price</h6>
-                            <input type="range" style="width:200px " min="1" max="100" value="50">
-
-                            <p style="text-align:left;">
-
-                                Rs.7445
-
-                                <span style="float:right; margin-right: 25px;">
-
-                                    Rs.15806
-
-                                </span>
-
+                            <input type="range" style="width: 200px;" min="1" max="100" value="50">
+                            <p style="text-align: left;">
+                                Rs. 7,445
+                                <span style="float: right; margin-right: 25px;">Rs. 15,806</span>
                             </p>
-
                             <hr>
-
                         </div>
                         <div class="Price">
-
                             <h6>Onward Duration</h6>
-                            <input type="range" style="width:200px " min="1" max="100" value="50">
-
-                            <p style="text-align:left;">
-
+                            <input type="range" style="width: 200px;" min="1" max="100" value="50">
+                            <p style="text-align: left;">
                                 2h 00m
-
-                                <span style="float:right; margin-right: 25px;">
-
-                                    13h 05m
-
-                                </span>
-
+                                <span style="float: right; margin-right: 25px;">13h 05m</span>
                             </p>
-
                         </div>
-
                         <hr>
                         <div class="container">
-
                             <div class="form-check">
-
                                 <h6>Preferred Airlines</h6>
-
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-
                                 <img src="./images/air_india.png" alt="">
-
-                                <label class="form-check-label" for="flexCheckDefault">
-
-                                    Air India
-
-                                </label>
+                                <label class="form-check-label" for="flexCheckDefault">Air India</label>
                             </div>
-
                             <div class="form-check">
-
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-
                                 <img src="./images/air_india_express.png" alt="">
-
-                                <label class="form-check-label" for="flexCheckChecked">
-
-                                    Air India Express
-
-                                </label>
-
+                                <label class="form-check-label" for="flexCheckChecked">Air India Express</label>
                             </div>
-
                             <div class="form-check">
-
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-
                                 <img src="./images/airasia.png" alt="">
-
-                                <label class="form-check-label" for="flexCheckChecked">
-
-                                    Air Asia
-
-                                </label>
-
+                                <label class="form-check-label" for="flexCheckChecked">Air Asia</label>
                             </div>
-
                             <div class="form-check">
-
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-
                                 <img src="./images/akasa air.png" alt="">
-
-                                <label class="form-check-label" for="flexCheckChecked">
-
-                                    Akasa Air
-
-                                </label>
-
+                                <label class="form-check-label" for="flexCheckChecked">Akasa Air</label>
                             </div>
-
                             <div class="form-check">
-
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-
                                 <img src="./images/indigo.png" alt="">
-                                <label class="form-check-label" for="flexCheckChecked">
-
-                                    IndiGO
-
-                                </label>
-
+                                <label class="form-check-label" for="flexCheckChecked">IndiGO</label>
                             </div>
-
                             <div class="form-check">
-
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-
                                 <img src="./images/spicejet.png" alt="">
-
-                                <label class="form-check-label" for="flexCheckChecked">
-
-                                    SpiceJet
-
-                                </label>
-
-                                <br>
-
-                                <button type="button" style="margin-top: 10px;" class="btn btn-primary">View
-
-                                    all</button>
+                                <label class="form-check-label" for="flexCheckChecked">SpiceJet</label>
                             </div>
-
+                            <br>
+                            <button type="button" style="margin-top: 10px;" class="btn btn-primary">View all</button>
                         </div>
                     </div>
-
                 </div>
-
             </div>
-
         </div>
         <div class="col-md-9">
-
             <h4 style="margin-left: 10px;">Sort By</h4>
-
-            <!-- Horizontal Card 1 -->
-
-
-
             <div class="card">
-
-                <table style="border: collapase;">
-
+                <table style="border: collapse;">
                     <tr>
-
                         <td>DEPARTURE
-
                             <br>
-
-                            <span>ealiest @ 02:00</span>
-
+                            <span>earliest @ 02:00</span>
                         </td>
-
-
-
                         <td>DURATION
-
                             <br>
-
                             <span>fastest @ 2hrs 00m</span>
-
                         </td>
-
                         <td>ARRIVAL
-
                             <br>
-
                             <span>Thu, 16 Nov @ 04:15</span>
-
                         </td>
-
                         <td>
-
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 PRICE
-
                             </a>
-
                             <ul class="dropdown-menu dropdown-menu-dark">
-
-                                <li><a class="dropdown-item" href="#">8500</a></li>
-
-                                <li><a class="dropdown-item" href="#">12000</a></li>
-
-                                <li><a class="dropdown-item" href="#">9500</a></li>
-
+                                <li><a class="dropdown-item" href="#">8,500</a></li>
+                                <li><a class="dropdown-item" href="#">12,000</a></li>
+                                <li><a class="dropdown-item" href="#">9,500</a></li>
                             </ul>
-
                             <br>
-
-                            <span>chepatest @7,445</span>
-
+                            <span>cheapest @ 7,445</span>
                         </td>
                         <td>BEST
-
                             <br>
-
                             <span>2HRS 10M, 0 Stops - 7,445</span>
-
                         </td>
-
                     </tr>
-
                 </table>
-
             </div>
-
             <br><br>
-
             <div class="card">
-
-                <table style="border: collapase;">
-
+                <table style="border: collapse;">
                     <tr>
-
                         <td>
-
                             <img src="./air_india.png">
-
                             Indigo
-
                             <br>
-
-                            <span>DEL ,New Delhi,India</span>
-
+                            <span>DEL, New Delhi, India</span>
                             <p>19:15</p>
-
                         </td>
                         <td>
-
                             <br>
-
                             <span>2h 05m</span>
-
                         </td>
-
-                        <td>BOM Mumbai,India
-
+                        <td>BOM Mumbai, India
                             <br>
-
                             <span>21:20</span>
-
                         </td>
-
-                        <td>Rs. 8,578 </td>
-                        <td><button type="button" class="btn btn-success">
+                        <td>Rs. 8,578</td>
+                        <td>
+                            <button type="button" class="btn btn-success">
                                 <a style="text-decoration: none; color: white;" href="/review">Book</a>
                             </button>
                         </td>
                     </tr>
-
                 </table>
-
             </div>
-
         </div>
-
-        <br><br>
     </div>
 </div>
