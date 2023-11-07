@@ -16,6 +16,7 @@ export class BodyComponent {
   selectedClass: string;
   Passengers: number = 0;
   data!: any;
+  messageIfAny!: string;
 
 
   constructor(private http: HttpClient, private router: Router) {
@@ -49,16 +50,27 @@ export class BodyComponent {
       `Arrival: ${this.ArrivalDate} ` +
       `class: ${this.selectedClass} ` + `Passengers: ${this.Passengers}`);
 
-    
-   
+
+
     let url = `http://localhost:7777/flights-controller/flight-search?from=${this.city1}&to=${this.city2}`;
     this.http.get<any>(url).subscribe(data => {
       alert(JSON.stringify(data));
-       
+
+      /*sessionStorage.setItem('flightId', data.flightId);
+      sessionStorage.setItem('airline', data.airline);
+      sessionStorage.setItem('departureTime', data.departureTime);
+      sessionStorage.setItem('arrivalTime', data.arrivalTime);
+      sessionStorage.setItem('from', data.from);
+      sessionStorage.setItem('to', data.to);
+      // sessionStorage.setItem('reservations', data.reservations);*/
+      sessionStorage.setItem('flights', JSON.stringify(data));
+
       this.router.navigate(['/showflight']);
-      
+
     })
   }
+
+  
 
   // Swapcities
   swapCities() {
@@ -67,3 +79,17 @@ export class BodyComponent {
     // this.city2 = temp;
   }
 }
+
+// loginCheck() {
+//   let url = "http://localhost:9090/customer/login";
+//   this.http.post<any>(url, this.login).subscribe(data => {
+//     console.log(data);
+//     if(data.status == true) {
+//       sessionStorage.setItem('customerId', data.customerId);
+//       sessionStorage.setItem('name', data.name);
+//       this.router.navigate(['/dashboard'])
+//     }
+//     else
+//       this.messageIfAny = data.messageIfAny;
+//   })
+// }
