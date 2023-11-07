@@ -1,13 +1,13 @@
 <div class="container d-flex justify-content-center align-items-center vh-100">
     <div class="card" style="width: 350px;">
         <div class="card-header">
-            <h5 class="card-title">Login</h5>
+            <h5 class="card-title">Admin Login</h5>
         </div>
         <div class="card-body">
             <form (ngSubmit)="login()" #loginForm="ngForm">
                 <div class="mb-3">
-                    <label for="username" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="username" name="username" [(ngModel)]="username"
+                    <label for="adminName" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="adminName" name="adminName" [(ngModel)]="adminName"
                         required>
                 </div>
                 <div class="mb-3">
@@ -23,7 +23,8 @@
         </div>
         <div class="card-footer">
             <p class="text-center mb-0">
-                <a href="/resetpass">Forgot Password?</a> | <a href="/userRegister">Register</a>
+                <!-- <a href="/resetpass">Forgot Password?</a> |  -->
+                <a href="/adminregister">Register</a>
 
             </p>
         </div>

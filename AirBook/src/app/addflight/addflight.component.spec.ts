@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RigesterComponent } from './rigester.component';
+import { AddflightComponent } from './addflight.component';
 
-describe('RigesterComponent', () => {
-  let component: RigesterComponent;
-  let fixture: ComponentFixture<RigesterComponent>;
+describe('AddflightComponent', () => {
+  let component: AddflightComponent;
+  let fixture: ComponentFixture<AddflightComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [RigesterComponent]
+      declarations: [AddflightComponent]
     });
-    fixture = TestBed.createComponent(RigesterComponent);
+    fixture = TestBed.createComponent(AddflightComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

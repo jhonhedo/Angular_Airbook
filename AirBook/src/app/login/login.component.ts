@@ -1,32 +1,48 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http'
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  loginForm: FormGroup;
-  errorMessage!: string;
-
-  constructor(private fb: FormBuilder) {
-    this.loginForm = this.fb.group({
-      username: ['', Validators.required],
-      password: ['', Validators.required],
-    });
+  errorMessage: string;
+  username: string;
+  password: string;
+  data!: any;
+  constructor(private http: HttpClient, private router: Router) {
+    this.username = ''
+    this.password = ''
+    this.errorMessage = '';
   }
-
+ 
   login() {
-    const username = this.loginForm.value.username;
-    const password = this.loginForm.value.password;
+    const username = this.username;
+    const password = this.password;
 
-    if (username === 'John' && password === 'hedo') {
-      console.log('Login successful');
-      // Successful login, perform necessary actions (e.g., navigate to a different page)
-    } else {
-      console.log('Login failed');
-      // Display an error message to the user (e.g., incorrect username or password)
-      this.errorMessage = 'Incorrect username or password';
-    }
+
+
+     let url = `http://localhost:7777/user-controller/login?userName=${this.username}&password=${this.password}`;
+    this.http.post<any>(url,null).subscribe(data => {
+      alert(JSON.stringify(data));
+      this.data = data;
+
+      if (username === data.userName && password === data.password) {
+        alert('Login successful ' + `username: ${this.username} ` + `password:${this.password}`);
+        // Successful login, perform necessary actions (e.g., navigate to a different page)
+        this.router.navigate(['/']);
+      } else {
+        alert('Login failed');
+        // Display an error message to the user (e.g., incorrect username or password)
+        this.errorMessage = 'Incorrect username or password';
+      }
+    })
+
+
+
+  }
+  cancel() {
+    this.router.navigate(['/']);
   }
 }
