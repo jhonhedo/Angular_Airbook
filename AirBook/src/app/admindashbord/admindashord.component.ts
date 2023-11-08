@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./admindashord.component.css']
 })
 export class AdmindashordComponent {
-
+  
 }
