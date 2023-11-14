@@ -2,12 +2,11 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-admindashord',
-  templateUrl: './admindashord.component.html',
-  styleUrls: ['./admindashord.component.css']
+  selector: 'app-admindashbord',
+  templateUrl: './admindashbord.component.html',
+  styleUrls: ['./admindashbord.component.css']
 })
-export class AdmindashordComponent {
-<<<<<<< HEAD
+export class AdmindashbordComponent {
 
 
   // private url = `http://localhost:7777/flights-controller/delete-flight/{flightId}`;
@@ -24,8 +23,5 @@ export class AdmindashordComponent {
   //         console.log('Flight deleted successfully!');
   //       })
   //    }
-=======
-  
->>>>>>> afa2531c1471c9e9bee6d77613da59e73463fd59
 }
 

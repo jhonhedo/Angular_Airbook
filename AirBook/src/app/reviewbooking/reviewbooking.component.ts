@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 @Component({
@@ -7,27 +7,35 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./reviewbooking.component.css']
 })
 export class ReviewbookingComponent {
-  p: Passenger = new Passenger();
+  P: Passenger = new Passenger();
   messageIfAny!: string;
   data: any = {};
-  selectedflight: any[] = JSON.parse(sessionStorage.getItem('selectedflight') || '[]');
 
-  constructor(private http: HttpClient, private router: Router) { }
+  //for showing selected data from session storage
+  selectedflight: any = JSON.parse(sessionStorage.getItem('selectedflight') || '[]');
+  noOfPassengers: any = JSON.parse(sessionStorage.getItem('passengers')|| '[]');
+  passengerArray: any[] = Array(this.noOfPassengers).fill({});
 
-  submitForm() {
-    alert(JSON.stringify(this.p));
-    let url = "http://localhost/7777/passenger-controller/add-passenger";
-    this.http.post<any>(url, this.p).subscribe(data => {
-      console.log('Form Data:', this.data);
-      // You can now send this data to your backend API.
-      this.router.navigate(['/']);
-    })
+  ngOnInit() {
+    console.log('Selected Object:',this.selectedflight)
+    
   }
+
+constructor(private http: HttpClient, private router: Router) { }
+
+//for passanger data
+submitForm() {
+  alert(JSON.stringify(this.P));
+  let url = "http://localhost/7777/passenger-controller/add-passenger";
+  this.http.post<any>(url, this.P).subscribe(data => {
+    console.log('Form Data:', this.data);
+    // You can now send this data to your backend API.
+    this.router.navigate(['/seatselection']);
+  })
+}
 }
 
-
-
 export class Passenger {
-  firstname!: string;
-  lastname!: string;
+  first_name!: string;
+  last_name!: string;
 }

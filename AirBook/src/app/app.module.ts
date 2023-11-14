@@ -8,7 +8,7 @@ import { BodyComponent } from './search/body.component';
 import { ShowflightComponent } from './showflight/showflight.component';
 import { LoginComponent } from './login/login.component';
 import { CounterComponent } from './counter/counter.component';
-import { AdmindashordComponent } from './admindashbord/admindashord.component';
+import { AdmindashbordComponent } from './admindashbord/admindashord.component';
 import { PaymentComponent } from './cardpayment/payment.component';
 import { SeatselectionComponent } from './seatselection/seatselection.component';
 import { ResetpassComponent } from './resetpass/resetpass.component';
@@ -20,6 +20,7 @@ import { AdminRegisterComponent } from './admin-register/admin-register.componen
 import { AdminNavComponent } from './admin-nav/admin-nav.component';
 import { AddflightComponent } from './addflight/addflight.component';
 import { FooterComponent } from './footer/footer.component';
+import { CommonModule } from '@angular/common'; // Import CommonModule
 
 
 @NgModule({
@@ -30,25 +31,21 @@ import { FooterComponent } from './footer/footer.component';
     ShowflightComponent,
     LoginComponent,
     CounterComponent,
-    AdmindashordComponent,
-   
-  
+  AdmindashbordComponent,
     PaymentComponent,
-         SeatselectionComponent,
-             ResetpassComponent,
-             PaymentreviewComponent,
-             UserregisterComponent,
-             AdminloginComponent,
-             AdminRegisterComponent,
-             AdminNavComponent,
-             AddflightComponent,
-             FooterComponent,
-             
+    SeatselectionComponent,
+    ResetpassComponent,
+    PaymentreviewComponent,
+    UserregisterComponent,
+    AdminloginComponent,
+    AdminRegisterComponent,
+    AdminNavComponent,
+    AddflightComponent,
+    FooterComponent,
 
-    
-   
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,

@@ -58,6 +58,7 @@ export class BodyComponent {
 
     
       sessionStorage.setItem('flights', JSON.stringify(data));
+      sessionStorage.setItem('passengers', JSON.stringify(this.Passengers));
       this.router.navigate(['/showflight']);
 
     })
