@@ -56,15 +56,8 @@ export class BodyComponent {
     this.http.get<any>(url).subscribe(data => {
       alert(JSON.stringify(data));
 
-      /*sessionStorage.setItem('flightId', data.flightId);
-      sessionStorage.setItem('airline', data.airline);
-      sessionStorage.setItem('departureTime', data.departureTime);
-      sessionStorage.setItem('arrivalTime', data.arrivalTime);
-      sessionStorage.setItem('from', data.from);
-      sessionStorage.setItem('to', data.to);
-      // sessionStorage.setItem('reservations', data.reservations);*/
+    
       sessionStorage.setItem('flights', JSON.stringify(data));
-
       this.router.navigate(['/showflight']);
 
     })
@@ -74,9 +67,9 @@ export class BodyComponent {
 
   // Swapcities
   swapCities() {
-    // const temp = this.city1;
-    // this.city1 = this.city2;
-    // this.city2 = temp;
+    const temp = this.city1;
+    this.city1 = this.city2;
+    this.city2 = temp;
   }
 }
 

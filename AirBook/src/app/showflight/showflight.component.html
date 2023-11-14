@@ -5,15 +5,7 @@
                 <div class="card-body">
                     <h2>Filters</h2>
                     <p>Showing 80 flights</p>
-                    <div *ngFor="let flight of flights">
-                        <div>
-                            <p>Flight No: {{ flight.flightId }}</p>
-                            <p>From: {{ flight.from }}</p>
-                            <p>To: {{ flight.to }}</p>
-                            <p>Departure Time: {{ flight.departureTime }}</p>
-                            <p>Arrival Time: {{ flight.arrivalTime }}</p>
-                        </div>
-                    </div>
+
                     <hr>
                     <div class="departure">
                         <h6 style="margin-left: 10px;">Departure</h6>
@@ -106,7 +98,8 @@
                             <span>Thu, 16 Nov @ 04:15</span>
                         </td>
                         <td>
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
                                 PRICE
                             </a>
                             <ul class="dropdown-menu dropdown-menu-dark">
@@ -126,7 +119,7 @@
             </div>
             <br><br>
             <div class="card">
-                <table style="border: collapse;">
+                <!-- <table style="border: collapse;">
                     <tr>
                         <td>
                             <img src="./air_india.png">
@@ -150,8 +143,45 @@
                             </button>
                         </td>
                     </tr>
+                </table> -->
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Flight No</th>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Departure</th>
+                            <th>Arrival</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let flight of flights">
+                            <td>{{ flight.flightId }}</td>
+                            <td>{{ flight.from }}</td>
+                            <td>{{ flight.to }}</td>
+                            <td>{{ flight.departureTime }}</td>
+                            <td>{{ flight.arrivalTime }}</td>
+                            <td>{{ flight.Price }}</td>
+                            <td>
+                                <button type="button" class="btn btn-success" (click)="selectedItem(flight)">
+                                    <a style="text-decoration: none; color: white;">Book</a>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
+
             </div>
         </div>
     </div>
 </div>
+<!-- <div *ngFor="let flight of flights">
+    <div>
+        <p>Flight No: {{ flight.flightId }}</p>
+        <p>From: {{ flight.from }}</p>
+        <p>To: {{ flight.to }}</p>
+        <p>Departure Time: {{ flight.departureTime }}</p>
+        <p>Arrival Time: {{ flight.arrivalTime }}</p>
+    </div>
+</div> -->

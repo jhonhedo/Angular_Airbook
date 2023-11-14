@@ -1,12 +1,34 @@
+ <!--<div *ngFor="let key of Object.keys(selectedflight)">
+    <p>{{key}}: {{ selectedflight[key]}}</p>
 
-<div>
+    <H1>hello</H1>
+   </div> -->
+   <!-- <div>
+    <H2>Hello</H2>
+    <table>
+        <tbody>
+            <tr *ngFor="let key of selectedflight">
+                <td>{{ key.flightId }}</td>
+                <td>{{ key.from }}</td>
+                <td>{{ key.to }}</td>
+                <td>{{ key.departureTime }}</td>
+                <td>{{ key.arrivalTime }}</td>
+                <td>{{ key.Price }}</td>
+                
+            </tr>
+        </tbody>
+    </table>
+   </div> -->
+
+ <div>
     <div>
         <div class="container-fluid p-5 mt-3 bg-primary text-white text-center">
             <div class="row">
                 <div class="col-sm-8">
                     <div class="card">
                         <div class="card-body">
-                            <h2>Chennai-Raipur</h2>
+                            <h2> flight.from flight.to </h2>
+                        
                             <p>1 Stop | All departure/arrival times are in local time</p>
                             <div class="card-content m-1 p-2" style="border:1px dotted black">
                                 <div class="card-title" style="display: inline-flex;">
@@ -118,7 +140,7 @@
                     </div>
                 </div>
 
-                <div class="card "
+                 <div class="card "
                     style="width: 57rem;margin-top:10px;margin-left:10px;box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;">
                     <div class="card-body">
                         <h5 class="card-title">GOIBIBO OFFERS</h5>
@@ -176,7 +198,7 @@
                         <div class="card-line mb-2" style="border-bottom:1px dashed gray;">
                         </div>
                     </div>
-                </div>
+                </div> 
             </div>
         </div>
         <div class="card m-5"
@@ -270,17 +292,21 @@
             <div class="card p-3 m-3 bg-light text-dark" style="width: 82rem;">
                 <div class="flight" style="display: inline-flex;">
                     <div style="margin-top: 5px;">
-                        <h6>Adult Name</h6>
+                        <h6>Passenger Name</h6>
                     </div>
-                    <div style="margin-left: 80px;margin-top: 5px;"><select name="" id="">
+                    <div style="margin-left: 80px;margin-top: 5px;">
+                        <select name="gender" id="gender">
                             <option value="Gender">Gender</option>
                             <option value="m">Male</option>
                             <option value="f">Female</option>
                         </select></div>
-                    <div style="margin-left: 80px;"><input type="text" placeholder="First & Middle Name"
-                            style="padding: 7px;">
+                    <div style="margin-left: 80px;">
+                        <input type="text" placeholder="First & Middle Name"
+                         style="padding: 7px;">
                     </div>
-                    <div><input type="text" placeholder="Last Name" style="padding: 7px;">
+                    <div>
+                        <input type="text" placeholder="Last Name"
+                         style="padding: 7px;">
                     </div>
                 </div>
             </div>
@@ -294,7 +320,6 @@
             <label for="no">Mobile No</label>
             <select style="padding: 4px;width: 80px;">
                 <option value="+91">+91</option>
-                <option value="+100">+100</option>
             </select>
             <input type="text" placeholder="Mobile No" style="padding: 7px;width:350px;margin-left:30px ;">
         </div>
@@ -302,9 +327,9 @@
         </div>
         <div>
             <a href="seatselection"> <input type="button" value="Proceed"
-                style="background-color: orangered;color: white;width: 200px;padding: 5px;border-radius: 4px;float: right;margin-bottom: 20px;margin-right: 20px;"></a>
+                    style="background-color: orangered;color: white;width: 200px;padding: 5px;border-radius: 4px;float: right;margin-bottom: 20px;margin-right: 20px;"></a>
         </div>
-           
+
     </div>
 
 </div>

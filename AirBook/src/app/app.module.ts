@@ -19,6 +19,7 @@ import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AdminRegisterComponent } from './admin-register/admin-register.component';
 import { AdminNavComponent } from './admin-nav/admin-nav.component';
 import { AddflightComponent } from './addflight/addflight.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { AddflightComponent } from './addflight/addflight.component';
              AdminRegisterComponent,
              AdminNavComponent,
              AddflightComponent,
+             FooterComponent,
              
 
     
