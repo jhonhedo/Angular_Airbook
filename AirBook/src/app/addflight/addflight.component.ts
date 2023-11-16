@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-addflight',
@@ -6,11 +8,32 @@ import { Component } from '@angular/core';
   styleUrls: ['./addflight.component.css']
 })
 export class AddflightComponent {
-  formData: any = {};
+ 
+
+  constructor(private http: HttpClient, private router: Router) { }
+
+  flights: Flights = new Flights();
+  messageIfAny!: string;
+  data: any = {};
 
   submitForm() {
-    // Handle the form submission and send the data to your API here
-    console.log('Form Data:', this.formData);
+    alert(JSON.stringify(this.flights));
+    let url = "http://localhost:7777/flights-controller/adding-flights";
+    this.http.post<any>(url, this.flights).subscribe(data => {
+    console.log('Form Data:', this.data);
     // You can now send this data to your backend API.
-  }
+    this.router.navigate(['/addflight']);
+  })
 }
+}
+//Flight is getting added but it is not taking departure time
+export class Flights {
+  airline_id!: number;
+  from!: string;
+	to!: string;
+	depatureTime!: Date;
+  arrivalTime!:Date;
+  price!:number;
+  
+ }
+

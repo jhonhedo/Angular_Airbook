@@ -1,3 +1,15 @@
+<!-- reviewbooking.component.html -->
+
+<!-- <form (ngSubmit)="submitForm()">
+    <label for="firstname">First Name:</label>
+    <input type="text" id="firstname" [(ngModel)]="P.firstname" name="firstname" required>
+  
+    <label for="lastname">Last Name:</label>
+    <input type="text" id="lastname" [(ngModel)]="P.lastname" name="lastname" required>
+  
+    <button type="submit">Submit</button>
+  </form>
+   -->
 
 <div>
     <div>
@@ -6,17 +18,18 @@
                 <div class="col-sm-8">
                     <div class="card">
                         <div class="card-body">
-                            <h2>Chennai-Raipur</h2>
-                            <p>1 Stop | All departure/arrival times are in local time</p>
+                            <h2>{{ selectedflight.from }}----------- > To ----------- >{{ selectedflight.to }} </h2>
+
+                            <p> All departure/arrival times are in local time</p>
                             <div class="card-content m-1 p-2" style="border:1px dotted black">
                                 <div class="card-title" style="display: inline-flex;">
-                                    <h5 style="margin-right: 350px;">Start on- 05 Oct, Thu 2023</h5>
-                                    <h5>Arrive on- 05 Oct, Thu 2023</h5>
+                                    <h5 style="margin-right: 350px;">Start on-{{ selectedflight.departureTime }} </h5>
+                                    <h5>Arrive on- {{ selectedflight.arrivalTime }}</h5>
                                 </div>
                                 <div class="card-heading" style="display: inline-flex;">
-                                    <h5 style="margin-right: 350px;">05:05</h5>
+                                    <!--Calculate the time and display-->
                                     <h5 style="margin-right:80px;">1h 10m</h5>
-                                    <h5 style="margin-left: 250px;">06:15</h5>
+
                                 </div>
                                 <div class="card-line mt-2" style="border-bottom:1px dashed;">
                                 </div>
@@ -26,30 +39,7 @@
                                     <p>20kgs Ceck-In</p>
                                     <a href="#" style="margin-left: 420px;">View Baggage details</a>
                                 </div>
-                                <div class="card-shape p-3" style="width: 53rem; background-color:ghostwhite;">
-                                    <h6>9h 35m Layover in Bengaluru</h6>
-                                    <p>brc Terminal change brc Baggage re-check in will be required</p>
-                                </div>
-
-
-                                <div class="card-title" style="display: inline-flex;">
-                                    <h5 style="margin-right: 350px;">Start on- 05 Oct, Thu 2023</h5>
-                                    <h5>Arrive on- 05 Oct, Thu 2023</h5>
-                                </div>
-                                <div class="card-heading" style="display: inline-flex;">
-                                    <h5 style="margin-right: 350px;">05:05</h5>
-                                    <h5 style="margin-right:80px;">1h 10m</h5>
-                                    <h5 style="margin-left: 250px;">06:15</h5>
-                                </div>
-                                <div class="card-line mt-2" style="border-bottom:1px dashed;">
-                                </div>
-                                <div class="card-section" style="display: inline-flex">
-                                    <p>Baggage-</p>
-                                    <p>8kgs cabin</p>
-                                    <p>20kgs Ceck-In</p>
-                                    <a href="#" style="margin-left: 420px;">View Baggage details</a>
-                                </div>
-                                <div class="card-shape p-3" style="width: 53rem; background-color:ghostwhite;">
+                                <div class="card-shape p-3" style="width: rem; background-color:ghostwhite;">
                                     <h6>9h 35m Layover in Bengaluru</h6>
                                     <p>brc Terminal change brc Baggage re-check in will be required</p>
                                 </div>
@@ -61,64 +51,70 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="card">
-                        <div class="a1" style="margin-left: 20px;margin-top: 10px;">
+                        <div class="a1" style="margin-left: 20px; margin-top: 10px;">
                             <h4 style="float: left;">Fare Summary</h4>
                         </div>
                         <div class="card-body">
+                            <div class="card-line mb-2" style="border-bottom: 1px solid;"></div>
 
-                            <div class="card-line mb-2" style="border-bottom:1px solid;">
-                            </div>
-                            <div class="a" style="display:inline-flex">
+                            <div class="a" style="display: flex; justify-content: space-between;">
                                 <h5 class="card-title">Base Fare</h5>
-                                <h3 style="margin-left: 250px;">6613</h3>
+                                <h3>₹{{ selectedflight.price || '5000' }}</h3>
                             </div>
-                            <div class="a" style="display:inline-flex">
-                                <p style="margin-right: 250px;">Adult(1x₹6,613)</p>
-                                <p>₹.6613</p>
+
+                            <div class="a" style="display: flex; justify-content: space-between;">
+                                <p>Adult (1x₹5000)</p>
+                                <p>₹5000</p>
                             </div>
-                            <div class="card-line mb-2" style="border-bottom:1px solid;">
+
+                            <div class="card-line mb-2" style="border-bottom: 1px solid;"></div>
+
+                            <div class="a" style="display: flex; justify-content: space-between;">
+                                <p class="card-text">Taxes and Surcharges</p>
+                                <p>₹1,966</p>
                             </div>
-                            <div class="b p-3" style="display:inline-flex">
-                                <p class="card-text">TaxesandSurcharges</p>
-                                <p style="margin-left: 200px;">₹.1966</p>
-                            </div>
-                            <div class="card-line mb-2" style="border-bottom:1px solid;">
-                            </div>
-                            <div class="c p-2" style="display:inline-flex">
+
+                            <div class="card-line mb-2" style="border-bottom: 1px solid;"></div>
+
+                            <div class="c p-2" style="display: flex; justify-content: space-between;">
                                 <p>Donate ₹10 towards flood relief efforts in Himachal Pradesh.</p>
                                 <input type="checkbox">
                             </div>
-                            <div class="card-line mb-2" style="border-bottom:1px solid;">
+
+                            <div class="card-line mb-2" style="border-bottom: 1px solid;"></div>
+
+                            <div class="d p-2" style="display: flex; justify-content: space-between;">
+                                <h4 class="text-success">Grand Total</h4>
+                                <h1>₹8,589</h1>
                             </div>
-                            <div class="d p-2" style="display:inline-flex">
-                                <a href="#">Grand Total</a>
-                                <h1 style="margin-left: 250px;">₹8,589</h1>
-                            </div>
-                            <div class="card-line mb-2" style="border-bottom:1px solid;">
-                            </div>
-                            <div class="last-img" style="display:inline-flex">
+
+                            <div class="card-line mb-2" style="border-bottom: 1px solid;"></div>
+
+                            <div class="last-img" style="display: flex;">
                                 <div><img src="https://gos3.ibcdn.com/hotelStay-1685949391.png"></div>
                                 <div>
                                     <h6>Book this flight to get:</h6>
                                     <h5>Exclusive Rates + Flat 20% Off on Hotel Bookings</h5>
                                 </div>
                             </div>
-                            <div class="card-line mb-2" style="border-bottom:1px solid;">
-                            </div>
-                            <div class="card-info">
+
+                            <div class="card-line mb-2" style="border-bottom: 1px solid;"></div>
+
+                            <div class="card-info" style="display: flex; justify-content: space-between;">
                                 <div>
                                     <h5>Was the information helpful?</h5>
                                 </div>
-                                <div><input type="radio">Yes
+                                <div>
+                                    <input type="radio">Yes
                                     <input type="radio">No
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
 
-                <div class="card "
+
+                <!-- <div class="card "
                     style="width: 57rem;margin-top:10px;margin-left:10px;box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;">
                     <div class="card-body">
                         <h5 class="card-title">GOIBIBO OFFERS</h5>
@@ -141,8 +137,8 @@
                             <input type="radio" /> Get Rs. 1000 instant discount with HDFC Bank Credit & Debit Card EMI.
                         </div>
                     </div>
-                </div>
-                <div class="card mb-5"
+                </div> -->
+                <!-- <div class="card mb-5"
                     style="width: 28rem;margin-left: auto;margin-top: 10px;box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;">
                     <div class="card-body">
                         <h5 class="card-title">GOIBIBO OFFERS</h5>
@@ -178,133 +174,144 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="card m-5"
-            style="max-width: 1420px;background-color: white;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
-            <div class="row no-gutters">
-                <div class="col-md-4">
-                    <img src="https://tripmoneycmsimgak.mmtcdn.com/img/Picsart_23_04_25_18_34_26_158_85da0f583b.jpg"
-                        class="card-img" alt="...">
+        </div> -->
+                <div class="card m-5"
+                    style="width: 70rem; margin-left:50px; background-color: white; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <img src="https://tripmoneycmsimgak.mmtcdn.com/img/Picsart_23_04_25_18_34_26_158_85da0f583b.jpg"
+                                class="card-img img-fluid" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h2 class="card-title">Trip Secure</h2>
+                                <div><span>Secure your trip</span></div>
+                                <div class="card-text m-2" style="display: flex; justify-content: space-between;">
+                                    <div class="1">
+                                        <img src="https://tripmoneycmsimgak.mmtcdn.com/img/baggage_assistance30_30_59d38de19d.jpg"
+                                            class="img-fluid" alt="Support">
+                                        <div>24*7 Support</div>
+                                        <div>Lost Baggage Assistance</div>
+                                    </div>
+
+                                    <div class="2">
+                                        <img src="https://tripmoneycmsimgak.mmtcdn.com/img/missed_Flight30_30_d0c76c0360.png"
+                                            class="img-fluid" alt="Support">
+                                        <div>24*7 Support</div>
+                                        <div>Lost Baggage Assistance</div>
+                                    </div>
+
+                                    <div class="3">
+                                        <img src="https://tripmoneycmsimgak.mmtcdn.com/img/tripcancellation30_30_f14ac9f936.jpg"
+                                            class="img-fluid" alt="Support">
+                                        <div class="font14 green">24*7 Support</div>
+                                        <div>Lost Baggage Assistance</div>
+                                    </div>
+                                    <div class="4 mt-3"
+                                        style="border: 1px solid rgb(134, 235, 134); border-radius: 3px; padding: 7px; background-color: rgb(209, 240, 209);">
+                                        +6 More Benefits
+                                    </div>
+                                </div>
+                                <div class="card-text">
+                                    <input type="checkbox"> <span class="heading" style="color: rgb(129, 129, 238)">Over
+                                        7000 travellers secure their trip daily.</span>
+                                </div>
+                                <div class="input-1 m-4"
+                                    style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+                                    <div class="i-1 mb-2">
+                                        <input type="button" value="Trip secured" class="btn btn-primary btn-block">
+                                    </div>
+                                    <div class="i-2 mb-2">
+                                        <input type="button" value="I'll Risk it" class="btn btn-secondary btn-block">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-8">
+
+            </div>
+            <div class="card"
+                style="margin-left:50px;background-color: white;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+                <div class="card-body">
+                    <h3>YOUR PINCODE AND STATE</h3>
+                    <p>(Required for GST purpose on your tax invoice. You can edit this anytime later in your profile
+                        section. )
+                    </p>
+                    <div class="f" style="display: inline-flex;margin-top:15px ;">
+                        <input type="text" placeholder="Enter Billing Address" style="padding: 15px;margin-left:30px ;">
+                        <input type="text" placeholder="Enter Pincode" style="padding: 15px;margin-left:200px ;">
+                        <select name="a2" id="1" class="a3"
+                            style="margin-left: 200px;width: 200px;background-color: white;">
+                            <option value="Maharastra">Gujrat</option>
+                            <option value="Maharastra">Karnataka</option>
+                            <option value="Maharastra">Maharastra</option>
+                        </select>
+                    </div>
+                    <div class="a3" style="margin-top: 20px;"><input type="checkbox"> Confirm and save billing details
+                        to your
+                        profile</div>
+                </div>
+            </div>
+            <form (ngSubmit)="submitForm()">
+                <div class="card m-5"
+                    style="width: 70rem;margin-left:50px;background-color: white;box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px">
                     <div class="card-body">
-                        <h2 class="card-title">Trip Secure</h2>
-                        <div><span>Secure your trip</span></div>
-                        <div class="card-text m-2" style="display: inline-flex;">
-                            <div class="1">
-                                <img
-                                    src="https://tripmoneycmsimgak.mmtcdn.com/img/baggage_assistance30_30_59d38de19d.jpg">
-                                <div>24*7 Support</div>
-                                <div> Lost Baggage Assistance</div>
-                            </div>
+                        <h5>TRAVELLER DETAILS</h5>
+                        <div class="card-line mb-2" style="border-bottom:1px solid gray;">
+                        </div>
 
-                            <div class="2" style="margin-left:80px">
-                                <img src="https://tripmoneycmsimgak.mmtcdn.com/img/missed_Flight30_30_d0c76c0360.png">
-                                <div>24*7 Support</div>
-                                <div> Lost Baggage Assistance</div>
+                        <div class="a4" style=" display:inline-flex;">
+                            <input type="button" value="NOTE"
+                                style="width: 60px;height: 25px;margin-top: 15px;margin-left: 20px;">
+                            <p style="margin-left: 30px;background-color: rgb(150, 241, 241);margin-top: 15px;">Please
+                                make
+                                sure you
+                                enter the Name as per your govt. photo id.</p>
+                        </div> <br>
+                        <div class="card p-3 m-3 bg-light text-dark"
+                             style="width: 60rem;">
+                          
+                            <div class="flight" style="display: inline-flex;">
+                                <div style="margin-top: 5px;">
+                                    <h6>Passenger Name</h6>
+                                </div>
+                                <div style="margin-left: 80px;margin-top: 5px;">
+                                    <select name="gender" id="gender">
+                                        <option value="Gender">Gender</option>
+                                        <option value="m">Male</option>
+                                        <option value="f">Female</option>
+                                    </select>
+                                </div>
+                                <!-- <div style="margin-left: 80px;">
+                                    <input type="text" placeholder="First & Middle Name" style="padding: 7px;" [(ngModel)]="P.first_name">
+                                </div>
+                                <div>
+                                    <input type="text" placeholder="Last Name" style="padding: 7px;" [(ngModel)]="P.last_name">
+                                </div> -->
                             </div>
-
-                            <div class="3" style="margin-left:80px">
-                                <img
-                                    src="https://tripmoneycmsimgak.mmtcdn.com/img/tripcancellation30_30_f14ac9f936.jpg">
-                                <div class="font14 green">24*7 Support</div>
-                                <div> Lost Baggage Assistance</div>
-                            </div>
-                            <div class="4 mt-3"
-                                style="margin-left:40px;border: 1px solid rgb(134, 235, 134);border-radius: 3px; padding: 7px;background-color: rgb(209, 240, 209);">
-                                +6 More Benefits</div>
                         </div>
-                        <div class="card-text">
-                            <input type="checkbox"> <span class="heading" style="color:rgb(129, 129, 238)">Over 7000
-                                travellers secure their trip daily.</span>
-                        </div>
-                        <div class="input-1 m-4" style="display:inline-flex">
-                            <div class="i-1">
-                                <input type="button" value="Trip secured" class="btn"
-                                    style="width:200px;border:1px solid grey">
-                            </div>
-                            <div class="i-2" style="margin-left:20px;">
-                                <input type="button" value="I'll Risk it" class="btn"
-                                    style="width:200px;border:1px solid grey;">
-                            </div>
-                        </div>
+                    </div>
+                    <div class="a5" style="margin-left:50px;">
+                        <label for="email">Email</label>
+                        <input type="text" placeholder="Email"
+                            style="padding: 7px;width:350px;margin-left:40px ;"><span>
+                            ticket
+                            will be sent to this email address</span>
+                    </div><br>
+                    <div class="a6" style="margin-left:50px;margin-top: 30px;margin-bottom: 20px;">
+                        <label for="no">Mobile No</label>
+                        <select style="padding: 4px;width: 80px;">
+                            <option value="+91">+91</option>
+                        </select>
+                        <input type="text" placeholder="Mobile No" style="padding: 7px;width:350px;margin-left:30px ;">
+                    </div>
+                    <div class="card-line mb-2" style="border-bottom:1px dashed gray;">
+                    </div>
+                    <div>
+                        <input type="submit" value="Proceed"
+                            style="background-color: orangered;color: white;width: 200px;padding: 5px;border-radius: 4px;float: right;margin-bottom: 20px;margin-right: 20px;">
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
-    </div>
-    <div class="card"
-        style="width: 86rem;margin-left:50px;background-color: white;box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
-        <div class="card-body">
-            <h3>YOUR PINCODE AND STATE</h3>
-            <p>(Required for GST purpose on your tax invoice. You can edit this anytime later in your profile section. )
-            </p>
-            <div class="f" style="display: inline-flex;margin-top:15px ;">
-                <input type="text" placeholder="Enter Billing Address" style="padding: 15px;margin-left:30px ;">
-                <input type="text" placeholder="Enter Pincode" style="padding: 15px;margin-left:200px ;">
-                <select name="a2" id="1" class="a3" style="margin-left: 200px;width: 200px;background-color: white;">
-                    <option value="Maharastra">Gujrat</option>
-                    <option value="Maharastra">Karnataka</option>
-                    <option value="Maharastra">Maharastra</option>
-                </select>
-            </div>
-            <div class="a3" style="margin-top: 20px;"><input type="checkbox"> Confirm and save billing details to your
-                profile</div>
-        </div>
-    </div>
-    <div class="card m-5"
-        style="width: 86rem;margin-left:50px;background-color: white;box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px">
-        <div class="card-body">
-            <h5>TRAVELLER DETAILS</h5>
-            <div class="card-line mb-2" style="border-bottom:1px solid gray;">
-            </div>
-            <div class="btn-group m-3">
-                <button style="padding: 10px;width:200px;background-color: white;margin-left:350px;">Personal</button>
-                <button style="padding: 10px;width:200px;background-color: white;">Business</button>
-            </div><br>
-            <div class="a4" style=" display:inline-flex;">
-                <input type="button" value="NOTE" style="width: 60px;height: 25px;margin-top: 15px;margin-left: 20px;">
-                <p style="margin-left: 30px;background-color: rgb(150, 241, 241);margin-top: 15px;">Please make sure you
-                    enter the Name as per your govt. photo id.</p>
-            </div> <br>
-            <div class="card p-3 m-3 bg-light text-dark" style="width: 82rem;">
-                <div class="flight" style="display: inline-flex;">
-                    <div style="margin-top: 5px;">
-                        <h6>Adult Name</h6>
-                    </div>
-                    <div style="margin-left: 80px;margin-top: 5px;"><select name="" id="">
-                            <option value="Gender">Gender</option>
-                            <option value="m">Male</option>
-                            <option value="f">Female</option>
-                        </select></div>
-                    <div style="margin-left: 80px;"><input type="text" placeholder="First & Middle Name"
-                            style="padding: 7px;">
-                    </div>
-                    <div><input type="text" placeholder="Last Name" style="padding: 7px;">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="a5" style="margin-left:50px;">
-            <label for="email">Email</label>
-            <input type="text" placeholder="Email" style="padding: 7px;width:350px;margin-left:40px ;"><span> ticket
-                will be sent to this email address</span>
-        </div><br>
-        <div class="a6" style="margin-left:50px;margin-top: 30px;margin-bottom: 20px;">
-            <label for="no">Mobile No</label>
-            <select style="padding: 4px;width: 80px;">
-                <option value="+91">+91</option>
-                <option value="+100">+100</option>
-            </select>
-            <input type="text" placeholder="Mobile No" style="padding: 7px;width:350px;margin-left:30px ;">
-        </div>
-        <div class="card-line mb-2" style="border-bottom:1px dashed gray;">
-        </div>
-        <div>
-            <a href="seatselection"> <input type="button" value="Proceed"
-                style="background-color: orangered;color: white;width: 200px;padding: 5px;border-radius: 4px;float: right;margin-bottom: 20px;margin-right: 20px;"></a>
-        </div>
-           
-    </div>
-
-</div>

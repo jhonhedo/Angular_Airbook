@@ -8,7 +8,7 @@ import { BodyComponent } from './search/body.component';
 import { ShowflightComponent } from './showflight/showflight.component';
 import { LoginComponent } from './login/login.component';
 import { CounterComponent } from './counter/counter.component';
-import { AdmindashordComponent } from './admindashbord/admindashord.component';
+import { AdmindashbordComponent } from './admindashbord/admindashord.component';
 import { PaymentComponent } from './cardpayment/payment.component';
 import { SeatselectionComponent } from './seatselection/seatselection.component';
 import { ResetpassComponent } from './resetpass/resetpass.component';
@@ -19,7 +19,12 @@ import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AdminRegisterComponent } from './admin-register/admin-register.component';
 import { AdminNavComponent } from './admin-nav/admin-nav.component';
 import { AddflightComponent } from './addflight/addflight.component';
+<<<<<<< HEAD
 import { UpdateFlightComponent } from './update-flight/update-flight.component';
+=======
+import { FooterComponent } from './footer/footer.component';
+import { CommonModule } from '@angular/common'; // Import CommonModule
+>>>>>>> 0ccee3edb98dcb1344b0a1d04148a20afbd84734
 
 
 @NgModule({
@@ -30,10 +35,9 @@ import { UpdateFlightComponent } from './update-flight/update-flight.component';
     ShowflightComponent,
     LoginComponent,
     CounterComponent,
-    AdmindashordComponent,
-   
-  
+  AdmindashbordComponent,
     PaymentComponent,
+<<<<<<< HEAD
          SeatselectionComponent,
              ResetpassComponent,
              PaymentreviewComponent,
@@ -44,11 +48,21 @@ import { UpdateFlightComponent } from './update-flight/update-flight.component';
              AddflightComponent,
              UpdateFlightComponent,
              
+=======
+    SeatselectionComponent,
+    ResetpassComponent,
+    PaymentreviewComponent,
+    UserregisterComponent,
+    AdminloginComponent,
+    AdminRegisterComponent,
+    AdminNavComponent,
+    AddflightComponent,
+    FooterComponent,
+>>>>>>> 0ccee3edb98dcb1344b0a1d04148a20afbd84734
 
-    
-   
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
