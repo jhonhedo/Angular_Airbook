@@ -10,7 +10,9 @@ import { Router } from '@angular/router';
 export class AddflightComponent {
  
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router) { 
+    this.flights.departureTime = new Date();
+  }
 
   flights: Flights = new Flights();
   messageIfAny!: string;
@@ -30,10 +32,10 @@ export class AddflightComponent {
 export class Flights {
   airline_id!: number;
   from!: string;
-	to!: string;
-	depatureTime!: Date;
-  arrivalTime!:Date;
-  price!:number;
-  
- }
+  to!: string;
+  departureTime!: Date;
+  arrivalTime!: Date;
+  price!: number;
+}
+
 

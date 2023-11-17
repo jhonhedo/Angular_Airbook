@@ -19,12 +19,10 @@ import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AdminRegisterComponent } from './admin-register/admin-register.component';
 import { AdminNavComponent } from './admin-nav/admin-nav.component';
 import { AddflightComponent } from './addflight/addflight.component';
-<<<<<<< HEAD
 import { UpdateFlightComponent } from './update-flight/update-flight.component';
-=======
 import { FooterComponent } from './footer/footer.component';
 import { CommonModule } from '@angular/common'; // Import CommonModule
->>>>>>> 0ccee3edb98dcb1344b0a1d04148a20afbd84734
+
 
 
 @NgModule({
@@ -35,20 +33,20 @@ import { CommonModule } from '@angular/common'; // Import CommonModule
     ShowflightComponent,
     LoginComponent,
     CounterComponent,
-  AdmindashbordComponent,
+    AdmindashbordComponent,
     PaymentComponent,
-<<<<<<< HEAD
-         SeatselectionComponent,
-             ResetpassComponent,
-             PaymentreviewComponent,
-             UserregisterComponent,
-             AdminloginComponent,
-             AdminRegisterComponent,
-             AdminNavComponent,
-             AddflightComponent,
-             UpdateFlightComponent,
-             
-=======
+
+    SeatselectionComponent,
+    ResetpassComponent,
+    PaymentreviewComponent,
+    UserregisterComponent,
+    AdminloginComponent,
+    AdminRegisterComponent,
+    AdminNavComponent,
+    AddflightComponent,
+    UpdateFlightComponent,
+
+
     SeatselectionComponent,
     ResetpassComponent,
     PaymentreviewComponent,
@@ -58,7 +56,7 @@ import { CommonModule } from '@angular/common'; // Import CommonModule
     AdminNavComponent,
     AddflightComponent,
     FooterComponent,
->>>>>>> 0ccee3edb98dcb1344b0a1d04148a20afbd84734
+
 
   ],
   imports: [
