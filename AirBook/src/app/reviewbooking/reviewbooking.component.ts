@@ -10,18 +10,22 @@ export class ReviewbookingComponent {
   P: Passenger = new Passenger();
   messageIfAny!: string;
   data: any = {};
+  
 
   //for showing selected data from session storage
   selectedflight: any = JSON.parse(sessionStorage.getItem('selectedflight') || '[]');
   noOfPassengers: any = JSON.parse(sessionStorage.getItem('passengers')|| '[]');
   passengerArray: any[] = Array(this.noOfPassengers).fill({});
+ 
 
   ngOnInit() {
     console.log('Selected Object:',this.selectedflight)
     
+    
   }
 
 constructor(private http: HttpClient, private router: Router) { }
+
 
 //for passanger data
 submitForm() {

@@ -269,26 +269,28 @@
                                 sure you
                                 enter the Name as per your govt. photo id.</p>
                         </div> <br>
-                        <div class="card p-3 m-3 bg-light text-dark"
-                             style="width: 60rem;">
-                          
+                        <!-- Iterate over passengerArray -->
+                        <div *ngFor="let passenger of passengerArray; let i = index"
+                            class="card p-3 m-3 bg-light text-dark" style="width: 60rem;">
                             <div class="flight" style="display: inline-flex;">
                                 <div style="margin-top: 5px;">
                                     <h6>Passenger Name</h6>
                                 </div>
-                                <div style="margin-left: 80px;margin-top: 5px;">
-                                    <select name="gender" id="gender">
+                                <div style="margin-left: 80px; margin-top: 5px;">
+                                    <select name="gender" id="gender{{ i }}">
                                         <option value="Gender">Gender</option>
                                         <option value="m">Male</option>
                                         <option value="f">Female</option>
                                     </select>
                                 </div>
-                                <!-- <div style="margin-left: 80px;">
-                                    <input type="text" placeholder="First & Middle Name" style="padding: 7px;" [(ngModel)]="P.first_name">
+                                 <!-- <div style="margin-left: 80px;">
+                                    <input type="text" placeholder="First & Middle Name" style="padding: 7px;"
+                                        [(ngModel)]="P.first_name">
                                 </div>
                                 <div>
-                                    <input type="text" placeholder="Last Name" style="padding: 7px;" [(ngModel)]="P.last_name">
-                                </div> -->
+                                    <input type="text" placeholder="Last Name" style="padding: 7px;"
+                                        [(ngModel)]="P.last_name">
+                                </div>  -->
                             </div>
                         </div>
                     </div>
