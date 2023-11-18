@@ -15,25 +15,26 @@ import { UserregisterComponent } from './userregister/userregister.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AdminRegisterComponent } from './admin-register/admin-register.component';
 import { AddflightComponent } from './addflight/addflight.component';
+import { AddpassengerComponent } from './addpassenger/addpassenger.component';
 
 
 
 const routes: Routes = [
-  {path: '', component: BodyComponent},
-  {path:'login',component:LoginComponent},
-  {path:'userRegister', component:UserregisterComponent},
-  {path: 'showflight', component:ShowflightComponent},
-  {path:'review', component:ReviewbookingComponent},
-  {path:'seatselection',component:SeatselectionComponent},
-  {path:'resetpass', component:ResetpassComponent},
-  {path:'admindash',component:AdmindashbordComponent},
-  {path:'ticket',component:TicketComponent},
-  {path:'cardpayment',component:PaymentComponent},
-  {path:'paymentreview',component:PaymentreviewComponent},
-  {path:'adminlogin',component:AdminloginComponent},
-  {path:'adminregister',component:AdminRegisterComponent},
-  {path:'addflight',component:AddflightComponent}
-  
+  { path: '', component: BodyComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'userRegister', component: UserregisterComponent },
+  { path: 'showflight', component: ShowflightComponent },
+  { path: 'review', component: ReviewbookingComponent },
+  { path: 'seatselection', component: SeatselectionComponent },
+  { path: 'resetpass', component: ResetpassComponent },
+  { path: 'admindash', component: AdmindashbordComponent },
+  { path: 'ticket', component: TicketComponent },
+  { path: 'cardpayment', component: PaymentComponent },
+  { path: 'paymentreview', component: PaymentreviewComponent },
+  { path: 'adminlogin', component: AdminloginComponent },
+  { path: 'adminregister', component: AdminRegisterComponent },
+  { path: 'addflight', component: AddflightComponent },
+  { path: 'addpassenger', component: AddpassengerComponent }
 ];
 
 @NgModule({

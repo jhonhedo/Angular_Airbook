@@ -1,0 +1,42 @@
+
+<form (ngSubmit)="submitForm()">
+  <div class="card m-5"
+       style="width: 70rem;margin-left:50px;background-color: white;box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px">
+    <div class="card-body">
+      <h5>TRAVELLER DETAILS</h5>
+      <div class="card-line mb-2" style="border-bottom:1px solid gray;"></div>
+
+      <div class="a4" style="display:inline-flex;">
+        <input type="button" value="NOTE" style="width: 60px;height: 25px;margin-top: 15px;margin-left: 20px;">
+        <p style="margin-left: 30px;background-color: rgb(150, 241, 241);margin-top: 15px;">Please make sure you enter the Name as per your govt. photo id.</p>
+      </div> <br>
+
+      <!-- Iterate over passengerArray -->
+      <div *ngFor="let passenger of passengerArray; let i = index" class="card p-3 m-3 bg-light text-dark" style="width: 60rem;">
+        <div class="flight" style="display: inline-flex;">
+          <div style="margin-top: 5px;">
+            
+          </div>
+          <div style="margin-left: 80px; margin-top: 5px;">
+            <select name="gender">
+              <option value="Gender">Gender</option>
+              <option value="m">Male</option>
+              <option value="f">Female</option>
+            </select>
+          </div>
+          <div style="margin-left: 80px;">
+            <input type="text" placeholder="First Name" style="padding: 7px;" [(ngModel)]="passenger.first_name" [ngModelOptions]="{standalone: true}">
+          </div>
+          <div>
+            <input type="text" placeholder="Last Name" style="padding: 7px;" [(ngModel)]="passenger.last_name" [ngModelOptions]="{standalone: true}">
+          </div>  
+        </div>
+      </div>
+    </div>
+    <div class="card-line mb-2" style="border-bottom:1px dashed gray;"></div>
+    <div>
+      <button type="button" class="btn btn-outline-warning" (click)="addPassenger()" >Add Passenger</button>
+      <input type="submit" value="Proceed" style="background-color: orangered;color: white;width: 200px;padding: 5px;border-radius: 4px;float: right;margin-bottom: 20px;margin-right: 20px;">
+    </div>
+  </div>
+</form>

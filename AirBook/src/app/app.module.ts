@@ -21,7 +21,9 @@ import { AdminNavComponent } from './admin-nav/admin-nav.component';
 import { AddflightComponent } from './addflight/addflight.component';
 import { UpdateFlightComponent } from './update-flight/update-flight.component';
 import { FooterComponent } from './footer/footer.component';
-import { CommonModule } from '@angular/common'; // Import CommonModule
+import { CommonModule } from '@angular/common';
+import { AddpassengerComponent } from './addpassenger/addpassenger.component'; // Import CommonModule
+import { ReviewbookingComponent } from './reviewbooking/reviewbooking.component';
 
 
 
@@ -56,6 +58,8 @@ import { CommonModule } from '@angular/common'; // Import CommonModule
     AdminNavComponent,
     AddflightComponent,
     FooterComponent,
+    AddpassengerComponent,
+    ReviewbookingComponent
 
 
   ],
