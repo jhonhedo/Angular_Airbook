@@ -49,15 +49,15 @@
                         </div>
 
                         <div class="a" style="display: flex; justify-content: space-between;">
-                            <p>Adult (1x₹5000)</p>
-                            <p>₹5000</p>
+                            <p>Adult (1x₹{{ selectedflight.price || '5000' }})</p>
+                            <p>₹{{ selectedflight.price || '5000' }}</p>
                         </div>
 
                         <div class="card-line mb-2" style="border-bottom: 1px solid;"></div>
 
                         <div class="a" style="display: flex; justify-content: space-between;">
                             <p class="card-text">Taxes and Surcharges</p>
-                            <p>₹1,966</p>
+                            <p>₹{{Tax}}</p>
                         </div>
 
                         <div class="card-line mb-2" style="border-bottom: 1px solid;"></div>
@@ -71,7 +71,7 @@
 
                         <div class="d p-2" style="display: flex; justify-content: space-between;">
                             <h4 class="text-success">Grand Total</h4>
-                            <h1>₹8,589</h1>
+                            <h1>₹{{Tax + selectedflight.price}}</h1>
                         </div>
 
                         <div class="card-line mb-2" style="border-bottom: 1px solid;"></div>
@@ -98,32 +98,6 @@
                     </div>
                 </div>
             </div>
-
-
-            <!-- <div class="card "
-                    style="width: 57rem;margin-top:10px;margin-left:10px;box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;">
-                    <div class="card-body">
-                        <h5 class="card-title">GOIBIBO OFFERS</h5>
-                        <div class="card-line mb-2" style="border-bottom:1px dashed;">
-                        </div>
-                        <div class="card-label">
-                            <h4>GISUPER</h4>
-                            <input type="radio" /> Get INR 439 instant discount + 25 extra on UPI
-                        </div>
-                        <div class="card-line mb-2" style="border-bottom:1px solid gray;">
-                        </div>
-                        <div class="card-label">
-                            <h4>HDFCEMI</h4>
-                            <input type="radio" /> Get Rs. 1000 instant discount with HDFC Bank Credit & Debit Card EMI.
-                        </div>
-                        <div class="card-line mb-2" style="border-bottom:1px solid gray;">
-                        </div>
-                        <div class="card-label">
-                            <h4>GIBFLEMI </h4>
-                            <input type="radio" /> Get Rs. 1000 instant discount with HDFC Bank Credit & Debit Card EMI.
-                        </div>
-                    </div>
-                </div> -->
             <!-- <div class="card mb-5"
                     style="width: 28rem;margin-left: auto;margin-top: 10px;box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;">
                     <div class="card-body">
@@ -240,6 +214,5 @@
             </div>
         </div>
         <app-addpassenger></app-addpassenger>
-
     </div>
 </div>

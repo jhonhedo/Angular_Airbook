@@ -35,11 +35,11 @@ export class AddpassengerComponent {
   submitForm() {
     this.data = this.passengerArray; 
     let url = "http://localhost/7777/passenger-controller/add-passenger";
-     //this.http.post<any>(url, this.data).subscribe(data => {
+     this.http.post<any>(url, this.data).subscribe(data => {
     console.log('Form Data:', this.data);
     // You can now send this data to your backend API.
     this.router.navigate(['/seatselection']);
-   // })
+    })
   }
 }
 

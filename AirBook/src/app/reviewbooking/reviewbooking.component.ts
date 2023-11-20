@@ -12,7 +12,7 @@ import { HttpClient } from '@angular/common/http';
 export class ReviewbookingComponent {
   
   messageIfAny!: string;
-  
+  Tax: number = 1966;
   
 
   //for showing selected data from session storage
