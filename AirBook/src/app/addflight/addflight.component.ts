@@ -36,6 +36,11 @@ export class Flights {
   departureTime!: Date;
   arrivalTime!: Date;
   price!: number;
+  
+}
+export class air
+{
+  id: number|undefined
 }
 
 
