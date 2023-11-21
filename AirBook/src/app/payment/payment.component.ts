@@ -11,11 +11,6 @@ export class PaymentComponent {
 
   payNow(){
 
-    const rozorpayoptions = {
-      description :'sample razorpay demo',
-      currency:'INR',
-      amount: 30000,
-      name:'sai',
-    }
+    
   }
 }

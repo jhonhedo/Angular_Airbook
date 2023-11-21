@@ -18,17 +18,17 @@
             
           </div>
           <div style="margin-left: 80px; margin-top: 5px;">
-            <select name="gender">
+            <select name="gender" [(ngModel)]="passenger.gender" [ngModelOptions]="{standalone: true}">
               <option value="Gender">Gender</option>
               <option value="m">Male</option>
               <option value="f">Female</option>
             </select>
           </div>
           <div style="margin-left: 80px;">
-            <input type="text" placeholder="First Name" style="padding: 7px;" [(ngModel)]="passenger.first_name" [ngModelOptions]="{standalone: true}">
+            <input type="text" placeholder="First Name" style="padding: 7px;" [(ngModel)]="passenger.firstName" [ngModelOptions]="{standalone: true}">
           </div>
           <div>
-            <input type="text" placeholder="Last Name" style="padding: 7px;" [(ngModel)]="passenger.last_name" [ngModelOptions]="{standalone: true}">
+            <input type="text" placeholder="Last Name" style="padding: 7px;" [(ngModel)]="passenger.lastName" [ngModelOptions]="{standalone: true}">
           </div>  
         </div>
       </div>

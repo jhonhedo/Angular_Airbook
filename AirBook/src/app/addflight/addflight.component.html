@@ -6,13 +6,13 @@
         <div class="card-body">
             <form class="row g-3" (ngSubmit)="submitForm()">
                 <div class="col-md-6">
-                    <label for="airline_id" class="form-label">Select Airline</label>
-                    <select class="form-select" id="airline_id" name="airline_id" [(ngModel)]="flights.airline_id">
+                    <label for="flightName" class="form-label">Select Airline</label>
+                    <select class="form-select" id="flightName" name="flightName" [(ngModel)]="flights.flightName">
                         <option value="from">Select</option>
-                        <option value="1">IndiGO</option>
-                        <option value="2">SpiceJet</option>
-                        <option value="3">VISTARA</option>
-                        <option value="4">AIR-INDIA</option>
+                        <option value="IndiGO">IndiGO</option>
+                        <option value="SpiceJet">SpiceJet</option>
+                        <option value="VISTARA">VISTARA</option>
+                        <option value="AIR-INDIA">AIR-INDIA</option>
                     </select>
                 </div>
 
