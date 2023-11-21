@@ -16,6 +16,7 @@ import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AdminRegisterComponent } from './admin-register/admin-register.component';
 import { AddflightComponent } from './addflight/addflight.component';
 import { AddpassengerComponent } from './addpassenger/addpassenger.component';
+import { NavComponent } from './nav/nav.component';
 
 
 
@@ -34,7 +35,8 @@ const routes: Routes = [
   { path: 'adminlogin', component: AdminloginComponent },
   { path: 'adminregister', component: AdminRegisterComponent },
   { path: 'addflight', component: AddflightComponent },
-  { path: 'addpassenger', component: AddpassengerComponent }
+  { path: 'addpassenger', component: AddpassengerComponent },
+  {path:'nav', component:NavComponent}
 ];
 
 @NgModule({

@@ -11,6 +11,8 @@ export class LoginComponent {
   username: string;
   password: string;
   data!: any;
+  
+
   constructor(private http: HttpClient, private router: Router) {
     this.username = ''
     this.password = ''
@@ -29,13 +31,13 @@ export class LoginComponent {
       this.data = data;
 
       if (username === data.userName && password === data.password) {
-      
-        //alert('Login successful ' + `username: ${this.username} ` + `password:${this.password}`);
+          
         // Successful login, perform necessary actions (e.g., navigate to a different page)
+        sessionStorage.setItem('UserData', JSON.stringify(data));
         this.router.navigate(['/']);
       } else {
         alert('Login failed');
-        // Display an error message to the user (e.g., incorrect username or password)
+        
         this.errorMessage = 'Incorrect username or password';
       }
     })

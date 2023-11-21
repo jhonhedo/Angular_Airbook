@@ -1,4 +1,4 @@
-<div class="container d-flex justify-content-center align-items-center vh-100">
+<div  *ngIf="!data; else loggedIn" class="container d-flex justify-content-center align-items-center vh-100">
     <div class="card" style="width: 350px;">
         <div class="card-header">
             <h5 class="card-title">Login</h5>
@@ -30,3 +30,6 @@
 
     </div>
 </div>
+<ng-template #loggedIn>
+    <router-outlet></router-outlet>
+  </ng-template>
