@@ -19,7 +19,7 @@ import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AdminRegisterComponent } from './admin-register/admin-register.component';
 import { AdminNavComponent } from './admin-nav/admin-nav.component';
 import { AddflightComponent } from './addflight/addflight.component';
-import { UpdateFlightComponent } from './update-flight/update-flight.component';
+//import { UpdateFlightComponent } from './update-flight/update-flight.component';
 import { FooterComponent } from './footer/footer.component';
 import { CommonModule } from '@angular/common';
 import { AddpassengerComponent } from './addpassenger/addpassenger.component'; // Import CommonModule
@@ -47,7 +47,7 @@ import { AdminshowflightsComponent } from './adminshowflights/adminshowflights.c
     AdminRegisterComponent,
     AdminNavComponent,
     AddflightComponent,
-    UpdateFlightComponent,
+    //UpdateFlightComponent,
 
 
     SeatselectionComponent,

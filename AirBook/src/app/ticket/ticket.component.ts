@@ -23,13 +23,13 @@ export class TicketComponent implements OnInit{
  
 export class Ticket{
   AirlineName!:String;
-  From:String;
-  To:String;
-  Passenger:String;
-  BoardTime:number;
-  Departure:number;
-  Arrival:number;
-  Seat:number;
+  From!:String;
+  To!:String;
+  Passenger!:String;
+  BoardTime!:number;
+  Departure!:number;
+  Arrival!:number;
+  Seat!:number;
 }
 
 
