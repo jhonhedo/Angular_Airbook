@@ -40,7 +40,16 @@
     height: 52px;
     margin-top: 70px;
     margin-left: 30%;
+    /* Additional styling properties */
+
+    /* Transition for a smooth hover effect */
+    transition: background-color 0.3s ease;
 }
+
+#search-btn:hover {
+    background-color:orange;
+}
+
 
 .nav-btn {
     margin-left: 10px;

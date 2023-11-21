@@ -29,7 +29,8 @@ export class LoginComponent {
       this.data = data;
 
       if (username === data.userName && password === data.password) {
-        alert('Login successful ' + `username: ${this.username} ` + `password:${this.password}`);
+        
+        //alert('Login successful ' + `username: ${this.username} ` + `password:${this.password}`);
         // Successful login, perform necessary actions (e.g., navigate to a different page)
         this.router.navigate(['/']);
       } else {
