@@ -25,6 +25,7 @@ import { CommonModule } from '@angular/common';
 import { AddpassengerComponent } from './addpassenger/addpassenger.component'; // Import CommonModule
 import { ReviewbookingComponent } from './reviewbooking/reviewbooking.component';
 import { AdminshowflightsComponent } from './adminshowflights/adminshowflights.component';
+import { TicketsComponent } from './tickets/tickets.component';
 
 
 
@@ -61,7 +62,8 @@ import { AdminshowflightsComponent } from './adminshowflights/adminshowflights.c
     FooterComponent,
     AddpassengerComponent,
     ReviewbookingComponent,
-    AdminshowflightsComponent
+    AdminshowflightsComponent,
+    TicketsComponent
 
 
   ],

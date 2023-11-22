@@ -19,16 +19,18 @@ export class PaymentComponent {
 redirectToNextPage() {
   
   this.cardDetails.paymentMode = 'card'
+  //this.reservationDetails.userId = parseInt(sessionStorage.getItem('user'|null));
+  this.reservationDetails.classFlight = (sessionStorage.getItem('class'));
   this.reservationDetails.flightId = parseInt(sessionStorage.getItem('selectedflight') || '{}');
   this.reservationDetails.passengers = JSON.parse(sessionStorage.getItem('passengerData') || '[]');
   this.cardDetails.amount = parseInt(sessionStorage.getItem('amount') || '{}');
  
-  //change the api url
-  // this.http.post("http://localhost:7777/user-controller/registration",this.reservationDetails)
-  // .subscribe((response:any)=>{
-  //   console.log(response)
-  //   alert("Data sent sucessfully...")
-  // })
+  
+  this.http.post("http://localhost:7777/reservation_controller/flight/reservation",this.reservationDetails)
+  .subscribe((response:any)=>{
+    console.log(response)
+    alert("Data sent sucessfully...")
+  })
 
   this.router.navigate(['/ticket']); // Replace 'next-page' with your actual route path // Replace 'next-page' with your actual route path
 } 
@@ -46,7 +48,10 @@ export class CreditCard {
 
 export class ReservationDetails{
   flightId!:any;
+  userId!:any;
+  classFlight!:any;
+  reservationDate: Date = new Date();
   passengers: Passenger[] = [];
-  payment!: CreditCard ;
+  payment : CreditCard = new CreditCard() ;
 }
 

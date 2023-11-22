@@ -17,6 +17,8 @@ import { AdminRegisterComponent } from './admin-register/admin-register.componen
 import { AddflightComponent } from './addflight/addflight.component';
 import { AddpassengerComponent } from './addpassenger/addpassenger.component';
 import { NavComponent } from './nav/nav.component';
+import { tick } from '@angular/core/testing';
+import { TicketsComponent } from './tickets/tickets.component';
 
 
 
@@ -36,7 +38,8 @@ const routes: Routes = [
   { path: 'adminregister', component: AdminRegisterComponent },
   { path: 'addflight', component: AddflightComponent },
   { path: 'addpassenger', component: AddpassengerComponent },
-  {path:'nav', component:NavComponent}
+  {path:'nav', component:NavComponent},
+  {path:'tickets',component:TicketsComponent}
 ];
 
 @NgModule({
