@@ -24,8 +24,10 @@ import { FooterComponent } from './footer/footer.component';
 import { CommonModule } from '@angular/common';
 import { AddpassengerComponent } from './addpassenger/addpassenger.component'; // Import CommonModule
 import { ReviewbookingComponent } from './reviewbooking/reviewbooking.component';
-import { AdminshowflightsComponent } from './adminshowflights/adminshowflights.component';
+import { AdminfetchflightsComponent } from './adminfetchflights/adminfetchflights.component';
+import { EditflightsComponent } from './editflights/editflights.component';
 import { TicketsComponent } from './tickets/tickets.component';
+import { AdminshowflightsComponent } from './adminshowflights/adminshowflights.component';
 
 
 
@@ -63,7 +65,10 @@ import { TicketsComponent } from './tickets/tickets.component';
     AddpassengerComponent,
     ReviewbookingComponent,
     AdminshowflightsComponent,
-    TicketsComponent
+    TicketsComponent,
+    AdminfetchflightsComponent,
+    EditflightsComponent ,
+   
 
 
   ],
