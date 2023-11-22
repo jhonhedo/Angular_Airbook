@@ -15,7 +15,6 @@ export class AddpassengerComponent {
   //passengerArray: any[] = Array(this.noOfPassengers).fill({});
   passengerArray: Passenger[] = [];
 
-  data: any = {};
 
   constructor(private http: HttpClient, private router: Router) {
     this.addPassenger();
@@ -34,17 +33,17 @@ export class AddpassengerComponent {
   }
 
   submitForm() {
-    this.data = this.passengerArray;
+    
     let reservation = new Reservation();
     reservation.passengers = this.passengerArray;
-    let url = "http://localhost:7777/passenger-controller/add-passenger";
-    this.http.post<any>(url, reservation).subscribe(data => {
-      console.log('Form Data:', this.data);
-      console.log('Form Data:', reservation);
-      console.log('msg:', data);
-      // You can now send this data to your backend API.
-      this.router.navigate(['/seatselection']);
-    })
+    // let url = "http://localhost:7777/passenger-controller/add-passenger";
+    // this.http.post<any>(url, reservation).subscribe(data => {
+    //   console.log('Form Data:', reservation);
+    //   console.log('msg:', data); 
+    //   this.router.navigate(['/seatselection']);
+    // })
+    sessionStorage.setItem('passengersData', JSON.stringify(reservation));
+    this.router.navigate(['/seatselection']);
   }
 }
 

@@ -27,19 +27,3 @@ constructor(private router: Router){
   }
 
 }
-// <div *ngFor="let flight of flights">
-//   <div>
-//     <p>From: {{ flight.from }}</p>
-//     <p>To: {{ flight.to }}</p>
-//     <!-- Add more properties as needed -->
-//   </div>
-// </div>
-// export class FlightComponent implements OnInit {
-//   flights: any[] = JSON.parse(sessionStorage.getItem('flights') || '[]');
-
-//   constructor() { }
-
-//   ngOnInit() {
-//     // Load your flight data here or in the constructor
-//   }
-// }

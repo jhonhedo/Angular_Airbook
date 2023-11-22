@@ -1,30 +1,68 @@
 <div>
-    <div class="container m-5  d-flex">
-        <div class="row">
-            <h2>Pay Rs 5000 to confirm booking</h2>
-            <div class="card" style="width: 40rem;">
-                <div class="card-body">
-                    <h5>MumBai(BOM)--------><span>Allahabad(prg)</span> <span>show details</span></h5>
-                    <p>8 Nov 2023-----><span>10 Nov 2023</span><span>(direct)</span></p>
-                    <hr>
+    <div class="container">
+        <div class="card">
+            <div class="a1" style="margin-left: 20px; margin-top: 10px;">
+                <h4 style="float: left;">Fare Summary</h4>
+            </div>
+            <div class="card-body">
+                <div class="card-line mb-2" style="border-bottom: 1px solid;"></div>
+
+                <div class="a" style="display: flex; justify-content: space-between;">
+                    <h5 class="card-title">Base Fare</h5>
+                    <h3>₹{{ selectedflight.price || '5000' }}</h3>
+                </div>
+
+                <div class="a" style="display: flex; justify-content: space-between;">
+                    <p>Adult (1x₹{{ selectedflight.price || '5000' }})</p>
+                    <p>₹{{ selectedflight.price || '5000' }}</p>
+                </div>
+
+                <div class="card-line mb-2" style="border-bottom: 1px solid;"></div>
+
+                <div class="a" style="display: flex; justify-content: space-between;">
+                    <p class="card-text">Taxes and Surcharges</p>
+                    <p>₹{{Tax}}</p>
+                </div>
+
+                <div class="card-line mb-2" style="border-bottom: 1px solid;"></div>
+
+                <div class="c p-2" style="display: flex; justify-content: space-between;">
+                    <p>Donate ₹10 towards flood relief efforts in Himachal Pradesh.</p>
+                    <input type="checkbox">
+                </div>
+
+                <div class="card-line mb-2" style="border-bottom: 1px solid;"></div>
+
+                <div class="d p-2" style="display: flex; justify-content: space-between;">
+                    <h4 class="text-success">Grand Total</h4>
+                    <h1>₹{{Tax + selectedflight.price}}</h1>
+                </div>
+
+                <div class="card-line mb-2" style="border-bottom: 1px solid;"></div>
+
+                <div class="last-img" style="display: flex;">
+                    <div><img src="https://gos3.ibcdn.com/hotelStay-1685949391.png"></div>
+                    <div>
+                        <h6>Book this flight to get:</h6>
+                        <h5>Exclusive Rates + Flat 20% Off on Hotel Bookings</h5>
+                    </div>
+                </div>
+
+                <div class="card-line mb-2" style="border-bottom: 1px solid;"></div>
+
+                <div class="card-info" style="display: flex; justify-content: space-between;">
+                    <div>
+                        <h5>Was the information helpful?</h5>
+                    </div>
+                    <div>
+                        <input type="radio">Yes
+                        <input type="radio">No
+                    </div>
                 </div>
             </div>
-            <div class="card flex-30">
-                <div class="card-body">
-                    <p>Grand Total<span class="ml-5" style="color: green;">₹48557</span></p>
-                    <hr>
-                    <p>Fare<span class="ml-5" style="color: green; ">₹48557</span></p>
-                    <p>Convence Fee<span class="ml-5" style="color: green;">₹48557</span></p>
-                    <p>Charity Fee<span class="ml-5" style="color: green;">₹48557</span></p>
-                    <p>Trip Secutity<span class="ml-5" style="color: green;">₹48557</span></p>
-                    <p>Seat<span class="ml-5" style="color: green;">₹48557</span></p>
-
-                </div>
-            </div>
-
         </div>
     </div>
-    <div class="card" style="width: 40rem;">
+    <div class="container" >
         <div class="card-body">
             <p>All Pyment option <span style="color: green;">Discoun of Rs 25</span></p>
             <hr>
