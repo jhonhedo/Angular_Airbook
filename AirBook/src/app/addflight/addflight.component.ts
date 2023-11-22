@@ -36,10 +36,6 @@ export class Flights {
   departureTime!: Date;
   arrivalTime!: Date;
   price!: number;
-<<<<<<< HEAD
-=======
-
->>>>>>> 80d7fe2ea4f1049002ce770e9e40ffb3571a1cbe
 }
 
 
