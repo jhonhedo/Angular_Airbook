@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
 import { ShowflightComponent } from './showflight/showflight.component';
 import { BodyComponent } from './search/body.component';
 import { LoginComponent } from './login/login.component';
-
+ import { RouterModule, Routes } from '@angular/router';
 import { ReviewbookingComponent } from './reviewbooking/reviewbooking.component';
 import { SeatselectionComponent } from './seatselection/seatselection.component';
 import { ResetpassComponent } from './resetpass/resetpass.component';
@@ -15,8 +14,7 @@ import { UserregisterComponent } from './userregister/userregister.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AdminRegisterComponent } from './admin-register/admin-register.component';
 import { AddflightComponent } from './addflight/addflight.component';
-import { AddpassengerComponent } from './addpassenger/addpassenger.component';
-
+import { EditflightsComponent } from './editflights/editflights.component';
 
 
 const routes: Routes = [
@@ -34,11 +32,11 @@ const routes: Routes = [
   { path: 'adminlogin', component: AdminloginComponent },
   { path: 'adminregister', component: AdminRegisterComponent },
   { path: 'addflight', component: AddflightComponent },
-  { path: 'addpassenger', component: AddpassengerComponent }
+  { path: 'editflight',component: EditflightsComponent},
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
