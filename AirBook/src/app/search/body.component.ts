@@ -74,16 +74,4 @@ export class BodyComponent {
   }
 }
 
-// loginCheck() {
-//   let url = "http://localhost:9090/customer/login";
-//   this.http.post<any>(url, this.login).subscribe(data => {
-//     console.log(data);
-//     if(data.status == true) {
-//       sessionStorage.setItem('customerId', data.customerId);
-//       sessionStorage.setItem('name', data.name);
-//       this.router.navigate(['/dashboard'])
-//     }
-//     else
-//       this.messageIfAny = data.messageIfAny;
-//   })
-// }
+
