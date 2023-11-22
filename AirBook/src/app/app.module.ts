@@ -48,7 +48,7 @@ import { EditflightsComponent } from './editflights/editflights.component';
     AdminRegisterComponent,
     AdminNavComponent,
     AddflightComponent,
-   // UpdateFlightComponent,
+    //UpdateFlightComponent,
 
 
     SeatselectionComponent,

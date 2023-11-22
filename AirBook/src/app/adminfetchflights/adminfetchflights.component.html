@@ -21,12 +21,13 @@
           <td class="py-2 px-4">{{flight. arrivalTime}}</td>
           <td class="py-2 px-4">{{ flight.price}}</td>
           <td class="py-2 px-4 space-x-2">
-            <button class="bg-danger text-white py-1 px-2 rounded-md" (click)="deleteFlight(flight.id)">CancelFlight</button>
+            <button *ngIf="!flight.cancelled" class="bg-danger text-white py-1 px-2 rounded-md" (click)="cancelFlight(flight.flightId)">CancelFlight</button>
+            <span *ngIf="flight?.cancelled" class="text-gray-500">Cancelled</span>
+
           </td>
           <td>
             <td class="py-2 px-4 space-x-2">
-                <button class="bg-success text-white py-1 px-2 rounded-md" (click)="editFlight(flight.id)">Edit</button>
-  
+                <button class="bg-success text-white py-1 px-2 rounded-md"><a href="editflight">Edit</a></button>
         </td>
         </tr>
       </tbody>

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-adminfetchflights',
@@ -10,9 +11,9 @@ export class AdminfetchflightsComponent implements OnInit{
   
   flights: any[] = [];
   imageUrl!: string;
-  router: any;
+ 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router:Router) { }
   
  // flights1: any[] = JSON.parse(sessionStorage.getItem('flights') || '[]');
 
@@ -26,22 +27,19 @@ export class AdminfetchflightsComponent implements OnInit{
       .subscribe(
         data => {
           this.flights= data;
-          console.log(data);
+          console.log(this.flights);
         }
       );
   }
 
-  deleteProduct(id: number): void {
-    const url = `http://localhost:7777/flights-controller/flightstatus?flightId/${id}`;
-   
-    this.http.delete<any[]>(url).subscribe(
+  cancelFlight(id: number): void {
+    const url = `http://localhost:7777/flights-controller/flightstatus?flightId=${id}`;
+    this.http.post<any[]>(url,null).subscribe(
       () => {
-        console.log(`Item with ID ${id} deleted successfully.`);
+        console.log(`Flight with ID ${id} cancel successfully.`);
       }
     );
   }
- 
- 
- 
+
 }
 

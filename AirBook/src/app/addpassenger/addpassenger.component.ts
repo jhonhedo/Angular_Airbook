@@ -15,7 +15,6 @@ export class AddpassengerComponent {
   //passengerArray: any[] = Array(this.noOfPassengers).fill({});
   passengerArray: Passenger[] = [];
 
-  data: any = {};
 
   constructor(private http: HttpClient, private router: Router) {
     this.addPassenger();
@@ -24,31 +23,34 @@ export class AddpassengerComponent {
 
   addPassenger() {
     // Use values from this.P when adding a new passenger
-    const newPassenger: Passenger = { first_name: this.P.first_name, last_name: this.P.last_name };
+    const newPassenger: Passenger = { firstName: this.P.firstName, lastName: this.P.lastName, gender: this.P.gender };
     this.passengerArray.push(newPassenger);
 
     // Optionally, you can clear the form fields after adding a passenger
-    this.P.first_name = '';
-    this.P.last_name = '';
+    this.P.firstName = '';
+    this.P.lastName = '';
+    this.P.gender = '';
   }
 
   submitForm() {
-    this.data = this.passengerArray;
+    
     let reservation = new Reservation();
     reservation.passengers = this.passengerArray;
-    let url = "http://localhost:7777/passenger-controller/add-passenger";
-    this.http.post<any>(url, reservation).subscribe(data => {
-      console.log('Form Data:', this.data);
-      console.log('msg:', data);
-      // You can now send this data to your backend API.
-      this.router.navigate(['/seatselection']);
-    })
+    // let url = "http://localhost:7777/passenger-controller/add-passenger";
+    // this.http.post<any>(url, reservation).subscribe(data => {
+    //   console.log('Form Data:', reservation);
+    //   console.log('msg:', data); 
+    //   this.router.navigate(['/seatselection']);
+    // })
+    sessionStorage.setItem('passengersData', JSON.stringify(reservation));
+    this.router.navigate(['/seatselection']);
   }
 }
 
 export class Passenger {
-  first_name!: string;
-  last_name!: string;
+  firstName!: string;
+  lastName!: string;
+  gender!: string;
 }
 
 export class Reservation {

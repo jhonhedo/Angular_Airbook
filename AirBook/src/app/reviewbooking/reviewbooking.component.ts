@@ -17,8 +17,7 @@ export class ReviewbookingComponent {
 
   //for showing selected data from session storage
   selectedflight: any = JSON.parse(sessionStorage.getItem('selectedflight') || '[]');
-  // noOfPassengers: any = JSON.parse(sessionStorage.getItem('passengers')|| '[]');
-  // passengerArray: any[] = Array(this.noOfPassengers).fill({});
+  
  
 
   ngOnInit() {
