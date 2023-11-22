@@ -33,3 +33,4 @@ export class NavComponent {
     this.router.navigate(['/']);
   }
 }
+//Is this code there for all
