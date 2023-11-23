@@ -11,7 +11,7 @@ export class LoginComponent {
   username: string;
   password: string;
   data!: any;
-  
+ // userdata!:any;
 
   constructor(private http: HttpClient, private router: Router) {
     this.username = ''
@@ -33,7 +33,7 @@ export class LoginComponent {
       if (username === data.userName && password === data.password) {
           
         // Successful login, perform necessary actions (e.g., navigate to a different page)
-        sessionStorage.setItem('UserData', JSON.stringify(data));
+        sessionStorage.setItem('userData', JSON.stringify(this.data));
         this.router.navigate(['/']);
       } else {
         alert('Login failed');

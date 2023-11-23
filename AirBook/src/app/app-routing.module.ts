@@ -17,8 +17,8 @@ import { AddflightComponent } from './addflight/addflight.component';
 import { EditflightsComponent } from './editflights/editflights.component';
 import { AddpassengerComponent } from './addpassenger/addpassenger.component';
 import { NavComponent } from './nav/nav.component';
-import { tick } from '@angular/core/testing';
 import { TicketsComponent } from './tickets/tickets.component';
+import { UserprofileComponent } from './userprofile/userprofile.component';
 
 
 
@@ -40,7 +40,8 @@ const routes: Routes = [
   { path: 'editflight',component: EditflightsComponent},
   { path: 'addpassenger', component: AddpassengerComponent },
   {path:'nav', component:NavComponent},
-  {path:'tickets',component:TicketsComponent}
+  {path:'tickets',component:TicketsComponent},
+  {path:'userprofile',component:UserprofileComponent}
 ];
 
 @NgModule({

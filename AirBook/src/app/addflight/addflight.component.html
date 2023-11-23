@@ -18,7 +18,7 @@
 
                 <div class="col-md-6">
                     <label for="from" class="form-label">From</label>
-                    <select class="form-select" id="from" name="from"  [(ngModel)]="flights.from">
+                    <select class="form-select" id="from" name="from" [(ngModel)]="flights.from">
                         <option value="from">Select</option>
                         <option value="Mumbai">BOM - Mumbai</option>
                         <option value="New Delhi">DEL - New Delhi</option>
@@ -32,7 +32,7 @@
 
                 <div class="col-md-6">
                     <label for="to" class="form-label">To</label>
-                    <select class="form-select" id="to" name="to"  [(ngModel)]="flights.to">
+                    <select class="form-select" id="to" name="to" [(ngModel)]="flights.to">
                         <option value="time">Select</option>
                         <option value="New Delhi">DEL - New Delhi</option>
                         <option value="Hyderabad">HYD - Hyderabad</option>
@@ -46,17 +46,19 @@
 
                 <div class="col-md-6">
                     <label for="depart" class="form-label">Depart-Time</label>
-                    <input type="datetime-local" class="form-control" id="depart" name="depart"  [(ngModel)]="flights.departureTime">
+                    <input type="datetime-local" class="form-control" id="depart" name="depart"
+                        [(ngModel)]="flights.departureTime">
                 </div>
 
                 <div class="col-md-6">
                     <label for="arrive" class="form-label">Arrival-Time</label>
-                    <input type="datetime-local" class="form-control" id="arrive" name="arrive"  [(ngModel)]="flights.arrivalTime" >
+                    <input type="datetime-local" class="form-control" id="arrive" name="arrive"
+                        [(ngModel)]="flights.arrivalTime">
                 </div>
 
                 <div class="col-md-6">
                     <label for="arrive" class="form-label">Price</label>
-                    <input type="number" class="form-control" id="price" name="price"  [(ngModel)]="flights.price">
+                    <input type="number" class="form-control" id="price" name="price" [(ngModel)]="flights.price">
                 </div>
                 <div class="col-12">
                     <div class="text-center">
