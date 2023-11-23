@@ -19,6 +19,10 @@ import { AddpassengerComponent } from './addpassenger/addpassenger.component';
 import { NavComponent } from './nav/nav.component';
 import { AdminfetchflightsComponent } from './adminfetchflights/adminfetchflights.component';
 import { ConfirmComponent } from './confirm/confirm.component';
+import { tick } from '@angular/core/testing';
+import { TicketsComponent } from './tickets/tickets.component';
+
+
 
 
 const routes: Routes = [
@@ -41,7 +45,7 @@ const routes: Routes = [
   {path:'nav', component:NavComponent},
   {path:'adminfetchflights',component:AdminfetchflightsComponent},
   {path: 'confirm',component: ConfirmComponent},
-
+  {path:'tickets',component:TicketsComponent},
 ];
 
 @NgModule({

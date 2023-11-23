@@ -27,6 +27,8 @@ import { ReviewbookingComponent } from './reviewbooking/reviewbooking.component'
 import { AdminfetchflightsComponent } from './adminfetchflights/adminfetchflights.component';
 import { EditflightsComponent } from './editflights/editflights.component';
 import { ConfirmComponent } from './confirm/confirm.component';
+import { TicketsComponent } from './tickets/tickets.component';
+import { AdminshowflightsComponent } from './adminshowflights/adminshowflights.component';
 
 
 
@@ -64,6 +66,8 @@ import { ConfirmComponent } from './confirm/confirm.component';
     FooterComponent,
     AddpassengerComponent,
     ReviewbookingComponent,
+    AdminshowflightsComponent,
+    TicketsComponent,
     AdminfetchflightsComponent,
     EditflightsComponent,
     ConfirmComponent,
