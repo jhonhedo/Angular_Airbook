@@ -35,6 +35,30 @@ export class TicketsComponent implements OnInit {
 
   fetchReservations() {
     this.http.get<any[]>('http://localhost:7777/reservation_controller/reservation/myreservation', {
+        params: { userId: this.userId.toString() }
+      })
+      .subscribe(
+        data => {
+          this.tickets = data;
+          console.log(data);
+        }
+      );
+      
+  }
+}
+
+export class Ticket {
+  flightId!: String;
+  from!: String;
+  to!: String;
+  passenger!: String;
+  boardTime!: Time;
+  departure!: Date;
+  arrival!: Date;
+  seatNo!: number;
+  class!: string;
+}
+
       params: { userId: this.userId.toString() }
     })
     .subscribe(

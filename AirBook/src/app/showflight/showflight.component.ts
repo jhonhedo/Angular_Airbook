@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 @Component({
@@ -9,7 +10,7 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./showflight.component.css']
 })
 
-export class ShowflightComponent {
+export class ShowflightComponent implements OnInit{
 
   flights: any[] = JSON.parse(sessionStorage.getItem('flights') || '[]');
   selectedPriceRange: number = 50; //new change
@@ -33,10 +34,11 @@ flightList : flightsli[]=[]
   ];
   selectedAirlines: string[] = [];
    flightsString = sessionStorage.getItem("flights");
-  constructor(private router: Router) {
+  router: any;
+  constructor (private http: HttpClient){
 
   }
-
+  //preferredAirlines: any[] = [];
   selectPreferredAirline() {
     const selectedAirlines = this.preferredAirlines.filter(airline => airline.selected);
     this.selectedFlight = selectedAirlines.map(airline => airline.name);
@@ -50,12 +52,29 @@ flightList : flightsli[]=[]
       console.log(this.filteredFlights);
   }
   
+  //changes started========================
 
-
-
-  ngOnInit() {
-
+  ngOnInit(): void {
+    // Fetch data from the API
+    // this.http.get('http://localhost:7777/flights-controller/all-flights')
+    //   .subscribe(
+    //     (data: any[]) => {
+    //       console.log('Fetched data:', data); // Log the fetched data to see its structure
+    //       // Assuming the response structure is an array of objects with a 'name' property
+    //       this.preferredAirlines = data.map(item => ({ name: item.name, selected: false }));
+    //       alert("preferredAirlines data :"+this.preferredAirlines)
+    //     },
+    //     error => {
+    //       console.error('Error fetching data:', error);
+    //     }
+    //   );
   }
+  
+  
+  
+
+
+  
 
 
 
