@@ -23,7 +23,7 @@ export class AddpassengerComponent {
 
   addPassenger() {
     // Use values from this.P when adding a new passenger
-    const newPassenger: Passenger = { firstName: this.P.firstName, lastName: this.P.lastName, gender: this.P.gender };
+    const newPassenger: Passenger = { firstName: this.P.firstName, lastName: this.P.lastName, gender: this.P.gender, seatNo: this.P.seatNo };
     this.passengerArray.push(newPassenger);
 
     // Optionally, you can clear the form fields after adding a passenger
@@ -51,6 +51,7 @@ export class Passenger {
   firstName!: string;
   lastName!: string;
   gender!: string;
+  seatNo!: number;
 }
 
 export class Reservation {
