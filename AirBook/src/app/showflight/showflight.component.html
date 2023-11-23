@@ -25,10 +25,18 @@
                     <div class="card-content m-1 p-2">
                         <div class="Price">
                             <h6>Price</h6>
-                            <input type="range" style="width: 200px;" min="1" max="100" value="50">
+                            <!--<input type="range" style="width: 200px;" min="1" max="100" value="50">-->
+                            <!-- new changes...!!! -->
+                            <input type="range" style="width: 200px;" min="1" max="100"
+                                [(ngModel)]="selectedPriceRange" />
+                            <!--<button type="button" class="btn btn-primary" (click)="filterFlightsByPrice()">Apply Price Filter</button>-->
+                            <input type="range" style="width: 200px;" min="1" max="100" [(ngModel)]="selectedPriceRange"
+                                (input)="filterFlightsByPrice()" />
+
+
                             <p style="text-align: left;">
-                                Rs. 7,445
-                                <span style="float: right; margin-right: 25px;">Rs. 15,806</span>
+                                {{minPrice}}
+                                <span style="float: right; margin-right: 25px;">{{maxPrice}}</span>
                             </p>
                             <hr>
                         </div>
@@ -42,39 +50,21 @@
                         </div>
                         <hr>
                         <div class="container">
-                            <div class="form-check">
-                                <h6>Preferred Airlines</h6>
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <img src="./images/air_india.png" alt="">
-                                <label class="form-check-label" for="flexCheckDefault">Air India</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                                <img src="./images/air_india_express.png" alt="">
-                                <label class="form-check-label" for="flexCheckChecked">Air India Express</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                                <img src="./images/airasia.png" alt="">
-                                <label class="form-check-label" for="flexCheckChecked">Air Asia</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                                <img src="./images/akasa air.png" alt="">
-                                <label class="form-check-label" for="flexCheckChecked">Akasa Air</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                                <img src="./images/indigo.png" alt="">
-                                <label class="form-check-label" for="flexCheckChecked">IndiGO</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                                <img src="./images/spicejet.png" alt="">
-                                <label class="form-check-label" for="flexCheckChecked">SpiceJet</label>
-                            </div>
-                            <br>
-                            <button type="button" style="margin-top: 10px;" class="btn btn-primary">View all</button>
+                            <form>
+                                <div *ngFor="let airline of preferredAirlines">
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" [(ngModel)]="airline.selected"
+                                            name="uselectedFlight" [value]="airline.name">{{airline.name}}
+                                        <img src="./images/air_india_express.png" alt="">
+                                    </div>
+                                </div>
+                                <div>
+                                    <br>
+                                    <button type="button" style="margin-top: 10px;" class="btn btn-primary"
+                                        (click)="selectPreferredAirline()">View all</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -87,15 +77,15 @@
                     <tr>
                         <td>DEPARTURE
                             <br>
-                            <span>earliest @ 02:00</span>
+                            <span>earliest 02:00</span>
                         </td>
                         <td>DURATION
                             <br>
-                            <span>fastest @ 2hrs 00m</span>
+                            <span>fastest 2hrs 00m</span>
                         </td>
                         <td>ARRIVAL
                             <br>
-                            <span>Thu, 16 Nov @ 04:15</span>
+                            <span>Thu, 16 Nov 04:15</span>
                         </td>
                         <td>
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -147,7 +137,7 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>Flight No</th>
+                            <th>Flight Name</th>
                             <th>From</th>
                             <th>To</th>
                             <th>Departure</th>
@@ -174,14 +164,6 @@
 
             </div>
         </div>
+
     </div>
 </div>
-<!-- <div *ngFor="let flight of flights">
-    <div>
-        <p>Flight No: {{ flight.flightId }}</p>
-        <p>From: {{ flight.from }}</p>
-        <p>To: {{ flight.to }}</p>
-        <p>Departure Time: {{ flight.departureTime }}</p>
-        <p>Arrival Time: {{ flight.arrivalTime }}</p>
-    </div>
-</div> -->

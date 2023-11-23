@@ -1,45 +1,92 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
+
 @Component({
   selector: 'app-showflight',
   templateUrl: './showflight.component.html',
   styleUrls: ['./showflight.component.css']
 })
-export class ShowflightComponent {
-constructor(private router: Router){
 
-}
+export class ShowflightComponent {
+  filterFlightsByPrice: any;
+  minPrice: any;
+  maxPrice: any;
+  selectedFlight!: any;
+  filteredFlights!: String
+  flightsli: flightsli = new flightsli();
+  // flightsString: string | null = sessionStorage.getItem("flights");
+  // flightList = JSON.parse(this.flightsString);
+flightList : flightsli[]=[]
+  //preferredAirlines = ["air india", "jet", "indigo"]
+
+  preferredAirlines: any[] = [
+    { name: "Air India" },
+    { name: "Air India Express" },
+    { name: "Air Asia" },
+    { name: "Akasa Air" },
+    { name: "IndiGO" },
+    { name: "SpiceJet" }
+  ];
+  selectedAirlines: string[] = [];
+   flightsString = sessionStorage.getItem("flights");
+  constructor(private router: Router) {
+
+  }
+
+  selectPreferredAirline() {
+    const selectedAirlines = this.preferredAirlines.filter(airline => airline.selected);
+    this.selectedFlight = selectedAirlines.map(airline => airline.name);
+    
+    alert("You have selected " + this.selectedFlight + " as preferred airlines");
+    
+    const flightsString: string | null = sessionStorage.getItem("flights");
+  
+    if (flightsString) {
+      const flightList: flightsli[] = JSON.parse(flightsString);
+  
+      // Filter flightList based on selectedFlight
+      const filteredFlights = flightList.filter(flight => flight.flightName === this.selectedFlight);
+  
+      console.log(filteredFlights);
+    } else {
+      console.error("Flights data in sessionStorage is null or not a valid JSON string");
+    }
+  }
+  
 
   flights: any[] = JSON.parse(sessionStorage.getItem('flights') || '[]');
+  selectedPriceRange: number = 50; //new change
+
+
+  ngOnInit() {
+
+  }
+
+
 
   selectedItem(selectedflight: any) {
     sessionStorage.setItem('selectedflight', JSON.stringify(selectedflight));
-      this.router.navigate(['/review']);
+    this.router.navigate(['/review']);
     console.log(selectedflight)
-  }
-  ngOnInit() {
-
-    // "airline": null,
-    // "departureTime": "2023-11-05T10:00:00",
-    // "arrivalTime": "2023-11-05T15:30:00",
-    // "from": "Mumbai",
-    // "to": "Goa",
   }
 
 }
-// <div *ngFor="let flight of flights">
-//   <div>
-//     <p>From: {{ flight.from }}</p>
-//     <p>To: {{ flight.to }}</p>
-//     <!-- Add more properties as needed -->
-//   </div>
-// </div>
-// export class FlightComponent implements OnInit {
-//   flights: any[] = JSON.parse(sessionStorage.getItem('flights') || '[]');
+function filterFlightsByPrice(this: any) {
+  const minPrice = 3000;
+  const maxPrice = 15000;
+  if (this.flights) {
+    const filteredFlights = this.flights.filter((flight: { price: number }) => flight.price >= minPrice && flight.price <= maxPrice);
 
-//   constructor() { }
+    this.flights = filteredFlights;
 
-//   ngOnInit() {
-//     // Load your flight data here or in the constructor
-//   }
-// }
+  } else {
+    console.error("this.flights are not avaliable");
+  }
+}
+
+
+export class flightsli{
+  flightName!: String 
+}
