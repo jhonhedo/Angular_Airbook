@@ -10,21 +10,23 @@ import { FormsModule } from '@angular/forms';
 })
 
 export class ShowflightComponent {
+
+  flights: any[] = JSON.parse(sessionStorage.getItem('flights') || '[]');
+  selectedPriceRange: number = 50; //new change
   filterFlightsByPrice: any;
-  minPrice: any;
-  maxPrice: any;
   selectedFlight!: any;
-  filteredFlights!: String
+  filteredFlights = this.flights;
   flightsli: flightsli = new flightsli();
   // flightsString: string | null = sessionStorage.getItem("flights");
   // flightList = JSON.parse(this.flightsString);
 flightList : flightsli[]=[]
-  //preferredAirlines = ["air india", "jet", "indigo"]
-
+  p1:any;
+  p2:any;
+  selectedSortOption: string = '';
   preferredAirlines: any[] = [
     { name: "Air India" },
     { name: "Air India Express" },
-    { name: "Air Asia" },
+    { name: "air asia" },
     { name: "Akasa Air" },
     { name: "IndiGO" },
     { name: "SpiceJet" }
@@ -41,23 +43,14 @@ flightList : flightsli[]=[]
     
     alert("You have selected " + this.selectedFlight + " as preferred airlines");
     
-    const flightsString: string | null = sessionStorage.getItem("flights");
-  
-    if (flightsString) {
-      const flightList: flightsli[] = JSON.parse(flightsString);
-  
-      // Filter flightList based on selectedFlight
-      const filteredFlights = flightList.filter(flight => flight.flightName === this.selectedFlight);
-  
-      console.log(filteredFlights);
-    } else {
-      console.error("Flights data in sessionStorage is null or not a valid JSON string");
-    }
+        // Filter flightList based on selectedFlight
+     // const filteredFlights = this.flights.filter(flight => flight.flightName == this.selectedFlight);
+     this.filteredFlights=this.flights.filter(flight=>this.selectedFlight.includes(flight.flightName));
+      console.log(this.flights);
+      console.log(this.filteredFlights);
   }
   
 
-  flights: any[] = JSON.parse(sessionStorage.getItem('flights') || '[]');
-  selectedPriceRange: number = 50; //new change
 
 
   ngOnInit() {
@@ -71,6 +64,14 @@ flightList : flightsli[]=[]
     this.router.navigate(['/review']);
     console.log(selectedflight)
   }
+
+  sort() {
+    if (this.selectedSortOption === 'asc') {
+       this.filteredFlights = this.flights.slice().sort((p1, p2) => (p1.price > p2.price ? 1 : -1));
+    } else if (this.selectedSortOption === 'dsc') {
+        this.filteredFlights = this.flights.slice().sort((p1, p2) => (p1.price > p2.price ? -1 : 1));
+    }
+}
 
 }
 function filterFlightsByPrice(this: any) {
@@ -90,3 +91,5 @@ function filterFlightsByPrice(this: any) {
 export class flightsli{
   flightName!: String 
 }
+
+
