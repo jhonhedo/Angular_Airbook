@@ -25,7 +25,7 @@ export class TicketsComponent  implements OnInit{
           console.log(data);
         }
       );
-      this.f.flightId = this.tickets.fli
+      
   }
 }
 

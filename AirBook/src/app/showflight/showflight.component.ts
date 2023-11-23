@@ -52,12 +52,29 @@ flightList : flightsli[]=[]
       console.log(this.filteredFlights);
   }
   
+  //changes started========================
 
-
-
-  ngOnInit() {
-
+  ngOnInit(): void {
+    // Fetch data from the API
+    // this.http.get('http://localhost:7777/flights-controller/all-flights')
+    //   .subscribe(
+    //     (data: any[]) => {
+    //       console.log('Fetched data:', data); // Log the fetched data to see its structure
+    //       // Assuming the response structure is an array of objects with a 'name' property
+    //       this.preferredAirlines = data.map(item => ({ name: item.name, selected: false }));
+    //       alert("preferredAirlines data :"+this.preferredAirlines)
+    //     },
+    //     error => {
+    //       console.error('Error fetching data:', error);
+    //     }
+    //   );
   }
+  
+  
+  
+
+
+  
 
 
 
