@@ -1,42 +1,57 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Passenger } from '../addpassenger/addpassenger.component';
+import { HttpClient } from '@angular/common/http'
+
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.component.html',
   styleUrls: ['./payment.component.css']
 })
-
-
 export class PaymentComponent {
 
-  constructor(private router: Router) { };
+  constructor(private router: Router,private http: HttpClient) { };
 
-  ownerName: string = '';
-  cvv: string = '';
-  cardNumber: string = '';
   message: string = '';
-  attempts: number = 0;
-  chances: number = 3;
+  cardDetails: CreditCard = new CreditCard();
+  reservationDetails: ReservationDetails = new ReservationDetails();
 
-  confirm() {
-    if (this.ownerName ==="kishore" && this.cvv ==="nk123" && this.cardNumber ==="123456789") {
-      this.message = "Payment completed successfully..!!";
-      this.router.navigate(['/ticket']); // Replace 'next-page' with your actual route path
-    } else {
-      this.attempts++;
-      this.chances--;
+redirectToNextPage() {
+  
+  this.cardDetails.paymentMode = 'card'
+  //this.reservationDetails.userId = parseInt(sessionStorage.getItem('user'|null));
+  this.reservationDetails.classFlight = (sessionStorage.getItem('class'));
+  this.reservationDetails.flightId = parseInt(sessionStorage.getItem('selectedflight') || '{}');
+  this.reservationDetails.passengers = JSON.parse(sessionStorage.getItem('passengerData') || '[]');
+  this.cardDetails.amount = parseInt(sessionStorage.getItem('amount') || '{}');
+ 
+  
+  this.http.post("http://localhost:7777/reservation_controller/flight/reservation",this.reservationDetails)
+  .subscribe((response:any)=>{
+    console.log(response)
+    alert("Data sent sucessfully...")
+  })
 
-      if (this.attempts >= 3) {
-        this.message = "Please wait 24 hours...!!";
-      } else {
-        this.message = "Login failed. You have" + this.chances + "attempts remaining.";
-      }
-    }
-  }
-
-  redirectToNextPage() {
-    // Use the Router service to navigate to the next page
-    this.router.navigate(['/ticket']); // Replace 'next-page' with your actual route path
-  }
-
+  this.router.navigate(['/ticket']); // Replace 'next-page' with your actual route path // Replace 'next-page' with your actual route path
+} 
 }
+
+
+export class CreditCard {
+  amount!: number;
+  paymentDate!: Date;
+  paymentMode!: string;
+  cardName!: string;
+  cardNumber!: number;
+  cvv!: string;
+}
+
+export class ReservationDetails{
+  flightId!:any;
+  userId!:any;
+  classFlight!:any;
+  reservationDate: Date = new Date();
+  passengers: Passenger[] = [];
+  payment : CreditCard = new CreditCard() ;
+}
+

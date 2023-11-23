@@ -3,17 +3,17 @@
     <div class="parent">
       <div class="child">
         <label class="form-label">Enter Name on card</label>
-        <input type="text" class="form-control" id="ownerName" [(ngModel)]="ownerName" name="t1">
+        <input type="text" class="form-control" id="ownerName" [(ngModel)]="cardDetails.cardName" name="t1">
       </div>
       <div class="child">
         <label for="cvv" class="form-label">CVV</label>
-        <input type="text" class="form-control" id="cvv" [(ngModel)]="cvv" name="t2">
+        <input type="text" class="form-control" id="cvv" [(ngModel)]="cardDetails.cvv" name="t2">
       </div>
     </div>
     <div class="parent">
       <div class="child">
         <label for="cardNumber" class="form-label">Card Number</label><br>
-        <input type="text" class="form-control" id="cardNumber" [(ngModel)]="cardNumber" name="t3">
+        <input type="text" class="form-control" id="cardNumber" [(ngModel)]="cardDetails.cardNumber" name="t3">
       </div>
       <div class="child1">
         <label for="expDate" class="form-label">Exp Date</label>
@@ -45,6 +45,6 @@
     </div>
     <div class="button">
       <button (click)="redirectToNextPage()" type="button" class="btn btn-primary"
-        [disabled]="attempts >= 3">Confirm</button>
+        >Confirm</button>
       <h3>{{message}}</h3>
     </div>

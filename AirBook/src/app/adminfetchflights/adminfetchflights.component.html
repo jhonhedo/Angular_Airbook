@@ -1,0 +1,35 @@
+<div class="flight-table">
+    <table class=" w-full bg-white border border-gray-300 shadow-md rounded-md overflow-hidden mt-10 ">
+      <thead class="bg-gray-100">
+        <tr>
+          <th class="py-2 px-4">FlightNo</th>
+          <th class="py-2 px-4">From</th>
+          <th class="py-2 px-4">To</th>
+          <th class="py-2 px-4">Departure</th>
+          <th class="py-2 px-4">Arrival</th>
+          <th class="py-2 px-4">Price</th>
+          <th class="py-2 px-4">Action</th>
+        
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let flight of flights" class="border-t hover:bg-gray-50 transition-all duration-200">
+          <td class="py-2 px-4">{{ flight.flightId}}</td>
+          <td class="py-2 px-4">{{ flight.from}}</td>
+          <td class="py-2 px-4">{{ flight. to}}</td>
+          <td class="py-2 px-4">{{ flight. departureTime}}</td>
+          <td class="py-2 px-4">{{flight. arrivalTime}}</td>
+          <td class="py-2 px-4">{{ flight.price}}</td>
+          <td class="py-2 px-4 space-x-2">
+            <button *ngIf="!flight.cancelled" class="bg-danger text-white py-1 px-2 rounded-md" (click)="cancelFlight(flight.flightId)">CancelFlight</button>
+            <span *ngIf="flight?.cancelled" class="text-gray-500">Cancelled</span>
+
+          </td>
+          <td>
+            <td class="py-2 px-4 space-x-2">
+                <button class="bg-success text-white py-1 px-2 rounded-md"><a href="editflight">Edit</a></button>
+        </td>
+        </tr>
+      </tbody>
+    </table>   
+  </div>

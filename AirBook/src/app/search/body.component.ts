@@ -54,9 +54,9 @@ export class BodyComponent {
 
     let url = `http://localhost:7777/flights-controller/flight-search?from=${this.city1}&to=${this.city2}`;
     this.http.get<any>(url).subscribe(data => {
-            alert(JSON.stringify(data));
+      alert(JSON.stringify(data));
 
-    
+      sessionStorage.setItem('class',JSON.stringify(this.selectedClass));
       sessionStorage.setItem('flights', JSON.stringify(data));
       sessionStorage.setItem('passengers', JSON.stringify(this.Passengers));
       this.router.navigate(['/showflight']);
@@ -64,7 +64,7 @@ export class BodyComponent {
     })
   }
 
-  
+
 
   // Swapcities
   swapCities() {
@@ -74,16 +74,4 @@ export class BodyComponent {
   }
 }
 
-// loginCheck() {
-//   let url = "http://localhost:9090/customer/login";
-//   this.http.post<any>(url, this.login).subscribe(data => {
-//     console.log(data);
-//     if(data.status == true) {
-//       sessionStorage.setItem('customerId', data.customerId);
-//       sessionStorage.setItem('name', data.name);
-//       this.router.navigate(['/dashboard'])
-//     }
-//     else
-//       this.messageIfAny = data.messageIfAny;
-//   })
-// }
+
