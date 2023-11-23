@@ -19,7 +19,8 @@ export class AddflightComponent {
   data: any = {};
 
   submitForm() {
-    alert(JSON.stringify(this.flights));
+   // alert(JSON.stringify(this.flights));
+   alert("flight addedd successfully");
     let url = "http://localhost:7777/flights-controller/adding-flights";
     this.http.post<any>(url, this.flights).subscribe(data => {
     console.log('Form Data:', this.data);
@@ -36,10 +37,6 @@ export class Flights {
   departureTime!: Date;
   arrivalTime!: Date;
   price!: number;
-<<<<<<< HEAD
-=======
-
->>>>>>> 80d7fe2ea4f1049002ce770e9e40ffb3571a1cbe
 }
 
 

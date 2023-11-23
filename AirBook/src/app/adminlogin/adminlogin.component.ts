@@ -13,6 +13,7 @@ export class AdminloginComponent {
   adminName: string;
   password: string;
   data: any;
+  message:any;
 
   constructor(private http: HttpClient, private router:Router) {
     this.adminName = '';
@@ -30,7 +31,8 @@ export class AdminloginComponent {
         this.data = data;
 
         if (adminName === this.data.adminName && password === this.data.password) {
-          alert('Login successful ' + `username: ${this.adminName} ` + `password:${this.password}`);
+         // alert('Login successful ' + `username: ${this.adminName} ` + `password:${this.password}`);
+         this.message="Login successful";
           // Successful login, perform necessary actions (e.g., navigate to a different page)
           this.router.navigate(['/admindash']);
         } else {

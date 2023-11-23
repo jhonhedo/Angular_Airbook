@@ -26,6 +26,8 @@ import { AddpassengerComponent } from './addpassenger/addpassenger.component'; /
 import { ReviewbookingComponent } from './reviewbooking/reviewbooking.component';
 import { AdminfetchflightsComponent } from './adminfetchflights/adminfetchflights.component';
 import { EditflightsComponent } from './editflights/editflights.component';
+import { ConfirmComponent } from './confirm/confirm.component';
+
 
 
 
@@ -63,7 +65,9 @@ import { EditflightsComponent } from './editflights/editflights.component';
     AddpassengerComponent,
     ReviewbookingComponent,
     AdminfetchflightsComponent,
-    EditflightsComponent ,
+    EditflightsComponent,
+    ConfirmComponent,
+   
    
 
 
@@ -75,7 +79,10 @@ import { EditflightsComponent } from './editflights/editflights.component';
     FormsModule,
     HttpClientModule
   ],
+  
   providers: [],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
