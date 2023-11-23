@@ -11,47 +11,54 @@ import { HttpClient } from '@angular/common/http'
 export class PaymentComponent {
 
   constructor(private router: Router,private http: HttpClient) { };
-
+  
+  cardName!: string;
+  cardNumber!: number;
+  cvv!: string;
   message: string = '';
-  cardDetails: CreditCard = new CreditCard();
+  
   reservationDetails: ReservationDetails = new ReservationDetails();
 
 redirectToNextPage() {
   
-  this.cardDetails.paymentMode = 'card'
-  //this.reservationDetails.userId = parseInt(sessionStorage.getItem('user'|null));
+  this.reservationDetails.cardName = this.cardName;
+  this.reservationDetails.cardNumber = this.cardNumber;
+  this.reservationDetails.cvv = this.cvv;
+  this.reservationDetails.paymentMode = 'card'
+  this.reservationDetails.userId = JSON.parse(sessionStorage.getItem('userData')||'{}').userId;
   this.reservationDetails.classFlight = (sessionStorage.getItem('class'));
-  this.reservationDetails.flightId = parseInt(sessionStorage.getItem('selectedflight') || '{}');
-  this.reservationDetails.passengers = JSON.parse(sessionStorage.getItem('passengerData') || '[]');
-  this.cardDetails.amount = parseInt(sessionStorage.getItem('amount') || '{}');
- 
-  
+  this.reservationDetails.flightId = JSON.parse(sessionStorage.getItem('selectedflight') || '{}').flightId;
+  this.reservationDetails.passengers = JSON.parse(sessionStorage.getItem('passengersData') || '[]');
+  this.reservationDetails.amount = parseInt(sessionStorage.getItem('amount') || '{}');
+  console.log('Class:', sessionStorage.getItem('class'));
+  console.log('Selected Flight:', sessionStorage.getItem('selectedflight.flightId'));
+  console.log('Passenger Data:', sessionStorage.getItem('passengerData'));
+  console.log('Amount:', sessionStorage.getItem('amount'));
+  console.log(this.reservationDetails);
   this.http.post("http://localhost:7777/reservation_controller/flight/reservation",this.reservationDetails)
   .subscribe((response:any)=>{
     console.log(response)
-    alert("Data sent sucessfully...")
+    alert("payment success and Data sent successfully...")
   })
 
-  this.router.navigate(['/ticket']); // Replace 'next-page' with your actual route path // Replace 'next-page' with your actual route path
+  this.router.navigate(['/']); // Replace 'next-page' with your actual route path // Replace 'next-page' with your actual route path
 } 
 }
 
 
-export class CreditCard {
+
+
+export class ReservationDetails{
+  flightId!:any;
+  userId!:number;
+  classFlight!:any;
+  reservationDate: Date = new Date();
+  passengers: Passenger[];
   amount!: number;
   paymentDate!: Date;
   paymentMode!: string;
   cardName!: string;
   cardNumber!: number;
   cvv!: string;
-}
-
-export class ReservationDetails{
-  flightId!:any;
-  userId!:any;
-  classFlight!:any;
-  reservationDate: Date = new Date();
-  passengers: Passenger[] = [];
-  payment : CreditCard = new CreditCard() ;
 }
 
