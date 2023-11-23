@@ -8,12 +8,12 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./adminlogin.component.css']
 })
 export class AdminloginComponent {
-
-  errorMessage: string;
+  errorMessage: string = '';
+  message: string = '';
   adminName: string;
   password: string;
   data: any;
-  message:any;
+ 
 
   constructor(private http: HttpClient, private router:Router) {
     this.adminName = '';
@@ -30,22 +30,18 @@ export class AdminloginComponent {
       (data) => {
         this.data = data;
 
-        if (adminName === this.data.adminName && password === this.data.password) {
-         // alert('Login successful ' + `username: ${this.adminName} ` + `password:${this.password}`);
-         this.message="Login successful";
-          // Successful login, perform necessary actions (e.g., navigate to a different page)
-          this.router.navigate(['/admindash']);
+        if (this.adminName === 'your_username' && this.password === 'your_password') {
+          this.message = 'Invalid username and password!';
+          // You may want to navigate to another page or perform other actions upon successful login
         } else {
-          alert('Login failed');
-          // Display an error message to the user (e.g., incorrect username or password)
-          this.errorMessage = 'Incorrect username or password';
+          this.errorMessage = 'Login is successful!';
         }
       },
-      (error) => {
-        console.error('Error during login:', error);
-        alert('An error occurred during login');
-        // Handle the error appropriately (e.g., display a user-friendly error message)
-      }
+      // (error) => {
+      //   console.error('Error during login:', error);
+      //   alert('An error occurred during login');
+      //   // Handle the error appropriately (e.g., display a user-friendly error message)
+      // }
     );
   }
 

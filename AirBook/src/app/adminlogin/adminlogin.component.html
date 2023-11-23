@@ -1,7 +1,7 @@
 <div class="container d-flex justify-content-center align-items-center vh-100">
     <div class="card" style="width: 350px;">
         <div class="card-header">
-            <h5 class="card-title">Admin Login</h5>
+            <h5 style="text-align: center;"class="card-title">Admin Login</h5>
         </div>
         <div class="card-body">
             <form (ngSubmit)="login()" #loginForm="ngForm">
@@ -11,7 +11,7 @@
                         required #adminNameField="ngModel">
                     <div *ngIf="adminNameField.invalid && (adminNameField.dirty || adminNameField.touched)"
                         class="text-danger">
-                        Username is required.
+                        *Username is required.
                     </div>
                 </div>
                 <div class="mb-3">
@@ -20,18 +20,20 @@
                         required #passwordField="ngModel">
                     <div *ngIf="passwordField.invalid && (passwordField.dirty || passwordField.touched)"
                         class="text-danger">
-                        Password is required.
+                        *Password is required.
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block">Login</button>
-                <div class="error-message " *ngIf="errorMessage">{{ errorMessage }}</div>
-                <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+                    <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+                </div>
             </form>
         </div>
         <h1>{{message}}</h1>
 
         <div class="card-footer">
-            <p class="text-center mb-0">
+            <p class="text-center mb-2">
                 <a href="/adminregister">Register</a>
             </p>
         </div>
