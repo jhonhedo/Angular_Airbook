@@ -46,9 +46,9 @@ export class BodyComponent {
   }
 
   searchFlight() {
-    alert(`From: ${this.city1} ` + `To: ${this.city2} ` + `Depart: ${this.DapartureDate} ` +
-      `Arrival: ${this.ArrivalDate} ` +
-      `class: ${this.selectedClass} ` + `Passengers: ${this.Passengers}`);
+    // alert(`From: ${this.city1} ` + `To: ${this.city2} ` + `Depart: ${this.DapartureDate} ` +
+    //   `Arrival: ${this.ArrivalDate} ` +
+    //   `class: ${this.selectedClass} ` + `Passengers: ${this.Passengers}`);
 
 
 

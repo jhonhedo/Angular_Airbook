@@ -1,49 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { forkJoin } from 'rxjs';
+import * as jspdf from 'jspdf';
+import html2canvas from 'html2canvas';
+
 @Component({
   selector: 'app-tickets',
   templateUrl: './tickets.component.html',
   styleUrls: ['./tickets.component.css']
 })
 export class TicketsComponent implements OnInit {
-  reservationsData: any[] = []; // Array to store extracted data
-  passengersData: any[] = []; // Array to store passenger data
+  reservationsData: any[] = [];
   user: any = JSON.parse(sessionStorage.getItem('userData') || '[]');
   userId: number = this.user.userId;
 
   constructor(private http: HttpClient) { }
+
   ngOnInit(): void {
-<<<<<<< HEAD
-    this.http.get<any[]>('http://localhost:7777/reservation_controller/reservation/myreservation', {
-        params: { userId: this.userId.toString() }
-      })
-      .subscribe(
-        data => {
-          this.tickets = data;
-          console.log(data);
-        }
-      );
-     // this.f.flightId = this.tickets.fli
-=======
-    // forkJoin([
-    //   this.http.get<any[]>('http://localhost:7777/reservation_controller/reservation/myreservation', {
-    //     params: { userId: this.userId.toString() }
-    //   }),
-    //   this.http.get<any[]>(`http://localhost:7777/passenger-controller/passenger-controller/get-passenger?reservationId=${this.userId}`)
-    // ]).subscribe(
-    //   ([reservations, passengers]) => {
-    //     this.reservationsData = reservations;
-    //     this.passengersData = passengers;
-    //     this.mapPassengersToReservations();
-    //   },
-    //   error => {
-    //     console.error('Error fetching data:', error);
-    //   }
-    // );
-   this.fetchReservations();
-   this.fetchPassengers();
->>>>>>> 0208590afb94a22dec80d253090969cc62d1f688
+    this.fetchReservations();
   }
 
   fetchReservations() {
@@ -65,10 +38,10 @@ export class TicketsComponent implements OnInit {
                 to,
                 arrivalTime,
                 departureTime
-              }
+              },
+              passengers
             } = reservation;
 
-            // Create an object with extracted data
             const extractedData = {
               amount,
               reservationId,
@@ -81,10 +54,13 @@ export class TicketsComponent implements OnInit {
                 arrivalTime,
                 departureTime
               },
-              passenger: {} // Placeholder for passenger data
+              passengers: passengers.map((passenger: any) => ({
+                firstName: passenger.firstName,
+                lastName: passenger.lastName,
+                gender: passenger.gender
+              }))
             };
 
-            // Push the object into the array
             this.reservationsData.push(extractedData);
           });
         }
@@ -94,37 +70,20 @@ export class TicketsComponent implements OnInit {
       }
     );
   }
-  fetchPassengers() {
-    console.log(this.userId);
-    const url = `http://localhost:7777/passenger-controller/passenger-controller/get-passenger?reservationId=${this.userId}`;
-    this.http.get<any[]>(url).subscribe(
-      data => {
-        this.passengersData = data;
-        console.log(data);
-        this.mapPassengersToReservations();
-      },
-      error => {
-        console.error('Error fetching passengers:', error);
-      }
-    );
-  }
-  mapPassengersToReservations() {
-    this.reservationsData.forEach(reservation => {
-      // Find the matching passenger for the current reservation
-      const matchingPassenger = this.passengersData.find(
-        passenger => passenger.reservationId === reservation.reservationId
-      );
-  
-      // If a matching passenger is found, associate it with the reservation
-      if (matchingPassenger) {
-        reservation.passenger = {
-          firstName: matchingPassenger.firstName,
-          lastName: matchingPassenger.lastName,
-          gender: matchingPassenger.gender,
-          seatNo: matchingPassenger.seatNo
-        };
-      }
-    });
-  }
-  
+
+  // convertToPDF() {
+  //   var data = document.getElementById('contentToConvert');
+  //   html2canvas(data).then(canvas => {
+  //     var imgWidth = 208;
+  //     var pageHeight = 295;
+  //     var imgHeight = canvas.height * imgWidth / canvas.width;
+  //     var heightLeft = imgHeight;
+
+  //     const contentDataURL = canvas.toDataURL('image/png');
+  //     let pdf = new jspdf.jsPDF('p', 'mm', 'a4');
+  //     var position = 0;
+  //     pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight);
+  //     pdf.save('new-file.pdf');
+  //   });
+  // }
 }

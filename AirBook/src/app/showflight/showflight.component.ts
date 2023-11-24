@@ -34,8 +34,8 @@ flightList : flightsli[]=[]
   ];
   selectedAirlines: string[] = [];
    flightsString = sessionStorage.getItem("flights");
-  router: any;
-  constructor (private http: HttpClient){
+  
+  constructor (private http: HttpClient,private router: Router){
 
   }
   //preferredAirlines: any[] = [];
