@@ -7,7 +7,7 @@
         <a href="/admindash" class="btn btn-primary fw-bold mx-2 black-text-on-hover">Contact</a>
       </div>
       <div class="d-none d-xl-flex">
-        <h5 *ngIf="loggedInUser">Welcome, {{ loggedInUser.userName }} <i class="bi bi-person"></i> &nbsp;</h5>
+        <h5 *ngIf="loggedInUser">Welcome, {{loggedInUser.userName}} <a href="/userprofile"> <i class="bi bi-person"></i> </a> &nbsp;</h5>
         <button (click)="toggleLoginComponent()" type="button" class="btn btn-primary" *ngIf="!loggedInUser">Login</button>
         <button (click)="logout()" type="button" class="btn btn-primary" *ngIf="loggedInUser">Logout</button>
       </div>

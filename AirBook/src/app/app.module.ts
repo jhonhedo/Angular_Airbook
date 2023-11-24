@@ -19,7 +19,6 @@ import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AdminRegisterComponent } from './admin-register/admin-register.component';
 import { AdminNavComponent } from './admin-nav/admin-nav.component';
 import { AddflightComponent } from './addflight/addflight.component';
-//import { UpdateFlightComponent } from './update-flight/update-flight.component';
 import { FooterComponent } from './footer/footer.component';
 import { CommonModule } from '@angular/common';
 import { AddpassengerComponent } from './addpassenger/addpassenger.component'; // Import CommonModule
@@ -29,6 +28,8 @@ import { EditflightsComponent } from './editflights/editflights.component';
 import { ConfirmComponent } from './confirm/confirm.component';
 import { TicketsComponent } from './tickets/tickets.component';
 import { AdminshowflightsComponent } from './adminshowflights/adminshowflights.component';
+import { UserprofileComponent } from './userprofile/userprofile.component';
+
 
 
 
@@ -43,7 +44,6 @@ import { AdminshowflightsComponent } from './adminshowflights/adminshowflights.c
     CounterComponent,
     AdmindashbordComponent,
     PaymentComponent,
-
     SeatselectionComponent,
     ResetpassComponent,
     PaymentreviewComponent,
@@ -52,9 +52,6 @@ import { AdminshowflightsComponent } from './adminshowflights/adminshowflights.c
     AdminRegisterComponent,
     AdminNavComponent,
     AddflightComponent,
-    //UpdateFlightComponent,
-
-
     SeatselectionComponent,
     ResetpassComponent,
     PaymentreviewComponent,
@@ -71,8 +68,7 @@ import { AdminshowflightsComponent } from './adminshowflights/adminshowflights.c
     AdminfetchflightsComponent,
     EditflightsComponent,
     ConfirmComponent,
-   
-   
+    UserprofileComponent ,
 
 
   ],
