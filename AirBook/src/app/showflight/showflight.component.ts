@@ -12,33 +12,22 @@ import { Router } from '@angular/router';
 
 export class ShowflightComponent implements OnInit{
 
+
   flights: any[] = JSON.parse(sessionStorage.getItem('flights') || '[]');
   selectedPriceRange: number = 50; //new change
   filterFlightsByPrice: any;
   selectedFlight!: any;
   filteredFlights = this.flights;
   flightsli: flightsli = new flightsli();
-  // flightsString: string | null = sessionStorage.getItem("flights");
-  // flightList = JSON.parse(this.flightsString);
 flightList : flightsli[]=[]
   p1:any;
   p2:any;
   selectedSortOption: string = '';
-  /*preferredAirlines: any[] = [
-    { name: "Air India" },
-    { name: "Air India Express" },
-    { name: "air asia" },
-    { name: "Akasa Air" },
-    { name: "IndiGO" },
-    { name: "SpiceJet" }
-  ];*/
   preferredAirlines: any[] = [];
 
   selectedAirlines: string[] = [];
    flightsString = sessionStorage.getItem("flights");
-  
-
-
+   selectedTimeRange: string = ''; // This will store the selected time range //working on Time Range======================
   constructor (private http: HttpClient, private router: Router){
 
   }
@@ -49,15 +38,10 @@ flightList : flightsli[]=[]
     this.selectedFlight = selectedAirlines.map(airline => airline.name);
     
     alert("You have selected " + this.selectedFlight + " as preferred airlines");
-    
-        // Filter flightList based on selectedFlight
-     // const filteredFlights = this.flights.filter(flight => flight.flightName == this.selectedFlight);
      this.filteredFlights=this.flights.filter(flight=>this.selectedFlight.includes(flight.flightName));
-      //console.log(this.flights);
-      console.log("filteredFlights :"+this.filteredFlights);
   }
   
-  //changes started========================
+ 
 
   ngOnInit(): void {
     this.http.get('http://localhost:7777/flights-controller/all-flights')
@@ -73,15 +57,6 @@ flightList : flightsli[]=[]
         }
       );
   }
-  
-  
-  
-
-
-  
-
-
-
   selectedItem(selectedflight: any) {
     sessionStorage.setItem('selectedflight', JSON.stringify(selectedflight));
     this.router.navigate(['/review']);
@@ -95,6 +70,53 @@ flightList : flightsli[]=[]
         this.filteredFlights = this.flights.slice().sort((p1, p2) => (p1.price > p2.price ? -1 : 1));
     }
 }
+
+selectTimeRange(timeRange: string): void {
+  this.selectedTimeRange = timeRange;
+
+  // Filter flights based on the selected time range
+  switch (timeRange) {
+    case 'Before 6AM':
+      this.filteredFlights = this.flights.filter(flight => this.isBefore6AM(flight.departureTime));
+      break;
+    case '6AM - 12PM':
+      this.filteredFlights = this.flights.filter(flight => this.isBetween6AMand12PM(flight.departureTime));
+      break;
+    case '12PM - 6PM':
+      this.filteredFlights = this.flights.filter(flight => this.isBetween12PMand6PM(flight.departureTime));
+      break;
+    case 'After 6PM':
+      this.filteredFlights = this.flights.filter(flight => this.isAfter6PM(flight.departureTime));
+      break;
+    default:
+      this.filteredFlights = this.flights; // No filter
+      break;
+  }
+}
+
+isBefore6AM(departureTime: string): boolean {
+  const time = new Date(`${departureTime}`);
+  return time.getHours() < 6;
+}
+
+isBetween6AMand12PM(departureTime: string): boolean {
+  const time = new Date(`${departureTime}`);
+  const hours = time.getHours();
+  return hours >= 6 && hours < 12;
+}
+
+isBetween12PMand6PM(departureTime: string): boolean {
+  const time = new Date(`${departureTime}`);
+  const hours = time.getHours();
+  return hours >= 12 && hours < 18;
+}
+
+isAfter6PM(departureTime: string): boolean {
+  const time = new Date(`${departureTime}`);
+  return time.getHours() >= 18;
+}cd
+
+
 
 }
 function filterFlightsByPrice(this: any) {
