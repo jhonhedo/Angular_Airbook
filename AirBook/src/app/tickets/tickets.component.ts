@@ -26,24 +26,9 @@ export class TicketsComponent implements OnInit {
           console.log(data);
         }
       );
-     // this.f.flightId = this.tickets.fli
-    // forkJoin([
-    //   this.http.get<any[]>('http://localhost:7777/reservation_controller/reservation/myreservation', {
-    //     params: { userId: this.userId.toString() }
-    //   }),
-    //   this.http.get<any[]>(`http://localhost:7777/passenger-controller/passenger-controller/get-passenger?reservationId=${this.userId}`)
-    // ]).subscribe(
-    //   ([reservations, passengers]) => {
-    //     this.reservationsData = reservations;
-    //     this.passengersData = passengers;
-    //     this.mapPassengersToReservations();
-    //   },
-    //   error => {
-    //     console.error('Error fetching data:', error);
-    //   }
-    // );
+   
    this.fetchReservations();
-   this.fetchPassengers();
+   
   }
 
   fetchReservations() {
