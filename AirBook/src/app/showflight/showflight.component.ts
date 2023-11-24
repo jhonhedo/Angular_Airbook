@@ -24,22 +24,25 @@ flightList : flightsli[]=[]
   p1:any;
   p2:any;
   selectedSortOption: string = '';
-  preferredAirlines: any[] = [
+  /*preferredAirlines: any[] = [
     { name: "Air India" },
     { name: "Air India Express" },
     { name: "air asia" },
     { name: "Akasa Air" },
     { name: "IndiGO" },
     { name: "SpiceJet" }
-  ];
+  ];*/
+  preferredAirlines: any[] = [];
+
   selectedAirlines: string[] = [];
    flightsString = sessionStorage.getItem("flights");
   router: any;
   constructor (private http: HttpClient){
 
   }
-  //preferredAirlines: any[] = [];
+  
   selectPreferredAirline() {
+    console.log("preferred air lines :"+this.preferredAirlines)
     const selectedAirlines = this.preferredAirlines.filter(airline => airline.selected);
     this.selectedFlight = selectedAirlines.map(airline => airline.name);
     
@@ -48,26 +51,25 @@ flightList : flightsli[]=[]
         // Filter flightList based on selectedFlight
      // const filteredFlights = this.flights.filter(flight => flight.flightName == this.selectedFlight);
      this.filteredFlights=this.flights.filter(flight=>this.selectedFlight.includes(flight.flightName));
-      console.log(this.flights);
-      console.log(this.filteredFlights);
+      //console.log(this.flights);
+      console.log("filteredFlights :"+this.filteredFlights);
   }
   
   //changes started========================
 
   ngOnInit(): void {
-    // Fetch data from the API
-    // this.http.get('http://localhost:7777/flights-controller/all-flights')
-    //   .subscribe(
-    //     (data: any[]) => {
-    //       console.log('Fetched data:', data); // Log the fetched data to see its structure
-    //       // Assuming the response structure is an array of objects with a 'name' property
-    //       this.preferredAirlines = data.map(item => ({ name: item.name, selected: false }));
-    //       alert("preferredAirlines data :"+this.preferredAirlines)
-    //     },
-    //     error => {
-    //       console.error('Error fetching data:', error);
-    //     }
-    //   );
+    this.http.get('http://localhost:7777/flights-controller/all-flights')
+      .subscribe(
+        (data: any[]) => {
+          console.log('Fetched data:', data); // Log the fetched data to see its structure
+          // Assuming the response structure is an array of objects with a 'name' property
+          this.preferredAirlines = data.map(item => ({ name: item, selected: false }));
+          alert("preferredAirlines data :"+this.preferredAirlines)
+        },
+        error => {
+          console.error('Error fetching data:', error);
+        }
+      );
   }
   
   
