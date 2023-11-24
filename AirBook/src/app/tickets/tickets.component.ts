@@ -11,10 +11,10 @@ export class TicketsComponent implements OnInit {
   passengersData: any[] = []; // Array to store passenger data
   user: any = JSON.parse(sessionStorage.getItem('userData') || '[]');
   userId: number = this.user.userId;
+  tickets: any[];
 
   constructor(private http: HttpClient) { }
   ngOnInit(): void {
-<<<<<<< HEAD
     this.http.get<any[]>('http://localhost:7777/reservation_controller/reservation/myreservation', {
         params: { userId: this.userId.toString() }
       })
@@ -25,7 +25,6 @@ export class TicketsComponent implements OnInit {
         }
       );
      // this.f.flightId = this.tickets.fli
-=======
     // forkJoin([
     //   this.http.get<any[]>('http://localhost:7777/reservation_controller/reservation/myreservation', {
     //     params: { userId: this.userId.toString() }
@@ -43,7 +42,6 @@ export class TicketsComponent implements OnInit {
     // );
    this.fetchReservations();
    this.fetchPassengers();
->>>>>>> 0208590afb94a22dec80d253090969cc62d1f688
   }
 
   fetchReservations() {

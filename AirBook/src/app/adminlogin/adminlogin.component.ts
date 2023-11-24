@@ -13,14 +13,14 @@ export class AdminloginComponent {
   adminName: string;
   password: string;
   data: any;
- 
+  
 
   constructor(private http: HttpClient, private router:Router) {
     this.adminName = '';
     this.password = '';
     this.errorMessage = '';
   }
-
+  
   login() {
     const adminName = this.adminName;
     const password = this.password;
@@ -48,4 +48,5 @@ export class AdminloginComponent {
   cancel() {
     this.router.navigate(['/admindash']);
   }
+  
 }
