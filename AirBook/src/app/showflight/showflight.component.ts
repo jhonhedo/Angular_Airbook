@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -36,11 +36,13 @@ flightList : flightsli[]=[]
 
   selectedAirlines: string[] = [];
    flightsString = sessionStorage.getItem("flights");
-  router: any;
-  constructor (private http: HttpClient){
+  
+
+
+  constructor (private http: HttpClient, private router: Router){
 
   }
-  
+   
   selectPreferredAirline() {
     console.log("preferred air lines :"+this.preferredAirlines)
     const selectedAirlines = this.preferredAirlines.filter(airline => airline.selected);
