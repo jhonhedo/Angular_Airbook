@@ -1,0 +1,11 @@
+.user-info-box {
+    padding: 20px;
+    border: 1px solid #ddd; /* Add a border for separation */
+    border-radius: 8px; /* Optional: Add some border radius for a softer look */
+    margin-bottom: 20px; /* Add margin at the bottom for spacing */
+  }
+  
+  .user-info-box label {
+    margin-bottom: 5px; /* Add margin below the labels for spacing */
+  }
+  

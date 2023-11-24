@@ -1,27 +1,42 @@
 <div class="container mt-5">
   <h2>User Profile</h2>
-  <form class="d-flex mt-5 mx-2 m align-items-center">
-    <div class="d-flex">
-      <div>
-        <div class="form-group">
-          <label for="username">Username:</label>
-          <h3>{{user.userName}}</h3>
-        </div>
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <h3>{{user.email}}</h3>
-        </div>
-        <div class="form-group">
-          <label for="phone">Phone Number:</label>
-          <h3>{{user.phone}}</h3>
-        </div>
-        <div class="form-group">
-          <label for="dob">Date of Birth:</label>
-          <h3>{{user.dob}}</h3>
+  <form class="d-flex mt-5 mx-2 align-items-center">
+    <div class="row d-flex">
+      <div class="col-md-6">
+        <div class="user-info-box d-flex">
+          <div class="form-group">
+            <label for="username">
+              <h5>Name:  </h5>
+            </label>
+            <p>{{user.userName}}</p>
+          </div>
+          <div class="form-group">
+            <label for="email">
+              <h5>Email:  </h5>
+            </label>
+            <p>{{user.email}}</p>
+          </div>
+          <div class="form-group">
+            <label for="phone">
+              <h5>Phone Number:  </h5>
+            </label>
+            <p>{{user.phone}}</p>
+          </div>
+          <div class="form-group">
+            <label for="dob">
+              <h5>Date of Birth:  </h5>
+            </label>
+            <p>{{user.dob}}</p>
+          </div>
         </div>
       </div>
-      <div>
-        <app-tickets></app-tickets>
+      <div class="">
+        <div class="card-header">
+          <h5 class="mb-0">Your Tickets</h5>
+        </div>
+        <div class="card-body">
+          <app-tickets></app-tickets>
+        </div>
       </div>
     </div>
   </form>
