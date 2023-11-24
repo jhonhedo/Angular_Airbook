@@ -1,4 +1,4 @@
-<main class="ticket-system">
+<!-- <main class="ticket-system">
    <div class="top">
       <div class="receipts-wrapper">
          <h4>My Bookings</h4>
@@ -6,8 +6,8 @@
             <div class="receipt">
 
                <div *ngFor="let ticket of tickets" class="receipt">
-                  <div class="route">
-
+                  <h2>{{ticket.amount}}</h2>
+                  <div class="route" >
                      <h2>{{ticket.from}}</h2>
                      <svg class="plane-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 510 510">
                         <path fill="#3f32e5"
@@ -42,7 +42,7 @@
                      </div>
                   </div>
                   <div class="receipt qr-code">
-                     <!-- QR Code for ticket download -->
+                     
                      <h5>Thank you Happy journey</h5>
                   </div>
                   <div class="col-md-2 d-flex">
@@ -55,6 +55,59 @@
                   <h3>No tickets available.</h3>
                </div>
             </div>
+         </div>
+      </div>
+   </div>
+</main> -->
+<main class="ticket-system">
+   <div class="top">
+      <div class="receipts-wrapper">
+         <h4>My Bookings</h4>
+         <div class="receipts">
+            <div *ngFor="let reservation of reservationsData" class="receipt">
+               <h2>{{ reservation.amount }}</h2>
+               <h2>{{reservation.flight.from}}</h2>
+               <svg class="plane-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 510 510">
+                  <path fill="#3f32e5"
+                     d="M497.25 357v-51l-204-127.5V38.25C293.25 17.85 275.4 0 255 0s-38.25 17.85-38.25 38.25V178.5L12.75 306v51l204-63.75V433.5l-51 38.25V510L255 484.5l89.25 25.5v-38.25l-51-38.25V293.25l204 63.75z" />
+               </svg>
+
+               <h2>{{reservation.flight.to}}</h2>
+               <div class="item">
+                  <span>Flight No</span>
+                  <h3>{{ reservation.flight.flightId }}</h3>
+               </div>
+               <div class="item">
+                  <span>Departure</span>
+                  <h3>{{ reservation.flight.departureTime }}</h3>
+                  <span>Arrival</span>
+                  <h3>{{ reservation.flight.arrivalTime }}</h3>
+               </div>
+
+
+               <!--                   
+                  <div class="item">
+                    <span>Passenger First Name</span>
+                    <h3>{{ reservation.passenger.firstName }}</h3>
+                  </div>
+                  <div class="item">
+                    <span>Passenger Last Name</span>
+                    <h3>{{ reservation.passenger.lastName }}</h3>
+                  </div>
+                  <div class="item">
+                    <span>Gender</span>
+                    <h3>{{ reservation.passenger.gender }}</h3>
+                  </div>
+                  <div class="item">
+                    <span>Seat No</span>
+                    <h3>{{ reservation.passenger.seatNo }}</h3>
+                  </div> -->
+
+
+            </div>
+         </div>
+         <div *ngIf="!reservationsData || reservationsData.length === 0">
+            <h3>No tickets available.</h3>
          </div>
       </div>
    </div>

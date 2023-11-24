@@ -25,9 +25,11 @@ import { AddpassengerComponent } from './addpassenger/addpassenger.component'; /
 import { ReviewbookingComponent } from './reviewbooking/reviewbooking.component';
 import { AdminfetchflightsComponent } from './adminfetchflights/adminfetchflights.component';
 import { EditflightsComponent } from './editflights/editflights.component';
+import { ConfirmComponent } from './confirm/confirm.component';
 import { TicketsComponent } from './tickets/tickets.component';
 import { AdminshowflightsComponent } from './adminshowflights/adminshowflights.component';
 import { UserprofileComponent } from './userprofile/userprofile.component';
+
 
 
 
@@ -65,9 +67,8 @@ import { UserprofileComponent } from './userprofile/userprofile.component';
     TicketsComponent,
     AdminfetchflightsComponent,
     EditflightsComponent,
+    ConfirmComponent,
     UserprofileComponent ,
-
-
 
 
   ],
@@ -78,7 +79,10 @@ import { UserprofileComponent } from './userprofile/userprofile.component';
     FormsModule,
     HttpClientModule
   ],
+  
   providers: [],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

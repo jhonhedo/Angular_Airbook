@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { ShowflightComponent } from './showflight/showflight.component';
 import { BodyComponent } from './search/body.component';
 import { LoginComponent } from './login/login.component';
- import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { ReviewbookingComponent } from './reviewbooking/reviewbooking.component';
 import { SeatselectionComponent } from './seatselection/seatselection.component';
 import { ResetpassComponent } from './resetpass/resetpass.component';
@@ -17,8 +17,12 @@ import { AddflightComponent } from './addflight/addflight.component';
 import { EditflightsComponent } from './editflights/editflights.component';
 import { AddpassengerComponent } from './addpassenger/addpassenger.component';
 import { NavComponent } from './nav/nav.component';
+import { AdminfetchflightsComponent } from './adminfetchflights/adminfetchflights.component';
+import { ConfirmComponent } from './confirm/confirm.component';
+import { tick } from '@angular/core/testing';
 import { TicketsComponent } from './tickets/tickets.component';
 import { UserprofileComponent } from './userprofile/userprofile.component';
+
 
 
 
@@ -40,6 +44,9 @@ const routes: Routes = [
   { path: 'editflight',component: EditflightsComponent},
   { path: 'addpassenger', component: AddpassengerComponent },
   {path:'nav', component:NavComponent},
+  {path:'adminfetchflights',component:AdminfetchflightsComponent},
+  {path: 'confirm',component: ConfirmComponent},
+  {path:'tickets',component:TicketsComponent},
   {path:'tickets',component:TicketsComponent},
   {path:'userprofile',component:UserprofileComponent}
 ];
