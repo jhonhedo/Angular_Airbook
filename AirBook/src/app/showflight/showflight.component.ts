@@ -114,9 +114,7 @@ isBetween12PMand6PM(departureTime: string): boolean {
 isAfter6PM(departureTime: string): boolean {
   const time = new Date(`${departureTime}`);
   return time.getHours() >= 18;
-}cd
-
-
+}
 
 }
 function filterFlightsByPrice(this: any) {
