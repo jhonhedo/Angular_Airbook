@@ -1,27 +1,67 @@
-.upi img {
-    width: 40px;
-    height: 40px;
-    margin-top: 5px;
-}
-.material-symbols-outlined {
-    font-variation-settings:
-    'FILL' 0,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 24
-  }
+ body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
 
-  .material-symbols-outlined {
-    font-variation-settings:
-    'FILL' 0,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 24
-  }
-  .material-symbols-outlined {
-    font-variation-settings:
-    'FILL' 0,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 24
-  }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        h4, h5, h6 {
+            margin: 0;
+        }
+
+        .card-line {
+            border-bottom: 1px solid #ddd;
+            margin: 10px 0;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .card-text {
+            color: #555;
+        }
+
+        .last-img {
+            display: flex;
+            align-items: center;
+        }
+
+        .last-img img {
+            max-width: 100px;
+            margin-right: 10px;
+        }
+
+        input[type="checkbox"], input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        input[type="radio"] {
+            margin-left: 10px;
+        }
+
+        .material-symbols-outlined {
+            font-size: 24px;
+            margin-right: 10px;
+            color: #555;
+        }

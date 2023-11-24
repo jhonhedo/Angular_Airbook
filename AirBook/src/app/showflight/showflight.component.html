@@ -4,16 +4,20 @@
             <div class="card">
                 <div class="card-body">
                     <h2>Filters</h2>
-                    <p>Showing 20 flights</p>
+                     <p>Showing 20 flights</p>
+                     <!--
+                        stared working ==============================================
+                      -->
 
                     <hr>
                     <div class="departure">
                         <h6 style="margin-left: 10px;">Departure</h6>
-                        <button type="button" class="btn btn-primary">Before 6AM</button>
-                        <button type="button" class="btn btn-primary">6AM - 12PM</button><br><br>
-                        <button type="button" class="btn btn-primary">12PM - 6PM</button>
-                        <button type="button" class="btn btn-primary">After 6PM</button>
-                    </div>
+                        <button type="button" class="btn btn-primary" (click)="selectTimeRange('Before 6AM')">Before 6AM</button>
+                        <button type="button" class="btn btn-primary" (click)="selectTimeRange('6AM - 12PM')">6AM - 12PM</button><br><br>
+                         <button type="button" class="btn btn-primary" (click)="selectTimeRange('12PM - 6PM')">12PM - 6PM</button>
+                         <button type="button" class="btn btn-primary" (click)="selectTimeRange('After 6PM')">After 6PM</button> 
+                      </div>
+                      
                     <hr>
                     <div class="card-content m-1 p-2">
                         <h6>Stops</h6>
@@ -75,15 +79,15 @@
                     <tr>
                         <td>DEPARTURE
                             <br>
-                            <span>earliest @ 02:00</span>
+                            <span>earliest 02:00</span>
                         </td>
                         <td>DURATION
                             <br>
-                            <span>fastest @ 2hrs 00m</span>
+                            <span>fastest 2hrs 00m</span>
                         </td>
                         <td>ARRIVAL
                             <br>
-                            <span>Thu, 16 Nov @ 04:15</span>
+                            <span>Thu, 16 Nov  04:15</span>
                         </td>
                         <td>
                             <div class="nav-item dropdown">

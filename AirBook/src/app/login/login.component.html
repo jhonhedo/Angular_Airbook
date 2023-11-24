@@ -1,4 +1,4 @@
-<div  *ngIf="!data; else loggedIn" class="container d-flex justify-content-center align-items-center vh-100">
+<div *ngIf="!data; else loggedIn" class="container d-flex justify-content-center align-items-center vh-100">
     <div class="card" style="width: 350px;">
         <div class="card-header">
             <h5 class="card-title">Login</h5>
@@ -8,28 +8,35 @@
                 <div class="mb-3">
                     <label for="username" class="form-label">Username</label>
                     <input type="text" class="form-control" id="username" name="username" [(ngModel)]="username"
-                        required>
+                        required #usernameField="ngModel">
+                    <div *ngIf="usernameField.invalid && (usernameField.dirty || usernameField.touched)"
+                        class="text-danger">
+                        Username is required.
+                    </div>
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
                     <input type="password" class="form-control" id="password" name="password" [(ngModel)]="password"
-                        required>
+                        required #passwordField="ngModel">
+                    <div *ngIf="passwordField.invalid && (passwordField.dirty || passwordField.touched)"
+                        class="text-danger">
+                        Password is required.
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block">Login</button>
-                <div class="error-message " *ngIf="errorMessage">{{ errorMessage }}</div>
-                <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary">Login</button>
+                    <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
+                </div>
+                <div class="error-message mt-2" *ngIf="errorMessage">{{ errorMessage }}</div>
             </form>
-
         </div>
         <div class="card-footer">
             <p class="text-center mb-0">
                 <a href="/resetpass">Forgot Password?</a> | <a href="/userRegister">Register</a>
-
             </p>
         </div>
-
     </div>
 </div>
 <ng-template #loggedIn>
     <router-outlet></router-outlet>
-  </ng-template>
+</ng-template>
