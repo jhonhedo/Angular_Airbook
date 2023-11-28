@@ -23,7 +23,15 @@ flightList : flightsli[]=[]
   p1:any;
   p2:any;
   selectedSortOption: string = '';
-  preferredAirlines: any[] = [];
+ // preferredAirlines: any[] = [];  //started changes====
+ preferredAirlines: any[] = [
+  { name: "Air India" },
+  { name: "Air India Express" },
+  { name: "air asia" },
+  { name: "Akasa Air" },
+  { name: "IndiGO" },
+  { name: "SpiceJet" }
+];
 
   selectedAirlines: string[] = [];
    flightsString = sessionStorage.getItem("flights");
@@ -37,8 +45,8 @@ flightList : flightsli[]=[]
     const selectedAirlines = this.preferredAirlines.filter(airline => airline.selected);
     this.selectedFlight = selectedAirlines.map(airline => airline.name);
     
-    alert("You have selected " + this.selectedFlight + " as preferred airlines");
-     this.filteredFlights=this.flights.filter(flight=>this.selectedFlight.includes(flight.flightName));
+    // alert("You have selected " + this.selectedFlight + " as preferred airlines");
+    //  this.filteredFlights=this.flights.filter(flight=>this.selectedFlight.includes(flight.flightName));
   }
   
  

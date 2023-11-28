@@ -38,7 +38,7 @@ redirectToNextPage() {
   this.http.post("http://localhost:7777/reservation_controller/flight/reservation",this.reservationDetails)
   .subscribe((response:any)=>{
     console.log(response)
-    alert("payment success and Data sent successfully...")
+    alert("payment success...")
   })
 
   this.router.navigate(['/']); // Replace 'next-page' with your actual route path // Replace 'next-page' with your actual route path

@@ -54,7 +54,7 @@ export class BodyComponent {
 
     let url = `http://localhost:7777/flights-controller/flight-search?from=${this.city1}&to=${this.city2}`;
     this.http.get<any>(url).subscribe(data => {
-      alert(JSON.stringify(data));
+     // alert(JSON.stringify(data));
 
       sessionStorage.setItem('class',JSON.stringify(this.selectedClass));
       sessionStorage.setItem('flights', JSON.stringify(data));
