@@ -57,8 +57,8 @@
                                 <div *ngFor="let airline of preferredAirlines">
                                   <div class="form-check">
                                     <input class="form-check-input" type="checkbox" [(ngModel)]="airline.selected" name="uselectedFlight"
-                                      [value]="airline.name">{{airline.name}}
-                                    <img src="./images/air_india_express.png" alt="">
+                                      [value]="airline">{{airline}}
+                                    <!-- <img src="./images/air_india_express.png" alt=""> -->
                                   </div>
                                 </div>
                                 <div>
