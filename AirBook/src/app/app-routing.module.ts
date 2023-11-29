@@ -20,7 +20,7 @@ import { AdminfetchflightsComponent } from './adminfetchflights/adminfetchflight
 import { ConfirmComponent } from './confirm/confirm.component';
 import { TicketsComponent } from './tickets/tickets.component';
 import { UserprofileComponent } from './userprofile/userprofile.component';
-
+import { PracticeComponent } from './practice/practice.component';
 
 
 
@@ -45,7 +45,8 @@ const routes: Routes = [
   {path: 'confirm',component: ConfirmComponent},
   {path:'tickets',component:TicketsComponent},
   {path:'tickets',component:TicketsComponent},
-  {path:'userprofile',component:UserprofileComponent}
+  {path:'userprofile',component:UserprofileComponent},
+  {path:'practice',component:PracticeComponent},
 ];
 
 @NgModule({

@@ -1,0 +1,38 @@
+<div>
+    <div class="card" style="width: 86rem; margin-left: 50px; margin-top: 45px; background-color: white; box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+      <div class="card-body">
+        <div class="v" style="display: inline-flex;">
+          <div class="v1" style="margin-right: 1080px;">
+            <h5 style="text-align: center;">TRAVELLER DETAILS</h5>
+          </div>
+          <div class="v2">
+            <a href="#">Edit</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="plane">
+      <!-- Add this section in your HTML template -->
+<div class="select">
+    <h1>Please Select a Seat</h1>
+    <div *ngIf="selectedSeats.length > 0">
+      <p>Total Price: {{ getTotalPrice() | currency: 'USD':'symbol':'1.2-2' }}</p>
+    </div>
+  </div>  
+      <div class="exit"></div>
+      <ol>
+        <li *ngFor="let row of seatData">
+          <ol class="seats">
+            <li *ngFor="let seat of row" class="seat" [ngClass]="{'selected': isSeatSelected(seat)}" (click)="selectSeat(seat)">
+              <input type="checkbox" [id]="seat" [checked]="isSeatSelected(seat)">
+              <label [for]="seat">{{ seat }}</label>
+            </li>
+          </ol>
+        </li>
+      </ol>
+      <div class="exit"></div>
+      <button (click)="redirectToNextPage()">Payment</button>
+    </div>
+    
+  </div>
+  
