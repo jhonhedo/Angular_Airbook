@@ -23,7 +23,7 @@ export class AddflightComponent {
    alert("flight addedd successfully");
     let url = "http://localhost:7777/flights-controller/adding-flights";
     this.http.post<any>(url, this.flights).subscribe(data => {
-      console.log('Form Data:', this.data);
+      //console.log('Form Data:', this.data);
       // You can now send this data to your backend API.
       this.router.navigate(['/addflight']);
     })
