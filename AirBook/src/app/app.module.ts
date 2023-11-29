@@ -28,6 +28,7 @@ import { ConfirmComponent } from './confirm/confirm.component';
 import { TicketsComponent } from './tickets/tickets.component';
 import { AdminshowflightsComponent } from './adminshowflights/adminshowflights.component';
 import { UserprofileComponent } from './userprofile/userprofile.component';
+import { PracticeComponent } from './practice/practice.component';
 
 
 
@@ -43,7 +44,6 @@ import { UserprofileComponent } from './userprofile/userprofile.component';
     CounterComponent,
     AdmindashbordComponent,
     PaymentComponent,
-   
     ResetpassComponent,
     PaymentreviewComponent,
     UserregisterComponent,
@@ -67,7 +67,8 @@ import { UserprofileComponent } from './userprofile/userprofile.component';
     AdminfetchflightsComponent,
     EditflightsComponent,
     ConfirmComponent,
-    UserprofileComponent ,
+    UserprofileComponent,
+    PracticeComponent ,
 
 
   ],
@@ -80,7 +81,6 @@ import { UserprofileComponent } from './userprofile/userprofile.component';
   ],
   
   providers: [],
-
   bootstrap: [AppComponent]
 })
 export class AppModule { }

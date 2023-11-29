@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import * as html2pdf from 'html2pdf.js';
 
 @Component({
   selector: 'app-tickets',
@@ -82,19 +82,25 @@ export class TicketsComponent implements OnInit {
     );
   }
 
-  // convertToPDF() {
-  //   var data = document.getElementById('contentToConvert');
-  //   html2canvas(data).then(canvas => {
-  //     var imgWidth = 208;
-  //     var pageHeight = 295;
-  //     var imgHeight = canvas.height * imgWidth / canvas.width;
-  //     var heightLeft = imgHeight;
+  convertToPDF() {
+    // Set the options for html2pdf
+    const options = {
+      margin: 10,
+      filename: 'tickets.pdf',
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2 },
+      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    };
 
-  //     const contentDataURL = canvas.toDataURL('image/png');
-  //     let pdf = new jspdf.jsPDF('p', 'mm', 'a4');
-  //     var position = 0;
-  //     pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight);
-  //     pdf.save('new-file.pdf');
-  //   });
-  // }
+   
+    const mainElement = document.getElementsByTagName('main')[0];
+
+    
+    html2pdf().from(mainElement).set(options).outputPdf(pdf => {
+      console.log('pdf conversion completed...')
+    }
+      );
+  }
 }
+  
+

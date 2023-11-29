@@ -4,7 +4,6 @@ import { BodyComponent } from './search/body.component';
 import { LoginComponent } from './login/login.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ReviewbookingComponent } from './reviewbooking/reviewbooking.component';
-
 import { ResetpassComponent } from './resetpass/resetpass.component';
 import { AdmindashbordComponent } from './admindashbord/admindashord.component';
 import { TicketComponent } from './ticket/ticket.component';
@@ -22,7 +21,7 @@ import { ConfirmComponent } from './confirm/confirm.component';
 
 import { TicketsComponent } from './tickets/tickets.component';
 import { UserprofileComponent } from './userprofile/userprofile.component';
-
+import { PracticeComponent } from './practice/practice.component';
 
 
 
@@ -32,7 +31,6 @@ const routes: Routes = [
   { path: 'userRegister', component: UserregisterComponent },
   { path: 'showflight', component: ShowflightComponent },
   { path: 'review', component: ReviewbookingComponent },
- 
   { path: 'resetpass', component: ResetpassComponent },
   { path: 'admindash', component: AdmindashbordComponent },
   { path: 'ticket', component: TicketComponent },
@@ -48,7 +46,8 @@ const routes: Routes = [
   {path: 'confirm',component: ConfirmComponent},
   {path:'tickets',component:TicketsComponent},
   {path:'tickets',component:TicketsComponent},
-  {path:'userprofile',component:UserprofileComponent}
+  {path:'userprofile',component:UserprofileComponent},
+  {path:'practice',component:PracticeComponent},
 ];
 
 @NgModule({
