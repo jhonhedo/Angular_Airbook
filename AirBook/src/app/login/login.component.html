@@ -27,8 +27,8 @@
                     <button type="submit" class="btn btn-primary">Login</button>
                     <button type="button" class="btn btn-secondary" (click)="cancel()">Cancel</button>
                 </div>
-                <div class="error-message mt-2" *ngIf="errorMessage">{{ errorMessage }}</div>
             </form>
+            <div class="error-message mt-2 bg-danger" *ngIf="successMsg" >{{ successMsg }}</div>
         </div>
         <div class="card-footer">
             <p class="text-center mb-0">
