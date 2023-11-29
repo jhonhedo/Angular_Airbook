@@ -23,7 +23,7 @@ export class ShowflightComponent implements OnInit {
   p1: any;
   p2: any;
   selectedSortOption: string = '';
- // preferredAirlines: any[] = [];  //started changes====
+  //preferredAirlines: any[] = [];  //started changes====
  preferredAirlines: any[] = [
   { name: "Air India" },
   { name: "Air India Express" },
@@ -41,13 +41,25 @@ export class ShowflightComponent implements OnInit {
   }
 
   selectPreferredAirline() {
-    console.log("preferred air lines==> :" + this.preferredAirlines)
-    const selectedAirlines = this.preferredAirlines.filter(airline => airline.selected);
-    console.log("selectedAirline ==>>"+this.selectedAirlines)
-    this.selectedFlight = selectedAirlines.map(airline => airline.name);
+    // console.log("preferred air lines==> :" + this.preferredAirlines)
+    // const selectedAirlines = this.preferredAirlines.filter(airline => airline.selected);
+    // console.log("selectedAirline ==>>"+this.selectedAirlines)
+    // this.selectedFlight = selectedAirlines.map(airline => airline.name);
     
     // alert("You have selected " + this.selectedFlight + " as preferred airlines");
     //  this.filteredFlights=this.flights.filter(flight=>this.selectedFlight.includes(flight.flightName));
+
+    const selectedAirlines = this.preferredAirlines.filter(airline => airline.selected);
+    console.log("selectedAirlines==>"+this.selectedAirlines)
+    this.selectedFlight = selectedAirlines.map(airline => airline.name);
+   
+    alert("You have selected " + this.selectedFlight + " as preferred airlines");
+   
+        // Filter flightList based on selectedFlight
+     // const filteredFlights = this.flights.filter(flight => flight.flightName == this.selectedFlight);
+     this.filteredFlights=this.flights.filter(flight=>this.selectedFlight.includes(flight.flightName));
+      console.log(this.flights);
+      console.log(this.filteredFlights);
   }
 
 

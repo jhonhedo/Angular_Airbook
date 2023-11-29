@@ -4,7 +4,7 @@ import { BodyComponent } from './search/body.component';
 import { LoginComponent } from './login/login.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ReviewbookingComponent } from './reviewbooking/reviewbooking.component';
-import { SeatselectionComponent } from './seatselection/seatselection.component';
+
 import { ResetpassComponent } from './resetpass/resetpass.component';
 import { AdmindashbordComponent } from './admindashbord/admindashord.component';
 import { TicketComponent } from './ticket/ticket.component';
@@ -19,7 +19,7 @@ import { AddpassengerComponent } from './addpassenger/addpassenger.component';
 import { NavComponent } from './nav/nav.component';
 import { AdminfetchflightsComponent } from './adminfetchflights/adminfetchflights.component';
 import { ConfirmComponent } from './confirm/confirm.component';
-import { tick } from '@angular/core/testing';
+
 import { TicketsComponent } from './tickets/tickets.component';
 import { UserprofileComponent } from './userprofile/userprofile.component';
 
@@ -32,7 +32,7 @@ const routes: Routes = [
   { path: 'userRegister', component: UserregisterComponent },
   { path: 'showflight', component: ShowflightComponent },
   { path: 'review', component: ReviewbookingComponent },
-  { path: 'seatselection', component: SeatselectionComponent },
+ 
   { path: 'resetpass', component: ResetpassComponent },
   { path: 'admindash', component: AdmindashbordComponent },
   { path: 'ticket', component: TicketComponent },
