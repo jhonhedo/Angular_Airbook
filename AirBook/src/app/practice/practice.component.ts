@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Injectable, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-practice',
@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
 export class PracticeComponent{
   constructor(private router: Router) { }
   selectedSeats: string[] = [];
-  pricePerSeat = 50;
+  selectedflight: any = JSON.parse(sessionStorage.getItem('selectedflight') || '[]');
+  pricePerSeat = this.selectedflight.price;
  
   seatData = [
     ['1', '2', '3', '4', '5', '6'],
@@ -21,7 +22,6 @@ export class PracticeComponent{
     ['8A', '8B', '8C', '8D', '9E', '9F'],
     ['10A', '10B', '10C', '10D', '10E', '10F']
   ];
- 
  
 
 
@@ -51,5 +51,4 @@ export class PracticeComponent{
 
   }
 }
-
 
